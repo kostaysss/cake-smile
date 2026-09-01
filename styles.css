@@ -129,16 +129,35 @@ img { max-width: 100%; display: block; }
 .feature h3 { font-size: 1.16rem; margin-bottom: 8px; }
 .feature p { color: var(--muted); font-size: 0.94rem; }
 
-/* ===== Форматы ===== */
+/* ===== Форматы (Вариант A «Обложка») ===== */
 .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-.format-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
-.format-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.format-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.format-card:hover { transform: translateY(-6px); box-shadow: 0 30px 55px -30px rgba(58,20,32,.45); border-color: var(--lilac); }
+.format-media { position: relative; }
 .ph-format { aspect-ratio: 4 / 3; }
-.format-body { padding: 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.format-weight { align-self: flex-start; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bordeaux); background: var(--lilac-soft); border: 1px solid var(--lilac); padding: 5px 12px; border-radius: 999px; }
-.format-body h3 { font-size: 1.4rem; }
-.format-body p { color: var(--muted); font-size: 0.95rem; flex: 1; }
-.format-body .link-arrow { margin-top: 6px; }
+.format-weight { font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bordeaux); background: var(--lilac-soft); border: 1px solid var(--lilac); padding: 6px 13px; border-radius: 999px; }
+.format-media .format-weight { position: absolute; top: 16px; left: 16px; background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); }
+.format-body { padding: 24px 24px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.format-body h3 { font-size: 1.55rem; }
+.format-body p { color: var(--muted); font-size: 0.92rem; flex: 1; }
+.format-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 6px; }
+
+/* ===== Страница формата (подробнее) ===== */
+.breadcrumb { font-family: var(--sans); font-size: 0.82rem; color: var(--muted); letter-spacing: 0.03em; margin-bottom: 22px; }
+.breadcrumb a { color: var(--bordeaux); }
+.breadcrumb a:hover { color: var(--lilac); }
+.subhero { padding: 52px 0 68px; }
+.subhero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: center; }
+.subhero .format-weight { display: inline-block; margin-bottom: 16px; }
+.subhero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 18px; }
+.subhero .lead { color: var(--muted); font-size: 1.08rem; margin-bottom: 26px; max-width: 46ch; }
+.subhero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.ph-subhero { aspect-ratio: 4 / 3; border-radius: 10px; }
+.btn-outline { background: transparent; color: var(--bordeaux); border: 1px solid var(--line); }
+.btn-outline:hover { border-color: var(--bordeaux); transform: translateY(-1px); }
+.prose { max-width: 720px; margin: 0 auto; }
+.prose p { color: var(--muted); margin-bottom: 16px; }
+.prose p:last-child { margin-bottom: 0; }
 
 /* ===== Десерты ===== */
 .dessert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
@@ -229,6 +248,8 @@ img { max-width: 100%; display: block; }
   .gallery { grid-template-columns: repeat(3, 1fr); }
   .about-inner { grid-template-columns: 1fr; gap: 30px; }
   .ph-about { max-width: 420px; }
+  .subhero-inner { grid-template-columns: 1fr; gap: 30px; }
+  .subhero .ph-subhero { order: -1; }
   .reviews { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
