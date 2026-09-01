@@ -106,7 +106,8 @@ img { max-width: 100%; display: block; }
     radial-gradient(120% 90% at 70% 20%, #7d2740 0%, #5a1628 55%, #3a1420 100%); }
 .ph-hero::after { content: "🎂"; position: absolute; right: 8%; bottom: 6%; font-size: clamp(6rem, 15vw, 13rem); opacity: 0.1; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(40,12,22,0.55), rgba(40,12,22,0.12)); }
-.hero-inner { position: relative; z-index: 2; padding: 48px 28px; max-width: 680px; }
+.hero-wrap { position: relative; z-index: 2; }
+.hero-inner { padding: 56px 0; max-width: 620px; }
 .hero .eyebrow.light { color: var(--lilac); }
 .hero .eyebrow.light::after { background: var(--lilac); opacity: 0.9; }
 .hero h1 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.9rem); font-weight: 600; margin-bottom: 18px; }
