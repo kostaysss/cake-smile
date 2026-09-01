@@ -98,26 +98,31 @@ img { max-width: 100%; display: block; }
 .ph span { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; opacity: 0.55; }
 .ph::before { content: "🎂"; position: absolute; font-size: 2.4rem; opacity: 0.14; }
 
-/* ===== Hero ===== */
-.hero { position: relative; min-height: 90vh; display: flex; align-items: center; color: #fff; overflow: hidden; }
+/* ===== Hero (компактный) ===== */
+.hero { position: relative; min-height: 58vh; display: flex; align-items: center; color: #fff; overflow: hidden; }
 .hero-media { position: absolute; inset: 0; }
 .ph-hero { background:
+    radial-gradient(90% 80% at 78% 12%, rgba(169,145,180,0.55) 0%, rgba(169,145,180,0) 45%),
     radial-gradient(120% 90% at 70% 20%, #7d2740 0%, #5a1628 55%, #3a1420 100%); }
-.ph-hero::after { content: "🎂"; position: absolute; right: 8%; bottom: 6%; font-size: clamp(8rem, 22vw, 20rem); opacity: 0.1; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(40,12,22,0.55), rgba(40,12,22,0.15)); }
-.hero-inner { position: relative; z-index: 2; padding: 60px 28px; max-width: 820px; }
-.hero h1 { color: #fff; font-size: clamp(2.3rem, 5.2vw, 4rem); font-weight: 600; margin-bottom: 22px; }
-.hero-sub { font-size: 1.14rem; color: rgba(255,255,255,0.88); max-width: 46ch; margin-bottom: 34px; }
+.ph-hero::after { content: "🎂"; position: absolute; right: 8%; bottom: 6%; font-size: clamp(6rem, 15vw, 13rem); opacity: 0.1; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(40,12,22,0.55), rgba(40,12,22,0.12)); }
+.hero-inner { position: relative; z-index: 2; padding: 48px 28px; max-width: 680px; }
+.hero .eyebrow.light { color: var(--lilac); }
+.hero .eyebrow.light::after { background: var(--lilac); opacity: 0.9; }
+.hero h1 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.9rem); font-weight: 600; margin-bottom: 18px; }
+.hero-sub { font-size: 1.02rem; color: rgba(255,255,255,0.86); max-width: 44ch; margin-bottom: 26px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* ===== Sections ===== */
 .section { padding: 90px 0; }
 .section-alt { background: var(--milk); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-lilac { background: var(--lilac-soft); border-top: 1px solid #ddd0e4; border-bottom: 1px solid #ddd0e4; }
+.section-lilac .eyebrow { color: var(--bordeaux); }
 
 /* ===== Почему мы ===== */
 .feature-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .feature { text-align: center; padding: 12px; }
-.feature-ico { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border: 1px solid var(--line); border-radius: 50%; color: var(--bordeaux); font-size: 1.2rem; margin-bottom: 18px; }
+.feature-ico { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: var(--lilac-soft); border: 1px solid var(--lilac); border-radius: 50%; color: var(--bordeaux); font-size: 1.25rem; margin-bottom: 18px; }
 .feature h3 { font-size: 1.16rem; margin-bottom: 8px; }
 .feature p { color: var(--muted); font-size: 0.94rem; }
 
@@ -127,7 +132,7 @@ img { max-width: 100%; display: block; }
 .format-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .ph-format { aspect-ratio: 4 / 3; }
 .format-body { padding: 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.format-weight { font-family: var(--sans); font-weight: 700; font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lilac); }
+.format-weight { align-self: flex-start; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bordeaux); background: var(--lilac-soft); border: 1px solid var(--lilac); padding: 5px 12px; border-radius: 999px; }
 .format-body h3 { font-size: 1.4rem; }
 .format-body p { color: var(--muted); font-size: 0.95rem; flex: 1; }
 .format-body .link-arrow { margin-top: 6px; }
@@ -171,6 +176,7 @@ img { max-width: 100%; display: block; }
 /* ===== Доставка ===== */
 .delivery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .delivery-card { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--bordeaux); border-radius: var(--radius); padding: 26px 24px; }
+.delivery-card:nth-child(even) { border-left-color: var(--lilac); }
 .delivery-card h3 { font-size: 1.16rem; margin-bottom: 10px; }
 .delivery-card p { color: var(--muted); font-size: 0.92rem; }
 
