@@ -57,18 +57,6 @@
     });
   }
 
-  /* ===== Галерея (плейсхолдеры) ===== */
-  var gGrid = document.getElementById("galleryGrid");
-  if (gGrid) {
-    var layout = ["tall", "", "", "", "", "tall", "", ""];
-    layout.forEach(function (mod) {
-      var cell = document.createElement("div");
-      cell.className = "ph ph-gal" + (mod ? " " + mod : "");
-      cell.innerHTML = "<span>фото</span>";
-      gGrid.appendChild(cell);
-    });
-  }
-
   /* ===== Мобильное меню ===== */
   var burger = document.getElementById("burger");
   var nav = document.getElementById("nav");
