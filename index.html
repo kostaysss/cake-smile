@@ -3,189 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="cake.smile — домашняя кондитерская. Торты, капкейки, макаруны и десерты на заказ. Натуральные ингредиенты, ручная работа, доставка." />
-  <meta name="theme-color" content="#e8a0bf" />
-  <title>cake.smile — домашняя кондитерская</title>
+  <meta name="description" content="cake.smile — кондитерская ручной работы. Бенто-торты, средние и большие свадебные торты, десерты на заказ. Натуральные ингредиенты, доставка. Заказ в Telegram." />
+  <meta name="theme-color" content="#6B1F32" />
+  <title>cake.smile — кондитерская ручной работы</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Background decor -->
-  <div class="bg-decor" aria-hidden="true">
-    <span class="sprinkle s1"></span>
-    <span class="sprinkle s2"></span>
-    <span class="sprinkle s3"></span>
-    <span class="sprinkle s4"></span>
-    <span class="sprinkle s5"></span>
-    <span class="sprinkle s6"></span>
-  </div>
 
   <!-- Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="logo">
-        <span class="logo-mark">🧁</span>
-        <span class="logo-text">cake<span class="dot">.</span>smile</span>
-      </a>
+      <a href="#top" class="logo">cake<span class="dot">.</span>smile</a>
       <nav class="nav" id="nav">
-        <a href="#menu">Меню</a>
-        <a href="#gallery">Галерея</a>
+        <a href="#formats">Торты</a>
+        <a href="#desserts">Десерты</a>
+        <a href="#fillings">Начинки</a>
+        <a href="#delivery">Доставка</a>
         <a href="#about">О нас</a>
-        <a href="#reviews">Отзывы</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <a href="#order" class="btn btn-primary nav-cta">Заказать</a>
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="btn btn-primary nav-cta js-tg" href="#">Написать в Telegram</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-media ph-hero" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-inner">
-      <div class="hero-text">
-        <span class="eyebrow">Домашняя кондитерская ручной работы</span>
-        <h1>Десерты, от которых<br /><span class="accent">хочется улыбаться</span></h1>
-        <p class="lead">Торты, капкейки и макаруны из натуральных ингредиентов. Готовим под заказ — свежо, красиво и по-настоящему вкусно.</p>
-        <div class="hero-actions">
-          <a href="#order" class="btn btn-primary">Заказать торт</a>
-          <a href="#menu" class="btn btn-ghost">Посмотреть меню</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><b>500+</b><span>довольных клиентов</span></div>
-          <div class="stat"><b>100%</b><span>натуральный состав</span></div>
-          <div class="stat"><b>24 ч</b><span>минимум на заказ</span></div>
-        </div>
+      <span class="eyebrow light">Кондитерская ручной работы</span>
+      <h1>Торты, которые становятся<br />главным украшением праздника</h1>
+      <p class="hero-sub">От бенто на двоих до многоярусных свадебных. Натуральные ингредиенты, авторский дизайн, безупречный вкус.</p>
+      <div class="hero-actions">
+        <a href="#formats" class="btn btn-light">Смотреть форматы</a>
+        <a href="#" class="btn btn-outline-light js-tg">Написать в Telegram</a>
       </div>
-      <div class="hero-visual">
-        <div class="cake-card">
-          <div class="cake-emoji">🎂</div>
-          <div class="cake-badge">Хит недели</div>
+    </div>
+  </section>
+
+  <!-- Почему мы -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-row">
+        <div class="feature">
+          <span class="feature-ico">✶</span>
+          <h3>Ручная работа</h3>
+          <p>Каждый торт создаётся вручную под ваш повод и пожелания.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-ico">✿</span>
+          <h3>Натуральный состав</h3>
+          <p>Только качественные ингредиенты, без лишней химии и консервантов.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-ico">◆</span>
+          <h3>Любой формат</h3>
+          <p>От бенто ~1 кг до больших свадебных тортов от 9 кг.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-ico">➜</span>
+          <h3>Срочные заказы</h3>
+          <p>Возьмёмся за срочный заказ и успеем к вашей дате.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Menu -->
-  <section class="section" id="menu">
+  <!-- Форматы тортов -->
+  <section class="section section-alt" id="formats">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Наше меню</span>
-        <h2>Выберите свою сладость</h2>
-        <p class="section-sub">Каждый десерт делаем вручную в день доставки.</p>
+        <span class="eyebrow">Форматы тортов</span>
+        <h2>Выберите размер под ваш праздник</h2>
+        <p class="section-sub">Три формата — от камерного повода до торжества на сотню гостей.</p>
       </div>
-      <div class="menu-grid" id="menuGrid"><!-- заполняется из script.js --></div>
+      <div class="format-grid">
+        <article class="format-card">
+          <div class="ph ph-format"><span>фото</span></div>
+          <div class="format-body">
+            <span class="format-weight">~ 1 кг</span>
+            <h3>Бенто и макси-бенто</h3>
+            <p>Маленькие торты на двоих или небольшой повод. Милый сюрприз, признание, мини-праздник.</p>
+            <a href="#" class="link-arrow js-tg">Заказать в Telegram →</a>
+          </div>
+        </article>
+        <article class="format-card">
+          <div class="ph ph-format"><span>фото</span></div>
+          <div class="format-body">
+            <span class="format-weight">5–8 кг</span>
+            <h3>Средние торты</h3>
+            <p>Дни рождения, юбилеи, семейные и корпоративные праздники на компанию гостей.</p>
+            <a href="#" class="link-arrow js-tg">Заказать в Telegram →</a>
+          </div>
+        </article>
+        <article class="format-card">
+          <div class="ph ph-format"><span>фото</span></div>
+          <div class="format-body">
+            <span class="format-weight">от 9 кг</span>
+            <h3>Большие и свадебные</h3>
+            <p>Многоярусные торты для свадеб и крупных торжеств. Сложный дизайн и архитектура.</p>
+            <a href="#" class="link-arrow js-tg">Заказать в Telegram →</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- Gallery -->
+  <!-- Мини-позиции / десерты -->
+  <section class="section" id="desserts">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Мини-позиции</span>
+        <h2>Десерты к столу и в подарок</h2>
+        <p class="section-sub">Дополните заказ или закажите отдельно — набором или боксом.</p>
+      </div>
+      <div class="dessert-grid" id="dessertGrid"><!-- из script.js --></div>
+    </div>
+  </section>
+
+  <!-- Каталог начинок -->
+  <section class="section section-alt" id="fillings">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Каталог начинок</span>
+        <h2>Вкус, который выбираете вы</h2>
+        <p class="section-sub">Подберём сочетание бисквита, крема и начинки под ваш торт.</p>
+      </div>
+      <div class="fillings-grid" id="fillingsGrid"><!-- из script.js --></div>
+    </div>
+  </section>
+
+  <!-- Расчёт за 3 вопроса -->
+  <section class="section" id="calc">
+    <div class="container">
+      <div class="calc-card">
+        <div class="calc-head">
+          <span class="eyebrow">Расчёт заказа</span>
+          <h2>Соберите заявку за 3 шага</h2>
+          <p class="section-sub">Ответьте на три вопроса — мы подготовим текст заявки и откроем Telegram.</p>
+        </div>
+        <form class="calc-form" id="calcForm">
+          <fieldset class="calc-step">
+            <legend>1. Формат</legend>
+            <div class="chips" data-name="format">
+              <button type="button" class="chip" data-val="Бенто / макси-бенто (~1 кг)">Бенто ~1 кг</button>
+              <button type="button" class="chip" data-val="Средний торт (5–8 кг)">Средний 5–8 кг</button>
+              <button type="button" class="chip" data-val="Большой / свадебный (от 9 кг)">Большой от 9 кг</button>
+              <button type="button" class="chip" data-val="Мини-десерты">Мини-десерты</button>
+            </div>
+          </fieldset>
+          <fieldset class="calc-step">
+            <legend>2. Повод</legend>
+            <div class="chips" data-name="occasion">
+              <button type="button" class="chip" data-val="День рождения">День рождения</button>
+              <button type="button" class="chip" data-val="Свадьба">Свадьба</button>
+              <button type="button" class="chip" data-val="Детский праздник">Детский</button>
+              <button type="button" class="chip" data-val="Корпоратив / другое">Другое</button>
+            </div>
+          </fieldset>
+          <fieldset class="calc-step">
+            <legend>3. Вкус</legend>
+            <div class="chips" data-name="taste">
+              <button type="button" class="chip" data-val="Классика (медовик, ваниль)">Классика</button>
+              <button type="button" class="chip" data-val="Шоколад">Шоколад</button>
+              <button type="button" class="chip" data-val="Ягоды / фрукты">Ягоды</button>
+              <button type="button" class="chip" data-val="Ещё не решил">Подскажите</button>
+            </div>
+          </fieldset>
+          <div class="calc-foot">
+            <button type="submit" class="btn btn-primary js-calc-submit">Отправить заявку в Telegram</button>
+            <p class="calc-note" id="calcNote" hidden>Текст заявки скопирован — вставьте его в чат Telegram 💬</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как заказать -->
+  <section class="section section-alt" id="how">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Как заказать</span>
+        <h2>Просто и понятно</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-num">01</span><h3>Напишите в Telegram</h3><p>Расскажите о поводе, дате и пожеланиях.</p></div>
+        <div class="step"><span class="step-num">02</span><h3>Обсудим эскиз и начинку</h3><p>Согласуем дизайн, размер и вкус.</p></div>
+        <div class="step"><span class="step-num">03</span><h3>Предоплата</h3><p>Закрепляем дату за вами и начинаем работу.</p></div>
+        <div class="step"><span class="step-num">04</span><h3>Доставка или самовывоз</h3><p>Аккуратно привезём к нужному времени.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Доставка -->
+  <section class="section" id="delivery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Доставка</span>
+        <h2>Привезём вовремя и бережно</h2>
+      </div>
+      <div class="delivery-grid">
+        <div class="delivery-card">
+          <h3>Зоны доставки</h3>
+          <p>По городу и ближайшим пригородам. Точную стоимость рассчитаем по адресу.</p>
+        </div>
+        <div class="delivery-card">
+          <h3>Стоимость</h3>
+          <p>Зависит от района и веса торта. Крупные и ярусные торты — с бережной сборкой на месте.</p>
+        </div>
+        <div class="delivery-card">
+          <h3>Сроки</h3>
+          <p>Заказ рекомендуем оформлять заранее. Возможны срочные заказы — уточняйте.</p>
+        </div>
+        <div class="delivery-card">
+          <h3>Самовывоз</h3>
+          <p>Можно забрать заказ самостоятельно в согласованное время.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея -->
   <section class="section section-alt" id="gallery">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Галерея</span>
-        <h2>Работы, которыми гордимся</h2>
+        <h2>Наши работы</h2>
       </div>
-      <div class="gallery">
-        <div class="g-item">🍰</div>
-        <div class="g-item">🧁</div>
-        <div class="g-item">🎂</div>
-        <div class="g-item">🍮</div>
-        <div class="g-item">🍩</div>
-        <div class="g-item">🥧</div>
-        <div class="g-item">🍪</div>
-        <div class="g-item">🍫</div>
-      </div>
+      <div class="gallery" id="galleryGrid"><!-- из script.js --></div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- О нас -->
   <section class="section" id="about">
     <div class="container about-inner">
-      <div class="about-visual"><div class="about-emoji">👩‍🍳</div></div>
+      <div class="ph ph-about"><span>фото</span></div>
       <div class="about-text">
         <span class="eyebrow">О нас</span>
-        <h2>Маленькая кондитерская<br />с большой любовью</h2>
-        <p>cake.smile начиналась с домашней кухни и одного простого желания — дарить людям радость через десерты. Сегодня мы готовим торты на праздники, капкейки для будних дней и сладкие боксы в подарок.</p>
-        <ul class="feature-list">
-          <li><span>🌿</span> Только натуральные ингредиенты, без консервантов</li>
-          <li><span>🎨</span> Индивидуальный дизайн под ваш повод</li>
-          <li><span>🚚</span> Аккуратная доставка по городу</li>
-        </ul>
+        <h2>Кондитерская, где важна каждая деталь</h2>
+        <p>cake.smile — это торты и десерты ручной работы. Мы соединяем продуманный дизайн, натуральные ингредиенты и честный вкус, чтобы ваш праздник запомнился.</p>
+        <p>Работаем с любым форматом: от бенто на двоих до больших свадебных тортов. Каждый заказ ведём лично — от идеи до доставки.</p>
+        <a href="#" class="btn btn-primary js-tg">Обсудить заказ</a>
       </div>
     </div>
   </section>
 
-  <!-- Reviews -->
+  <!-- Отзывы -->
   <section class="section section-alt" id="reviews">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Отзывы</span>
-        <h2>Что говорят наши гости</h2>
+        <h2>Что говорят клиенты</h2>
       </div>
       <div class="reviews">
-        <figure class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>Заказывала торт на день рождения дочки — все были в восторге! Красиво и очень вкусно.</blockquote>
-          <figcaption>— Анна</figcaption>
-        </figure>
-        <figure class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>Капкейки просто тают во рту. Теперь только здесь. Спасибо за вашу работу!</blockquote>
-          <figcaption>— Дмитрий</figcaption>
-        </figure>
-        <figure class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>Сделали макаруны точно под цвет свадьбы. Гости фотографировали больше, чем ели :)</blockquote>
-          <figcaption>— Марина</figcaption>
-        </figure>
+        <figure class="review"><div class="stars">★★★★★</div><blockquote>Заказывали торт на юбилей — гости были в восторге. Красиво и очень вкусно.</blockquote><figcaption>Анна</figcaption></figure>
+        <figure class="review"><div class="stars">★★★★★</div><blockquote>Бенто-торт получился именно таким, как хотелось. Всё аккуратно и в срок.</blockquote><figcaption>Дмитрий</figcaption></figure>
+        <figure class="review"><div class="stars">★★★★★</div><blockquote>Свадебный торт был безупречен — и внешне, и на вкус. Спасибо за работу!</blockquote><figcaption>Марина</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- Order -->
-  <section class="section" id="order">
-    <div class="container">
-      <div class="order-card">
-        <div class="order-info">
-          <span class="eyebrow">Оформить заказ</span>
-          <h2>Расскажите о вашем празднике</h2>
-          <p>Оставьте заявку — мы свяжемся, обсудим детали и рассчитаем стоимость.</p>
-          <div class="order-contacts">
-            <a href="tel:+70000000000" class="oc">📞 +7 (000) 000-00-00</a>
-            <a href="#" class="oc">✉️ hello@cakesmile.ru</a>
-          </div>
-        </div>
-        <form class="order-form" id="orderForm" novalidate>
-          <div class="field">
-            <label for="name">Имя</label>
-            <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required />
-          </div>
-          <div class="field">
-            <label for="phone">Телефон</label>
-            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
-          </div>
-          <div class="field">
-            <label for="dessert">Что хотите заказать?</label>
-            <select id="dessert" name="dessert">
-              <option value="Торт">Торт</option>
-              <option value="Капкейки">Капкейки</option>
-              <option value="Макаруны">Макаруны</option>
-              <option value="Сладкий бокс">Сладкий бокс</option>
-              <option value="Другое">Другое</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="comment">Комментарий</label>
-            <textarea id="comment" name="comment" rows="3" placeholder="Повод, дата, пожелания по вкусу и дизайну"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
-          <p class="form-note" id="formNote" hidden>Спасибо! Заявка отправлена — мы скоро свяжемся 💌</p>
-        </form>
-      </div>
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <h2>Готовы обсудить ваш торт?</h2>
+      <p>Напишите нам в Telegram — поможем с форматом, дизайном и вкусом.</p>
+      <a href="#" class="btn btn-light js-tg">Написать в Telegram</a>
     </div>
   </section>
 
@@ -193,31 +281,27 @@
   <footer class="site-footer" id="contacts">
     <div class="container footer-inner">
       <div class="footer-col">
-        <a href="#top" class="logo">
-          <span class="logo-mark">🧁</span>
-          <span class="logo-text">cake<span class="dot">.</span>smile</span>
-        </a>
-        <p class="footer-tag">Десерты, от которых хочется улыбаться.</p>
+        <a href="#top" class="logo footer-logo">cake<span class="dot">.</span>smile</a>
+        <p class="footer-tag">Торты и десерты ручной работы на любой повод.</p>
       </div>
       <div class="footer-col">
-        <h4>Меню</h4>
-        <a href="#menu">Торты</a>
-        <a href="#menu">Капкейки</a>
-        <a href="#menu">Макаруны</a>
+        <h4>Разделы</h4>
+        <a href="#formats">Форматы тортов</a>
+        <a href="#desserts">Десерты</a>
+        <a href="#fillings">Начинки</a>
+        <a href="#delivery">Доставка</a>
       </div>
       <div class="footer-col">
         <h4>Контакты</h4>
-        <a href="tel:+70000000000">+7 (000) 000-00-00</a>
-        <a href="#">hello@cakesmile.ru</a>
-        <div class="socials">
-          <a href="#" aria-label="Instagram">📷</a>
-          <a href="#" aria-label="Telegram">✈️</a>
-          <a href="#" aria-label="WhatsApp">💬</a>
-        </div>
+        <a href="#" class="js-tg">Telegram</a>
+        <a href="#">Instagram</a>
+        <span class="footer-muted">Ежедневно 09:00 — 20:00</span>
+        <span class="footer-muted">Город · доставка по договорённости</span>
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>© <span id="year"></span> cake.smile. Сделано с любовью.</span>
+      <span>© <span id="year"></span> cake.smile</span>
+      <span class="footer-muted">Сделано с любовью</span>
     </div>
   </footer>
 
