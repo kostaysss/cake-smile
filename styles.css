@@ -12,7 +12,7 @@
   --line:       #e4d8cb;   /* границы / разделители */
   --white:      #ffffff;
 
-  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --serif: "Forum", Georgia, "Times New Roman", serif;
   --sans: "Manrope", system-ui, -apple-system, sans-serif;
   --maxw: 1180px;
   --radius: 4px;
@@ -29,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); line-height: 1.18; font-weight: 600; }
+h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); line-height: 1.2; font-weight: 400; letter-spacing: 0.01em; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
@@ -73,7 +73,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; gap: 26px; height: 74px; }
-.logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
+.logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--ink); letter-spacing: 0.02em; }
 .logo .dot { color: var(--bordeaux); }
 .nav { display: flex; gap: 26px; margin-left: auto; }
 .nav a { font-weight: 600; font-size: 0.86rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); position: relative; padding: 4px 0; }
@@ -110,7 +110,7 @@ img { max-width: 100%; display: block; }
 .hero-inner { padding: 90px 0 54px; max-width: 600px; }
 .hero .eyebrow.light { color: var(--lilac); }
 .hero .eyebrow.light::after { background: var(--lilac); opacity: 0.9; }
-.hero h1 { color: #fff; font-size: clamp(1.6rem, 3.1vw, 2.5rem); font-weight: 600; margin-bottom: 18px; }
+.hero h1 { color: #fff; font-size: clamp(1.9rem, 3.6vw, 3rem); font-weight: 400; margin-bottom: 18px; }
 .hero-sub { font-size: 1.02rem; color: rgba(255,255,255,0.86); max-width: 44ch; margin-bottom: 26px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
