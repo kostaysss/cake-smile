@@ -170,6 +170,19 @@ img { max-width: 100%; display: block; }
 .showcase-tags li { font-family: var(--sans); font-weight: 600; font-size: 0.8rem; color: var(--bordeaux); background: var(--lilac-soft); border: 1px solid var(--lilac); padding: 6px 14px; border-radius: 999px; }
 .showcase-actions { display: flex; align-items: center; gap: 22px; margin-top: 10px; }
 
+/* ===== Каталог начинок (страница) ===== */
+.flavor-cat { margin-bottom: 46px; }
+.flavor-cat:last-child { margin-bottom: 0; }
+.cat-title { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); margin-bottom: 22px; padding-bottom: 12px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; gap: 12px; }
+.cat-title .cat-count { font-family: var(--sans); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lilac); }
+.flavor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.flavor-card { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--fc, var(--lilac)); border-radius: 8px; padding: 22px 24px; transition: transform .2s ease, box-shadow .2s ease; }
+.flavor-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -26px rgba(58,20,32,.4); }
+.flavor-head { display: flex; align-items: center; gap: 13px; margin-bottom: 10px; }
+.flavor-emoji { flex: none; font-size: 1.5rem; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--lilac-soft); background: color-mix(in srgb, var(--fc, #a991b4) 22%, #fff); }
+.flavor-name { font-family: var(--serif); font-size: 1.22rem; color: var(--ink); line-height: 1.2; }
+.flavor-desc { color: var(--muted); font-size: 0.9rem; }
+
 /* ===== Десерты ===== */
 .dessert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .dessert-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
@@ -264,6 +277,7 @@ img { max-width: 100%; display: block; }
   .showcase { grid-template-columns: 1fr; }
   .showcase .ph-showcase { min-height: 240px; order: -1; }
   .showcase-body { padding: 32px; }
+  .flavor-grid { grid-template-columns: repeat(2, 1fr); }
   .reviews { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
@@ -276,6 +290,7 @@ img { max-width: 100%; display: block; }
   .section { padding: 64px 0; }
   .calc-card { padding: 30px 22px; }
   .dessert-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .flavor-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 8px; }

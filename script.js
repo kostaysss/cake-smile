@@ -16,28 +16,6 @@
     el.setAttribute("rel", "noopener");
   });
 
-  /* ===== Начинки ===== */
-  var fillings = [
-    { name: "Медовик", desc: "Классические медовые коржи с нежной сметанной прослойкой." },
-    { name: "Красный бархат", desc: "Бисквит Red Velvet с фирменным сырным кремом." },
-    { name: "Двойной шоколад", desc: "Бельгийский шоколад на воздушном шоколадном бисквите." },
-    { name: "Фисташка-малина", desc: "Малиновый конфитюр, сырный крем и натуральная фисташка." },
-    { name: "Солёная карамель", desc: "Миндальный бисквит, карамель, морская соль и фундук." },
-    { name: "Клубничный чизкейк", desc: "Сырный крем и клубничный конфитюр на шоколадной основе." },
-    { name: "Нежная ваниль", desc: "Мадагаскарская ваниль на сливочном бисквите." },
-    { name: "Морковный", desc: "Пряный бисквит, апельсиновый конфитюр и грецкий орех." }
-  ];
-  var fGrid = document.getElementById("fillingsGrid");
-  if (fGrid) {
-    fillings.forEach(function (f) {
-      var row = document.createElement("div");
-      row.className = "filling";
-      row.innerHTML = '<span class="filling-name">' + f.name + "</span>" +
-        '<span class="filling-desc">' + f.desc + "</span>";
-      fGrid.appendChild(row);
-    });
-  }
-
   /* ===== Мобильное меню ===== */
   var burger = document.getElementById("burger");
   var nav = document.getElementById("nav");
