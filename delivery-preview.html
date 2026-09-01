@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>cake.smile — карточки доставки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#f6efe6; --milk:#fbf7f1; --bordeaux:#6b1f32; --bordeaux-d:#551423;
+    --ink:#3a1420; --lilac:#a991b4; --lilac-soft:#ece4f0; --text:#4a3b3e;
+    --muted:#8c7a7d; --line:#e4d8cb; --white:#fff;
+    --serif:"Forum",Georgia,serif; --sans:"Manrope",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); padding:44px 34px 90px; }
+  .page-title{ text-align:center; font-weight:600; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:6px; }
+  .page-sub{ text-align:center; color:var(--muted); font-size:14px; margin-bottom:52px; }
+  .variant{ max-width:1180px; margin:0 auto 66px; }
+  .variant-label{ font-family:var(--serif); font-size:26px; color:var(--ink); margin-bottom:4px; }
+  .variant-note{ color:var(--muted); font-size:14px; margin-bottom:30px; }
+  h3{ font-family:var(--serif); font-weight:400; color:var(--ink); }
+  .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+
+  /* ===== Вариант 1: Иконка в градиентном квадрате ===== */
+  .v1 .card{ background:var(--white); border:1px solid var(--line); border-radius:16px; padding:32px 26px; box-shadow:0 20px 44px -32px rgba(58,20,32,.35); transition:transform .28s, box-shadow .28s, border-color .28s; }
+  .v1 .card:hover{ transform:translateY(-6px); box-shadow:0 32px 56px -28px rgba(58,20,32,.42); border-color:var(--lilac); }
+  .v1 .ico{ width:58px; height:58px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:1.7rem; background:linear-gradient(150deg,#7a2036,#a991b4); box-shadow:0 12px 22px -10px rgba(107,31,50,.55); margin-bottom:22px; }
+  .v1 h3{ font-size:1.24rem; margin-bottom:10px; }
+  .v1 p{ color:var(--muted); font-size:.92rem; }
+
+  /* ===== Вариант 2: Верхняя градиент-полоса ===== */
+  .v2 .card{ position:relative; overflow:hidden; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:32px 26px 28px; box-shadow:0 18px 40px -32px rgba(58,20,32,.32); transition:transform .28s, box-shadow .28s; }
+  .v2 .card::before{ content:""; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--bordeaux),var(--lilac)); }
+  .v2 .card:hover{ transform:translateY(-5px); box-shadow:0 28px 50px -28px rgba(58,20,32,.4); }
+  .v2 .row{ display:flex; align-items:center; gap:13px; margin-bottom:14px; }
+  .v2 .ico{ flex:none; width:44px; height:44px; border-radius:50%; background:var(--lilac-soft); display:flex; align-items:center; justify-content:center; font-size:1.35rem; }
+  .v2 h3{ font-size:1.2rem; }
+  .v2 p{ color:var(--muted); font-size:.92rem; }
+
+  /* ===== Вариант 3: Тёмная премиум ===== */
+  .v3 .card{ position:relative; overflow:hidden; background:linear-gradient(160deg,#7a2036 0%,#4f1526 100%); border-radius:18px; padding:32px 26px 30px; color:#f3e7e2; transition:transform .28s, box-shadow .28s; }
+  .v3 .card::before{ content:""; position:absolute; top:-40px; right:-40px; width:130px; height:130px; border-radius:50%; background:rgba(169,145,180,.2); }
+  .v3 .card:hover{ transform:translateY(-6px); box-shadow:0 34px 58px -28px rgba(58,20,32,.6); }
+  .v3 .ico{ position:relative; width:56px; height:56px; border-radius:14px; background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center; font-size:1.55rem; margin-bottom:20px; }
+  .v3 h3{ position:relative; color:#fff; font-size:1.22rem; margin-bottom:9px; }
+  .v3 p{ position:relative; color:#e8d5da; font-size:.9rem; }
+</style>
+</head>
+<body>
+  <div class="page-title">cake.smile — карточки «Доставка»</div>
+  <div class="page-sub">Три премиум-варианта с иконками. Выбери лучший.</div>
+
+  <!-- 1 -->
+  <section class="variant v1">
+    <div class="variant-label">Вариант 1 — «Иконка-плитка»</div>
+    <div class="variant-note">Иконка в градиентном квадрате с мягкой тенью. Светло, чисто, дорого.</div>
+    <div class="grid">
+      <div class="card"><div class="ico">📍</div><h3>Зоны доставки</h3><p>По городу и ближайшим пригородам. Точную стоимость рассчитаем по адресу.</p></div>
+      <div class="card"><div class="ico">💰</div><h3>Стоимость</h3><p>Зависит от района и веса торта. Крупные и ярусные — с бережной сборкой на месте.</p></div>
+      <div class="card"><div class="ico">⏱️</div><h3>Сроки</h3><p>Заказ рекомендуем оформлять заранее. Возможны срочные заказы — уточняйте.</p></div>
+      <div class="card"><div class="ico">🏡</div><h3>Самовывоз</h3><p>Можно забрать заказ самостоятельно в согласованное время.</p></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="variant v2">
+    <div class="variant-label">Вариант 2 — «Верхняя полоса»</div>
+    <div class="variant-note">Градиентная полоса сверху и иконка рядом с заголовком. Аккуратно и современно.</div>
+    <div class="grid">
+      <div class="card"><div class="row"><span class="ico">📍</span><h3>Зоны доставки</h3></div><p>По городу и ближайшим пригородам. Точную стоимость рассчитаем по адресу.</p></div>
+      <div class="card"><div class="row"><span class="ico">💰</span><h3>Стоимость</h3></div><p>Зависит от района и веса торта. Крупные и ярусные — с бережной сборкой на месте.</p></div>
+      <div class="card"><div class="row"><span class="ico">⏱️</span><h3>Сроки</h3></div><p>Заказ рекомендуем оформлять заранее. Возможны срочные заказы — уточняйте.</p></div>
+      <div class="card"><div class="row"><span class="ico">🏡</span><h3>Самовывоз</h3></div><p>Можно забрать заказ самостоятельно в согласованное время.</p></div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="variant v3">
+    <div class="variant-label">Вариант 3 — «Тёмная премиум»</div>
+    <div class="variant-note">Глубокие бордовые карточки с иконками. Ярко и статусно, выделяет блок доставки.</div>
+    <div class="grid">
+      <div class="card"><div class="ico">📍</div><h3>Зоны доставки</h3><p>По городу и ближайшим пригородам. Точную стоимость рассчитаем по адресу.</p></div>
+      <div class="card"><div class="ico">💰</div><h3>Стоимость</h3><p>Зависит от района и веса торта. Крупные и ярусные — с бережной сборкой на месте.</p></div>
+      <div class="card"><div class="ico">⏱️</div><h3>Сроки</h3><p>Заказ рекомендуем оформлять заранее. Возможны срочные заказы — уточняйте.</p></div>
+      <div class="card"><div class="ico">🏡</div><h3>Самовывоз</h3><p>Можно забрать заказ самостоятельно в согласованное время.</p></div>
+    </div>
+  </section>
+</body>
+</html>
