@@ -159,6 +159,17 @@ img { max-width: 100%; display: block; }
 .prose p { color: var(--muted); margin-bottom: 16px; }
 .prose p:last-child { margin-bottom: 0; }
 
+/* ===== Витрина-блок (десерты на главной) ===== */
+.showcase { display: grid; grid-template-columns: 1fr 1fr; background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 30px 55px -34px rgba(58,20,32,.4); }
+.ph-showcase { min-height: 360px; height: 100%; }
+.showcase-body { padding: 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.showcase-body .eyebrow { margin-bottom: 4px; }
+.showcase-body h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.showcase-body p { color: var(--muted); max-width: 42ch; }
+.showcase-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0; }
+.showcase-tags li { font-family: var(--sans); font-weight: 600; font-size: 0.8rem; color: var(--bordeaux); background: var(--lilac-soft); border: 1px solid var(--lilac); padding: 6px 14px; border-radius: 999px; }
+.showcase-actions { display: flex; align-items: center; gap: 22px; margin-top: 10px; }
+
 /* ===== Десерты ===== */
 .dessert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .dessert-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
@@ -250,6 +261,9 @@ img { max-width: 100%; display: block; }
   .ph-about { max-width: 420px; }
   .subhero-inner { grid-template-columns: 1fr; gap: 30px; }
   .subhero .ph-subhero { order: -1; }
+  .showcase { grid-template-columns: 1fr; }
+  .showcase .ph-showcase { min-height: 240px; order: -1; }
+  .showcase-body { padding: 32px; }
   .reviews { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }

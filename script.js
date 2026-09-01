@@ -16,25 +16,6 @@
     el.setAttribute("rel", "noopener");
   });
 
-  /* ===== Десерты ===== */
-  var desserts = [
-    { name: "Капкейки", desc: "Кремовая шапочка, разные вкусы" },
-    { name: "Макаруны", desc: "Французские macarons" },
-    { name: "Пирожные", desc: "Порционные десерты" },
-    { name: "Сладкий бокс", desc: "Ассорти в подарок" }
-  ];
-  var dGrid = document.getElementById("dessertGrid");
-  if (dGrid) {
-    desserts.forEach(function (d) {
-      var card = document.createElement("article");
-      card.className = "dessert-card";
-      card.innerHTML =
-        '<div class="ph ph-dessert"><span>фото</span></div>' +
-        '<div class="dessert-info"><h3>' + d.name + "</h3><p>" + d.desc + "</p></div>";
-      dGrid.appendChild(card);
-    });
-  }
-
   /* ===== Начинки ===== */
   var fillings = [
     { name: "Медовик", desc: "Классические медовые коржи с нежной сметанной прослойкой." },
