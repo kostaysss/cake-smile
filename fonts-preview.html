@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>cake.smile — сравнение шрифтов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Forum&family=Cormorant:wght@500;600&family=Playfair+Display:wght@600;700&family=Tenor+Sans&family=Golos+Text:wght@400;500;600&family=Onest:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --cream:#f6efe6; --milk:#fbf7f1; --bordeaux:#6b1f32; --ink:#3a1420; --lilac:#a991b4; --text:#4a3b3e; --muted:#8c7a7d; --line:#e4d8cb; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ background:var(--cream); color:var(--text); padding:40px; font-family:Manrope,sans-serif; }
+  h1.page{ font-family:Manrope; font-size:15px; letter-spacing:.2em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:26px; text-align:center; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:1200px; margin:0 auto; }
+  .card{ background:var(--milk); border:1px solid var(--line); border-radius:6px; padding:26px 28px; }
+  .tag{ display:inline-block; font-family:Manrope; font-weight:600; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--lilac); margin-bottom:14px; }
+  .logo{ font-size:26px; color:var(--ink); margin-bottom:10px; }
+  .logo .dot{ color:var(--bordeaux); }
+  .head{ font-size:30px; line-height:1.15; color:var(--ink); margin-bottom:12px; }
+  .body{ font-size:15px; line-height:1.6; color:var(--muted); max-width:44ch; }
+  .meta{ margin-top:14px; font-family:Manrope; font-size:12px; color:var(--bordeaux); font-weight:600; }
+
+  /* A: Prata + Golos Text */
+  .a .logo,.a .head{ font-family:'Prata',serif; font-weight:400; }
+  .a .body{ font-family:'Golos Text',sans-serif; }
+  /* B: Forum + Manrope */
+  .b .logo,.b .head{ font-family:'Forum',serif; font-weight:400; }
+  .b .head{ font-size:34px; }
+  .b .body{ font-family:'Manrope',sans-serif; }
+  /* C: Cormorant + Onest */
+  .c .logo,.c .head{ font-family:'Cormorant',serif; font-weight:600; }
+  .c .head{ font-size:36px; }
+  .c .body{ font-family:'Onest',sans-serif; }
+  /* D: Tenor Sans + Manrope */
+  .d .logo,.d .head{ font-family:'Tenor Sans',sans-serif; font-weight:400; }
+  .d .body{ font-family:'Manrope',sans-serif; }
+  /* E: Playfair (текущий) + Manrope */
+  .e .logo,.e .head{ font-family:'Playfair Display',serif; font-weight:600; }
+  .e .body{ font-family:'Manrope',sans-serif; }
+</style>
+</head>
+<body>
+  <h1 class="page">cake.smile — варианты шрифтов</h1>
+  <div class="grid">
+    <div class="card a">
+      <span class="tag">Вариант A</span>
+      <div class="logo">cake<span class="dot">.</span>smile</div>
+      <div class="head">Торты, которые становятся украшением праздника</div>
+      <div class="body">От бенто на двоих до многоярусных свадебных. Натуральные ингредиенты, авторский дизайн.</div>
+      <div class="meta">Prata + Golos Text — модно, «парижская кондитерская»</div>
+    </div>
+    <div class="card b">
+      <span class="tag">Вариант B</span>
+      <div class="logo">cake<span class="dot">.</span>smile</div>
+      <div class="head">Торты, которые становятся украшением праздника</div>
+      <div class="body">От бенто на двоих до многоярусных свадебных. Натуральные ингредиенты, авторский дизайн.</div>
+      <div class="meta">Forum + Manrope — изящный бутик-антиква</div>
+    </div>
+    <div class="card c">
+      <span class="tag">Вариант C</span>
+      <div class="logo">cake<span class="dot">.</span>smile</div>
+      <div class="head">Торты, которые становятся украшением праздника</div>
+      <div class="body">От бенто на двоих до многоярусных свадебных. Натуральные ингредиенты, авторский дизайн.</div>
+      <div class="meta">Cormorant + Onest — утончённая классика</div>
+    </div>
+    <div class="card d">
+      <span class="tag">Вариант D</span>
+      <div class="logo">cake<span class="dot">.</span>smile</div>
+      <div class="head">Торты, которые становятся украшением праздника</div>
+      <div class="body">От бенто на двоих до многоярусных свадебных. Натуральные ингредиенты, авторский дизайн.</div>
+      <div class="meta">Tenor Sans + Manrope — спокойный минимализм</div>
+    </div>
+    <div class="card e">
+      <span class="tag">Вариант E — текущий</span>
+      <div class="logo">cake<span class="dot">.</span>smile</div>
+      <div class="head">Торты, которые становятся украшением праздника</div>
+      <div class="body">От бенто на двоих до многоярусных свадебных. Натуральные ингредиенты, авторский дизайн.</div>
+      <div class="meta">Playfair Display + Manrope — как сейчас</div>
+    </div>
+  </div>
+</body>
+</html>
