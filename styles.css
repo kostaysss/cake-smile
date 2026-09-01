@@ -99,7 +99,7 @@ img { max-width: 100%; display: block; }
 .ph::before { content: "🎂"; position: absolute; font-size: 2.4rem; opacity: 0.14; }
 
 /* ===== Hero (компактный) ===== */
-.hero { position: relative; min-height: 58vh; display: flex; align-items: center; color: #fff; overflow: hidden; }
+.hero { position: relative; min-height: 60vh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; }
 .hero-media { position: absolute; inset: 0; }
 .ph-hero { background:
     radial-gradient(90% 80% at 78% 12%, rgba(169,145,180,0.55) 0%, rgba(169,145,180,0) 45%),
@@ -107,10 +107,10 @@ img { max-width: 100%; display: block; }
 .ph-hero::after { content: "🎂"; position: absolute; right: 8%; bottom: 6%; font-size: clamp(6rem, 15vw, 13rem); opacity: 0.1; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(40,12,22,0.55), rgba(40,12,22,0.12)); }
 .hero-wrap { position: relative; z-index: 2; }
-.hero-inner { padding: 56px 0; max-width: 620px; }
+.hero-inner { padding: 90px 0 54px; max-width: 600px; }
 .hero .eyebrow.light { color: var(--lilac); }
 .hero .eyebrow.light::after { background: var(--lilac); opacity: 0.9; }
-.hero h1 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.9rem); font-weight: 600; margin-bottom: 18px; }
+.hero h1 { color: #fff; font-size: clamp(1.6rem, 3.1vw, 2.5rem); font-weight: 600; margin-bottom: 18px; }
 .hero-sub { font-size: 1.02rem; color: rgba(255,255,255,0.86); max-width: 44ch; margin-bottom: 26px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 

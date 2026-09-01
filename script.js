@@ -6,7 +6,7 @@
      НАСТРОЙКА: укажите ваш Telegram-логин (без @).
      Все кнопки «Написать/Заказать» ведут сюда.
   ---------------------------------------------------------------- */
-  var TELEGRAM_USERNAME = "cakesmile"; // <-- ЗАМЕНИТЬ на реальный логин
+  var TELEGRAM_USERNAME = "cakesmilee"; // Telegram-логин кондитерской
   var TG_LINK = "https://t.me/" + TELEGRAM_USERNAME;
 
   // Проставляем ссылку на всех кнопках .js-tg
