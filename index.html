@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="cake.smile — домашняя кондитерская. Торты, капкейки, макаруны и десерты на заказ. Натуральные ингредиенты, ручная работа, доставка." />
+  <meta name="theme-color" content="#e8a0bf" />
+  <title>cake.smile — домашняя кондитерская</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Background decor -->
+  <div class="bg-decor" aria-hidden="true">
+    <span class="sprinkle s1"></span>
+    <span class="sprinkle s2"></span>
+    <span class="sprinkle s3"></span>
+    <span class="sprinkle s4"></span>
+    <span class="sprinkle s5"></span>
+    <span class="sprinkle s6"></span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark">🧁</span>
+        <span class="logo-text">cake<span class="dot">.</span>smile</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#menu">Меню</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#about">О нас</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#order" class="btn btn-primary nav-cta">Заказать</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">Домашняя кондитерская ручной работы</span>
+        <h1>Десерты, от которых<br /><span class="accent">хочется улыбаться</span></h1>
+        <p class="lead">Торты, капкейки и макаруны из натуральных ингредиентов. Готовим под заказ — свежо, красиво и по-настоящему вкусно.</p>
+        <div class="hero-actions">
+          <a href="#order" class="btn btn-primary">Заказать торт</a>
+          <a href="#menu" class="btn btn-ghost">Посмотреть меню</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>500+</b><span>довольных клиентов</span></div>
+          <div class="stat"><b>100%</b><span>натуральный состав</span></div>
+          <div class="stat"><b>24 ч</b><span>минимум на заказ</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="cake-card">
+          <div class="cake-emoji">🎂</div>
+          <div class="cake-badge">Хит недели</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Наше меню</span>
+        <h2>Выберите свою сладость</h2>
+        <p class="section-sub">Каждый десерт делаем вручную в день доставки.</p>
+      </div>
+      <div class="menu-grid" id="menuGrid"><!-- заполняется из script.js --></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section section-alt" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Галерея</span>
+        <h2>Работы, которыми гордимся</h2>
+      </div>
+      <div class="gallery">
+        <div class="g-item">🍰</div>
+        <div class="g-item">🧁</div>
+        <div class="g-item">🎂</div>
+        <div class="g-item">🍮</div>
+        <div class="g-item">🍩</div>
+        <div class="g-item">🥧</div>
+        <div class="g-item">🍪</div>
+        <div class="g-item">🍫</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container about-inner">
+      <div class="about-visual"><div class="about-emoji">👩‍🍳</div></div>
+      <div class="about-text">
+        <span class="eyebrow">О нас</span>
+        <h2>Маленькая кондитерская<br />с большой любовью</h2>
+        <p>cake.smile начиналась с домашней кухни и одного простого желания — дарить людям радость через десерты. Сегодня мы готовим торты на праздники, капкейки для будних дней и сладкие боксы в подарок.</p>
+        <ul class="feature-list">
+          <li><span>🌿</span> Только натуральные ингредиенты, без консервантов</li>
+          <li><span>🎨</span> Индивидуальный дизайн под ваш повод</li>
+          <li><span>🚚</span> Аккуратная доставка по городу</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Отзывы</span>
+        <h2>Что говорят наши гости</h2>
+      </div>
+      <div class="reviews">
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>Заказывала торт на день рождения дочки — все были в восторге! Красиво и очень вкусно.</blockquote>
+          <figcaption>— Анна</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>Капкейки просто тают во рту. Теперь только здесь. Спасибо за вашу работу!</blockquote>
+          <figcaption>— Дмитрий</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>Сделали макаруны точно под цвет свадьбы. Гости фотографировали больше, чем ели :)</blockquote>
+          <figcaption>— Марина</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order -->
+  <section class="section" id="order">
+    <div class="container">
+      <div class="order-card">
+        <div class="order-info">
+          <span class="eyebrow">Оформить заказ</span>
+          <h2>Расскажите о вашем празднике</h2>
+          <p>Оставьте заявку — мы свяжемся, обсудим детали и рассчитаем стоимость.</p>
+          <div class="order-contacts">
+            <a href="tel:+70000000000" class="oc">📞 +7 (000) 000-00-00</a>
+            <a href="#" class="oc">✉️ hello@cakesmile.ru</a>
+          </div>
+        </div>
+        <form class="order-form" id="orderForm" novalidate>
+          <div class="field">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required />
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+          </div>
+          <div class="field">
+            <label for="dessert">Что хотите заказать?</label>
+            <select id="dessert" name="dessert">
+              <option value="Торт">Торт</option>
+              <option value="Капкейки">Капкейки</option>
+              <option value="Макаруны">Макаруны</option>
+              <option value="Сладкий бокс">Сладкий бокс</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comment">Комментарий</label>
+            <textarea id="comment" name="comment" rows="3" placeholder="Повод, дата, пожелания по вкусу и дизайну"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+          <p class="form-note" id="formNote" hidden>Спасибо! Заявка отправлена — мы скоро свяжемся 💌</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a href="#top" class="logo">
+          <span class="logo-mark">🧁</span>
+          <span class="logo-text">cake<span class="dot">.</span>smile</span>
+        </a>
+        <p class="footer-tag">Десерты, от которых хочется улыбаться.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <a href="#menu">Торты</a>
+        <a href="#menu">Капкейки</a>
+        <a href="#menu">Макаруны</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+        <a href="#">hello@cakesmile.ru</a>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Telegram">✈️</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> cake.smile. Сделано с любовью.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
