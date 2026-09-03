@@ -288,19 +288,52 @@ img { max-width: 100%; display: block; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
+  .container { padding: 0 20px; }
   .header-inner { display: flex; justify-content: space-between; }
   .nav, .nav-cta { display: none; }
   .burger { display: flex; }
-  .nav.open { display: flex; flex-direction: column; position: absolute; top: 74px; left: 0; right: 0; background: var(--cream); padding: 18px 28px; gap: 14px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+  .nav.open { display: flex; flex-direction: column; position: absolute; top: 74px; left: 0; right: 0; background: var(--cream); padding: 18px 20px; gap: 14px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
   .nav.open a { text-transform: none; font-size: 1rem; letter-spacing: 0; }
-  .section { padding: 64px 0; }
-  .calc-card { padding: 30px 22px; }
+  .section { padding: 56px 0; }
+  .section-head { margin-bottom: 36px; }
+
+  /* Кнопки-действия на всю ширину */
+  .hero-actions, .subhero-actions, .showcase-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .hero-actions .btn, .subhero-actions .btn, .showcase-actions .btn { width: 100%; }
+  .showcase-actions .link-arrow { text-align: center; padding-top: 2px; }
+
+  /* Hero */
+  .hero-split-inner { padding: 40px 0; gap: 26px; }
+
+  /* Дегустации */
+  .tasting-body { padding: 28px 22px; }
+  .tasting-body .btn-light { align-self: stretch; }
+
+  /* Каталог — карточки на всю ширину */
+  .cat-card { flex: 1 1 100%; max-width: 400px; }
+
+  /* Витрина / прочее */
+  .showcase-body { padding: 28px 22px; }
+  .delivery-grid { grid-template-columns: 1fr; }
+  .subhero { padding: 36px 0 48px; }
+  .calc-card { padding: 28px 20px; }
+  .cta-band { padding: 54px 0; }
+
   .dessert-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .flavor-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .ph-gal.tall { grid-row: span 1; aspect-ratio: 1 / 1; }
+}
+@media (max-width: 400px) {
+  .container { padding: 0 16px; }
+  .hero-brand { font-size: 2.6rem; }
+  .section { padding: 46px 0; }
+  .feature-row { grid-template-columns: 1fr; gap: 22px; }
+  .dessert-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 26px; }
+  .flavor-grid { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
