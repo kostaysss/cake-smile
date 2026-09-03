@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>cake.smile — рамки для фото</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#f6efe6; --milk:#fbf7f1; --bordeaux:#6b1f32; --ink:#3a1420; --lilac:#a991b4;
+    --lilac-soft:#ece4f0; --text:#4a3b3e; --muted:#8c7a7d; --line:#e4d8cb; --white:#fff;
+    --serif:"Forum",Georgia,serif; --sans:"Manrope",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); padding:44px 34px 90px; }
+  .page-title{ text-align:center; font-weight:600; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:6px; }
+  .page-sub{ text-align:center; color:var(--muted); font-size:14px; margin-bottom:50px; }
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:48px 40px; max-width:1150px; margin:0 auto; }
+  .item{ text-align:center; }
+  .label{ font-family:var(--serif); font-size:20px; color:var(--ink); margin-bottom:6px; }
+  .note{ color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .stage{ display:flex; justify-content:center; align-items:flex-start; min-height:430px; }
+  img{ width:280px; height:373px; object-fit:cover; display:block; }
+
+  /* 1 — Оффсет-контур */
+  .f1 .wrap{ position:relative; display:inline-block; }
+  .f1 .wrap::before{ content:""; position:absolute; inset:0; transform:translate(16px,16px); border:2px solid var(--lilac); border-radius:16px; }
+  .f1 img{ position:relative; border-radius:16px; }
+
+  /* 2 — Паспарту (рамка-багет) */
+  .f2 .mat{ background:#fff; padding:16px; border:1px solid var(--line); border-radius:6px; box-shadow:0 22px 44px -30px rgba(58,20,32,.4); }
+  .f2 .inner{ border:1px solid var(--lilac); padding:7px; }
+  .f2 img{ width:250px; height:333px; }
+
+  /* 3 — Арка */
+  .f3 img{ border-radius:150px 150px 16px 16px; }
+
+  /* 4 — Уголки-засечки */
+  .f4 .wrap{ position:relative; display:inline-block; padding:12px; }
+  .f4 img{ border-radius:10px; }
+  .f4 .wrap::before,.f4 .wrap::after{ content:""; position:absolute; width:36px; height:36px; }
+  .f4 .wrap::before{ top:0; left:0; border-top:2px solid var(--bordeaux); border-left:2px solid var(--bordeaux); }
+  .f4 .wrap::after{ bottom:0; right:0; border-bottom:2px solid var(--bordeaux); border-right:2px solid var(--bordeaux); }
+
+  /* 5 — Карточка с подписью */
+  .f5 .card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:0 22px 44px -30px rgba(58,20,32,.4); }
+  .f5 img{ width:250px; height:320px; border-radius:8px; }
+  .f5 .cap{ font-family:var(--serif); color:var(--ink); font-size:16px; padding:12px 4px 4px; }
+
+  /* 6 — Градиентная рамка */
+  .f6 .grad{ display:inline-block; padding:6px; border-radius:20px; background:linear-gradient(135deg,var(--bordeaux),var(--lilac)); box-shadow:0 22px 44px -30px rgba(58,20,32,.45); }
+  .f6 img{ border-radius:15px; }
+</style>
+</head>
+<body>
+  <div class="page-title">cake.smile — оформление фото на главной</div>
+  <div class="page-sub">Выбери рамку/стиль. Показано на реальном фото.</div>
+
+  <div class="grid">
+    <div class="item f1">
+      <div class="label">1 — Оффсет-контур</div>
+      <div class="note">Тонкая сиреневая рамка со сдвигом за фото</div>
+      <div class="stage"><span class="wrap"><img src="assets/hero.jpg" alt="" /></span></div>
+    </div>
+
+    <div class="item f2">
+      <div class="label">2 — Паспарту</div>
+      <div class="note">Фото в багете как напечатанный кадр</div>
+      <div class="stage"><span class="mat"><span class="inner"><img src="assets/hero.jpg" alt="" /></span></span></div>
+    </div>
+
+    <div class="item f3">
+      <div class="label">3 — Арка</div>
+      <div class="note">Скруглённый верх — свадебная эстетика</div>
+      <div class="stage"><img src="assets/hero.jpg" alt="" /></div>
+    </div>
+
+    <div class="item f4">
+      <div class="label">4 — Уголки-засечки</div>
+      <div class="note">Бордовые уголки, минимализм</div>
+      <div class="stage"><span class="wrap"><img src="assets/hero.jpg" alt="" /></span></div>
+    </div>
+
+    <div class="item f5">
+      <div class="label">5 — Карточка с подписью</div>
+      <div class="note">Фото на плашке + подпись</div>
+      <div class="stage"><span class="card"><img src="assets/hero.jpg" alt="" /><div class="cap">Свадебная коллекция</div></span></div>
+    </div>
+
+    <div class="item f6">
+      <div class="label">6 — Градиентная рамка</div>
+      <div class="note">Рамка бордо→сирень</div>
+      <div class="stage"><span class="grad"><img src="assets/hero.jpg" alt="" /></span></div>
+    </div>
+  </div>
+</body>
+</html>
