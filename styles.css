@@ -314,7 +314,7 @@ img { max-width: 100%; display: block; }
 .hero-brand .dot { color: var(--bordeaux); }
 .hero-slogan { font-size: 1.2rem; color: var(--muted); margin-bottom: 30px; max-width: 32ch; }
 .ph-hero-photo { aspect-ratio: 4 / 3; border-radius: 16px; }
-.hero-photo-card { max-width: 360px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 12px; box-shadow: 0 34px 60px -22px rgba(107,31,50,.5), 0 14px 34px -14px rgba(169,145,180,.55); }
+.hero-photo-card { max-width: 440px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 12px; box-shadow: 0 34px 60px -22px rgba(107,31,50,.5), 0 14px 34px -14px rgba(169,145,180,.55); }
 .hero-photo { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; border-radius: 10px; display: block; }
 .hero-photo-cap { font-family: var(--serif); color: var(--ink); text-align: center; font-size: 1.15rem; padding: 14px 4px 4px; }
 
