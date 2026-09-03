@@ -332,18 +332,20 @@ img { max-width: 100%; display: block; }
 
 /* ===== Каталог (иконка + фото + подробнее) ===== */
 .catalog-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-.cat-card { flex: 0 1 250px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.cat-card:hover { transform: translateY(-6px); box-shadow: 0 30px 55px -30px rgba(58,20,32,.42); border-color: var(--lilac); }
-.cat-media { position: relative; }
+/* Вариант C — «Минимал-галерея» */
+.cat-card { flex: 0 1 250px; background: transparent; display: flex; flex-direction: column; transition: transform .25s ease; }
+.cat-card:hover { transform: translateY(-4px); }
+.cat-media { position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 40px -30px rgba(58,20,32,.4); transition: box-shadow .25s ease; }
+.cat-card:hover .cat-media { box-shadow: 0 26px 48px -26px rgba(58,20,32,.45); }
 .cat-media .ph { aspect-ratio: 4 / 3; }
 .cat-photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .cat-photo--contain { object-fit: contain; background: var(--milk); }
-.cat-icon { position: absolute; top: 14px; left: 14px; width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,.9); backdrop-filter: blur(4px); border: 1px solid var(--lilac); display: flex; align-items: center; justify-content: center; color: var(--bordeaux); }
-.cat-icon svg { width: 25px; height: 25px; }
-.cat-body { padding: 20px 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-.cat-body h3 { font-size: 1.18rem; }
-.cat-more { font-family: var(--sans); font-weight: 700; font-size: .85rem; color: var(--bordeaux); white-space: nowrap; }
+.cat-body { padding: 14px 4px 0; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cat-body h3 { font-size: 1.2rem; }
+.cat-more { font-family: var(--sans); font-weight: 700; font-size: .84rem; color: var(--bordeaux); white-space: nowrap; opacity: 0; transition: opacity .2s ease, color .2s ease; }
+.cat-card:hover .cat-more { opacity: 1; }
 .cat-more:hover { color: var(--lilac); }
+@media (hover: none) { .cat-more { opacity: 1; } }
 
 /* ===== О нас + отзывы ===== */
 .about-block { max-width: 760px; margin: 0 auto 50px; text-align: center; }
