@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>cake.smile — стиль карточек и палитры</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#f6efe6; --milk:#fbf7f1; --bordeaux:#6b1f32; --ink:#3a1420; --lilac:#a991b4;
+    --lilac-soft:#ece4f0; --text:#4a3b3e; --muted:#8c7a7d; --line:#e4d8cb; --white:#fff;
+    --serif:"Forum",Georgia,serif; --sans:"Manrope",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ background:var(--cream); color:var(--text); font-family:var(--sans); padding:44px 34px 90px; }
+  .ptitle{ text-align:center; font-weight:600; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:6px; }
+  .psub{ text-align:center; color:var(--muted); font-size:14px; margin-bottom:50px; }
+  .block{ max-width:1180px; margin:0 auto 68px; }
+  .vlabel{ font-family:var(--serif); font-size:25px; color:var(--ink); margin-bottom:4px; }
+  .vnote{ color:var(--muted); font-size:14px; margin-bottom:26px; }
+  .row{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+  h3{ font-family:var(--serif); font-weight:400; color:var(--ink); }
+  .more{ font-family:var(--sans); font-weight:700; font-size:.84rem; color:var(--bordeaux); white-space:nowrap; }
+
+  /* A — Оверлей */
+  .A .card{ position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 22px 44px -30px rgba(58,20,32,.45); transition:transform .25s; }
+  .A .card:hover{ transform:translateY(-5px); }
+  .A img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .A .ov{ position:absolute; inset:0; background:linear-gradient(to top, rgba(40,12,22,.78) 0%, rgba(40,12,22,.15) 42%, rgba(40,12,22,0) 62%); }
+  .A .cap{ position:absolute; left:20px; right:18px; bottom:18px; display:flex; align-items:flex-end; justify-content:space-between; gap:12px; }
+  .A h3{ color:#fff; font-size:1.32rem; }
+  .A .more{ color:#fff; }
+
+  /* B — Стеклянная плашка */
+  .B .card{ position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 22px 44px -30px rgba(58,20,32,.4); }
+  .B img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .B .bar{ position:absolute; left:12px; right:12px; bottom:12px; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-radius:12px; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .B h3{ font-size:1.12rem; }
+
+  /* C — Минимал-галерея */
+  .C .card{ background:transparent; transition:transform .25s; }
+  .C .card:hover{ transform:translateY(-4px); }
+  .C .media{ border-radius:14px; overflow:hidden; aspect-ratio:4/3; box-shadow:0 18px 40px -30px rgba(58,20,32,.4); }
+  .C img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .C .cap{ padding:14px 4px 0; display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+  .C h3{ font-size:1.22rem; }
+  .C .more{ opacity:0; transition:opacity .2s; }
+  .C .card:hover .more{ opacity:1; }
+
+  /* D — Журнальная рамка */
+  .D .card{ background:var(--white); border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:0 20px 42px -30px rgba(58,20,32,.4); transition:transform .25s, box-shadow .25s; }
+  .D .card:hover{ transform:translateY(-5px); box-shadow:0 28px 50px -28px rgba(58,20,32,.45); }
+  .D .media{ border-radius:10px; overflow:hidden; aspect-ratio:4/3; }
+  .D img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .D .cap{ text-align:center; padding:16px 6px 6px; }
+  .D h3{ font-size:1.2rem; margin-bottom:12px; }
+  .D .more-btn{ display:inline-flex; padding:9px 20px; border-radius:999px; background:var(--lilac-soft); border:1px solid var(--lilac); color:var(--bordeaux); font-family:var(--sans); font-weight:700; font-size:.82rem; }
+
+  /* palettes */
+  .pal-row{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; max-width:900px; margin:0 auto; }
+  .pal{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 18px 40px -32px rgba(58,20,32,.35); }
+  .pal .sw{ display:flex; height:96px; }
+  .pal .sw span{ flex:1; }
+  .pal .info{ padding:16px 18px; }
+  .pal .pname{ font-family:var(--serif); font-size:1.2rem; color:var(--ink); margin-bottom:4px; }
+  .pal .phex{ color:var(--muted); font-size:.82rem; font-family:var(--sans); }
+</style>
+</head>
+<body>
+  <div class="ptitle">cake.smile — оформление карточек каталога</div>
+  <div class="psub">Слева направо: разные стили. Ниже — палитры. Выбери что нравится.</div>
+
+  <!-- A -->
+  <section class="block A">
+    <div class="vlabel">Вариант A — «Оверлей»</div>
+    <div class="vnote">Фото на всю карточку, название и стрелка поверх лёгкого затемнения снизу. Журнально, фото — главное.</div>
+    <div class="row">
+      <div class="card"><img src="assets/wedding.png?v=5" alt=""><div class="ov"></div><div class="cap"><h3>Свадебный торт</h3><span class="more">Подробнее →</span></div></div>
+      <div class="card"><img src="assets/kids.png?v=2" alt=""><div class="ov"></div><div class="cap"><h3>Детский праздник</h3><span class="more">Подробнее →</span></div></div>
+      <div class="card"><img src="assets/mini.png?v=2" alt=""><div class="ov"></div><div class="cap"><h3>Мини-позиции</h3><span class="more">Подробнее →</span></div></div>
+    </div>
+  </section>
+
+  <!-- B -->
+  <section class="block B">
+    <div class="vlabel">Вариант B — «Стеклянная плашка»</div>
+    <div class="vnote">Фото на всю карточку, матовая полупрозрачная плашка снизу с названием. Современно и чисто.</div>
+    <div class="row">
+      <div class="card"><img src="assets/wedding.png?v=5" alt=""><div class="bar"><h3>Свадебный торт</h3><span class="more">Подробнее →</span></div></div>
+      <div class="card"><img src="assets/kids.png?v=2" alt=""><div class="bar"><h3>Детский праздник</h3><span class="more">Подробнее →</span></div></div>
+      <div class="card"><img src="assets/mini.png?v=2" alt=""><div class="bar"><h3>Мини-позиции</h3><span class="more">Подробнее →</span></div></div>
+    </div>
+  </section>
+
+  <!-- C -->
+  <section class="block C">
+    <div class="vlabel">Вариант C — «Минимал-галерея»</div>
+    <div class="vnote">Без «коробки»: скруглённое фото, подпись под ним, стрелка появляется при наведении. Лёгкий, воздушный стиль.</div>
+    <div class="row">
+      <div class="card"><div class="media"><img src="assets/wedding.png?v=5" alt=""></div><div class="cap"><h3>Свадебный торт</h3><span class="more">Подробнее →</span></div></div>
+      <div class="card"><div class="media"><img src="assets/kids.png?v=2" alt=""></div><div class="cap"><h3>Детский праздник</h3><span class="more">Подробнее →</span></div></div>
+      <div class="card"><div class="media"><img src="assets/mini.png?v=2" alt=""></div><div class="cap"><h3>Мини-позиции</h3><span class="more">Подробнее →</span></div></div>
+    </div>
+  </section>
+
+  <!-- D -->
+  <section class="block D">
+    <div class="vlabel">Вариант D — «Журнальная рамка»</div>
+    <div class="vnote">Фото в рамке-плашке, название по центру и кнопка-пилюля «Подробнее». Аккуратно и премиально.</div>
+    <div class="row">
+      <div class="card"><div class="media"><img src="assets/wedding.png?v=5" alt=""></div><div class="cap"><h3>Свадебный торт</h3><a class="more-btn">Подробнее →</a></div></div>
+      <div class="card"><div class="media"><img src="assets/kids.png?v=2" alt=""></div><div class="cap"><h3>Детский праздник</h3><a class="more-btn">Подробнее →</a></div></div>
+      <div class="card"><div class="media"><img src="assets/mini.png?v=2" alt=""></div><div class="cap"><h3>Мини-позиции</h3><a class="more-btn">Подробнее →</a></div></div>
+    </div>
+  </section>
+
+  <!-- Palettes -->
+  <div class="ptitle" style="margin-top:20px;">Цветовая гамма</div>
+  <div class="psub">Текущая — «Бордо / Крем / Сирень». Ниже альтернативы.</div>
+  <section class="block">
+    <div class="pal-row">
+      <div class="pal">
+        <div class="sw"><span style="background:#6b1f32"></span><span style="background:#a991b4"></span><span style="background:#f6efe6"></span><span style="background:#3a1420"></span></div>
+        <div class="info"><div class="pname">1 — Бордо / Сирень / Крем (текущая)</div><div class="phex">#6B1F32 · #A991B4 · #F6EFE6 · #3A1420</div></div>
+      </div>
+      <div class="pal">
+        <div class="sw"><span style="background:#5a3e2b"></span><span style="background:#9caf88"></span><span style="background:#f5eee3"></span><span style="background:#2e2420"></span></div>
+        <div class="info"><div class="pname">2 — Эспрессо / Шалфей / Крем</div><div class="phex">#5A3E2B · #9CAF88 · #F5EEE3 · #2E2420 — тёплая, натуральная</div></div>
+      </div>
+      <div class="pal">
+        <div class="sw"><span style="background:#4a2540"></span><span style="background:#e0a6b6"></span><span style="background:#fbf6f0"></span><span style="background:#2c1626"></span></div>
+        <div class="info"><div class="pname">3 — Слива / Пудра / Айвори</div><div class="phex">#4A2540 · #E0A6B6 · #FBF6F0 · #2C1626 — мягкая, женственная</div></div>
+      </div>
+      <div class="pal">
+        <div class="sw"><span style="background:#2e2a2a"></span><span style="background:#c6a15b"></span><span style="background:#f4efe6"></span><span style="background:#1c1a1a"></span></div>
+        <div class="info"><div class="pname">4 — Графит / Золото / Крем</div><div class="phex">#2E2A2A · #C6A15B · #F4EFE6 · #1C1A1A — премиум, строго</div></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
