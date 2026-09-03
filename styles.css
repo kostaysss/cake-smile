@@ -314,6 +314,7 @@ img { max-width: 100%; display: block; }
 .hero-brand .dot { color: var(--bordeaux); }
 .hero-slogan { font-size: 1.2rem; color: var(--muted); margin-bottom: 30px; max-width: 32ch; }
 .ph-hero-photo { aspect-ratio: 4 / 3; border-radius: 16px; }
+.hero-photo { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; border-radius: 16px; display: block; box-shadow: var(--shadow); }
 
 /* ===== Дегустации (акцентный блок) ===== */
 .tasting { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; background: linear-gradient(160deg, #7a2036 0%, #4f1526 100%); border-radius: 18px; color: #f3e7e2; box-shadow: var(--shadow); }
