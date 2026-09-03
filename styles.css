@@ -329,7 +329,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== Каталог (иконка + фото + подробнее) ===== */
 .catalog-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-.cat-card { flex: 0 1 280px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.cat-card { flex: 0 1 250px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .cat-card:hover { transform: translateY(-6px); box-shadow: 0 30px 55px -30px rgba(58,20,32,.42); border-color: var(--lilac); }
 .cat-media { position: relative; }
 .cat-media .ph { aspect-ratio: 4 / 3; }
