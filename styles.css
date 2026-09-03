@@ -410,3 +410,11 @@ img { max-width: 100%; display: block; }
   .partners-inner { grid-template-columns: 1fr; gap: 28px; }
   .partners-text { order: 2; }
 }
+
+/* Мобильные переопределения для компонентов, объявленных ниже медиа-запросов */
+@media (max-width: 640px) {
+  .cat-card { flex: 1 1 100%; max-width: 400px; }
+  .tasting-body { padding: 26px 22px; }
+  .tasting-body .btn-light { align-self: stretch; text-align: center; }
+  .hero-split-inner { padding: 36px 0; }
+}
