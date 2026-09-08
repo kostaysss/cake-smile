@@ -15,7 +15,7 @@
   --serif: "Forum", Georgia, "Times New Roman", serif;
   --sans: "Manrope", system-ui, -apple-system, sans-serif;
   --maxw: 1180px;
-  --radius: 4px;
+  --radius: 12px;
   --shadow: 0 24px 50px -30px rgba(58, 20, 32, 0.4);
 }
 
@@ -459,4 +459,104 @@ img { max-width: 100%; display: block; }
   .tasting-body { padding: 26px 22px; }
   .tasting-body .btn-light { align-self: stretch; text-align: center; }
   .hero-split-inner { padding: 36px 0; }
+}
+
+/* ============================================================
+   ДИЗАЙН-ЭЛЕВЕЙШН — глубина, мягкость, премиальные детали.
+   Только визуал: тексты и структура разделов не меняются.
+   ============================================================ */
+:root {
+  --gold: #c2a15f;
+  --shadow-soft: 0 22px 50px -32px rgba(58, 20, 32, .34);
+  --shadow-card: 0 30px 66px -34px rgba(58, 20, 32, .44);
+}
+
+/* Тёплая многослойная подложка вместо плоского фона */
+body {
+  background:
+    radial-gradient(58% 42% at 88% -6%, rgba(169, 145, 180, .22), transparent 60%),
+    radial-gradient(52% 40% at -8% 4%, rgba(122, 32, 54, .09), transparent 55%),
+    radial-gradient(90% 60% at 50% 118%, rgba(194, 161, 95, .07), transparent 60%),
+    var(--cream);
+  background-attachment: fixed;
+}
+
+/* Заголовки разделов — изящный золотой штрих под заголовком */
+.section-head h2 { position: relative; }
+.section-head h2::after {
+  content: ""; display: block; width: 58px; height: 2px; margin: 20px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.eyebrow::after { width: 42px; height: 2px; opacity: .85; }
+.section-head .eyebrow::after { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+/* Плейсхолдеры фото — продуманная рамка, а не пустота */
+.ph {
+  background:
+    radial-gradient(130% 120% at 28% 16%, rgba(255, 255, 255, .68), transparent 55%),
+    linear-gradient(155deg, #efe6ee 0%, #f6efe9 55%, #f1e8de 100%);
+  border: 1px solid #e8ddd0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), inset 0 0 70px -22px rgba(169, 145, 180, .4);
+}
+.ph::after {
+  content: ""; position: absolute; inset: 12px; border: 1px solid rgba(169, 145, 180, .30);
+  border-radius: 8px; pointer-events: none;
+}
+.ph span { opacity: .55; font-size: .68rem; letter-spacing: .34em; }
+.ph::before { opacity: .16; }
+/* Тёмные плейсхолдеры (дегустация) не трогаем */
+.tasting .ph { background: rgba(255, 255, 255, .06); border: none; box-shadow: none; }
+.tasting .ph::after { content: none; }
+
+/* Карточки — мягче радиус, объёмнее тень, аккуратный ховер */
+.dessert-card, .review, .contact-card, .flavor-card, .calc-card, .format-card {
+  border-radius: 18px; border-color: #ece1d4; box-shadow: var(--shadow-soft);
+}
+.dessert-card { overflow: hidden; }
+.dessert-card:hover, .format-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); border-color: var(--lilac); }
+.dessert-info { padding: 20px 22px 22px; }
+.dessert-info h3 { font-family: var(--serif); font-size: 1.2rem; }
+
+/* Отзывы — декоративная кавычка и мягкий фон */
+.review { padding: 34px 32px; position: relative; overflow: hidden; background: linear-gradient(180deg, #ffffff, #fffdfb); }
+.review::before {
+  content: "\201C"; position: absolute; top: 4px; right: 24px; font-family: var(--serif);
+  font-size: 4.4rem; line-height: 1; color: var(--lilac); opacity: .22;
+}
+.review blockquote { font-size: 1.06rem; line-height: 1.55; }
+
+/* Кнопки — плавный градиент и мягкая тень */
+.btn { border-radius: 10px; letter-spacing: .04em; }
+.btn-primary { background: linear-gradient(135deg, #832a40 0%, var(--bordeaux) 62%); box-shadow: 0 14px 28px -16px rgba(107, 31, 50, .6); }
+.btn-primary:hover { background: linear-gradient(135deg, #6f2135 0%, var(--bordeaux-d) 62%); box-shadow: 0 20px 34px -14px rgba(107, 31, 50, .6); transform: translateY(-2px); }
+.btn-outline { border-color: #d9c9ba; }
+.btn-outline:hover { border-color: var(--bordeaux); background: rgba(107, 31, 50, .045); }
+.btn-light { box-shadow: 0 14px 28px -18px rgba(0, 0, 0, .4); }
+
+/* Шаги — градиентный номер с тенью */
+.steps li { border-radius: 14px; box-shadow: var(--shadow-soft); }
+.steps li::before { background: linear-gradient(135deg, #832a40, var(--bordeaux)); box-shadow: 0 8px 16px -6px rgba(107, 31, 50, .6); }
+
+/* Ценовой блок — глубже тень + тонкая золотая линия сверху */
+.pricebox { box-shadow: 0 34px 70px -34px rgba(107, 31, 50, .65); border: 1px solid rgba(255, 255, 255, .1); }
+.pricebox::before { content: ""; display: block; width: 46px; height: 2px; margin: 0 auto 20px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+/* Витрина / дегустация — мягче края и объёмнее */
+.showcase, .tasting { border-radius: 20px; }
+.tasting { box-shadow: 0 34px 70px -36px rgba(107, 31, 50, .6); }
+
+/* Разделители секций и хедер */
+.section-alt { border-top-color: #ece0d1; border-bottom-color: #ece0d1; }
+.site-header { box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 10px 30px -26px rgba(58, 20, 32, .5); }
+
+/* Подвал — тёплый акцентный штрих сверху */
+.site-footer { position: relative; }
+.site-footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--bordeaux), var(--lilac), var(--gold)); opacity: .9; }
+
+/* Карусель — рамка-плейсхолдер уже наследуется от .ph */
+.carousel > .ph::after { inset: 10px; }
+
+@media (max-width: 640px) {
+  .review { padding: 28px 24px; }
+  .section-head h2::after { margin-top: 16px; }
 }
