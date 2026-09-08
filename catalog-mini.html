@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Мини-позиции — cake.smile. Капкейки, макаруны, пирожные и сладкие боксы к столу и в подарок. Заказ в Telegram." />
+  <meta name="description" content="Мини-позиции — cake.smile. Небольшие десерты для двоих, в подарок, на маленький праздник или в дополнение к торту: бенто, торт на 1 кг, капкейки, стаканчики, макаронс, моти, трайфлы, картошка, павлова, тирамису." />
   <meta name="theme-color" content="#6B1F32" />
   <title>Мини-позиции — cake.smile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=45" />
+  <link rel="stylesheet" href="styles.css?v=46" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -36,10 +36,10 @@
         <div>
           <span class="format-weight">Каталог</span>
           <h1>Мини-позиции</h1>
-          <p class="lead">Небольшие десерты — капкейки, макаруны, пирожные и сладкие боксы — к столу и в подарок.</p>
+          <p class="lead">Небольшие десерты для тех случаев, когда большой торт не нужен: угощение для двоих или для себя, приятный подарок, маленький праздник или дополнение к основному торту.</p>
           <div class="subhero-actions">
-            <a href="#" class="btn btn-primary js-tg">Написать в Telegram</a>
-            <a href="index.html#catalog" class="btn btn-outline">Весь каталог</a>
+            <a href="#categories" class="btn btn-primary">Выбрать формат</a>
+            <a href="#" class="btn btn-outline js-tg">Написать в Telegram</a>
           </div>
         </div>
         <div class="ph ph-subhero"><span>фото</span></div>
@@ -47,32 +47,46 @@
     </div>
   </section>
 
-  <section class="section section-alt">
+  <!-- Категории -->
+  <section class="section section-alt" id="categories">
     <div class="container">
-      <div class="section-head"><span class="eyebrow">О позиции</span><h2>Мини-позиции</h2></div>
-      <div class="prose">
-        <p>Мини-позиции — компактные десерты, которые дополняют торт или становятся самостоятельным угощением. Удобно взять набором на праздник, для угощения гостей или в качестве подарка.</p>
-        <p>Собираем наборы под ваш повод: подбираем вкусы, палитру и оформление. Отлично подходят для кэнди-бара, фуршета и небольших поздравлений.</p>
+      <div class="section-head">
+        <span class="eyebrow">Форматы</span>
+        <h2>Выберите мини-позицию</h2>
+        <p class="section-sub">Каждый формат — на отдельной странице: размеры, вкусы, оформление и цены.</p>
+      </div>
+      <div class="dessert-grid">
+        <a class="dessert-card" href="catalog-bento.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Бенто-торты</h3><p>Мини-торт на 1–2 человек, в подарок или сюрприз.</p></div></a>
+        <a class="dessert-card" href="catalog-cake1kg.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Торт на 1 кг</h3><p>Компактный торт на небольшой праздник.</p></div></a>
+        <a class="dessert-card" href="catalog-cupcakes.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Капкейки</h3><p>Порционные пирожные наборами.</p></div></a>
+        <a class="dessert-card" href="catalog-cups.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Десерты в стаканчиках</h3><p>Удобный формат «ложкой» на фуршет.</p></div></a>
+        <a class="dessert-card" href="catalog-macarons.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Макаронс</h3><p>Французское миндальное печенье, ассорти вкусов.</p></div></a>
+        <a class="dessert-card" href="catalog-mochi.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Моти</h3><p>Японский десерт из рисового теста с начинкой.</p></div></a>
+        <a class="dessert-card" href="catalog-trifle.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Трайфлы</h3><p>Слоёный десерт в баночке.</p></div></a>
+        <a class="dessert-card" href="catalog-potato.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Пирожное «Картошка»</h3><p>Классика в авторском исполнении.</p></div></a>
+        <a class="dessert-card" href="catalog-pavlova.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Павлова</h3><p>Воздушное безе с кремом и ягодами.</p></div></a>
+        <a class="dessert-card" href="catalog-tiramisu.html"><div class="ph ph-dessert"><span>фото</span></div><div class="dessert-info"><h3>Тирамису</h3><p>Классический итальянский десерт с маскарпоне.</p></div></a>
       </div>
     </div>
   </section>
 
+  <!-- Кому подходит -->
   <section class="section">
     <div class="container">
-      <div class="section-head"><span class="eyebrow">Детали</span><h2>Что важно знать</h2></div>
+      <div class="section-head"><span class="eyebrow">Когда пригодится</span><h2>Идеально, если нужно немного</h2></div>
       <div class="delivery-grid">
-        <div class="delivery-card"><h3>Наборы</h3><p>Капкейки и макаруны — наборами, боксы — ассорти под запрос.</p></div>
-        <div class="delivery-card"><h3>Оформление</h3><p>Подберём цвета и декор под тему вашего праздника.</p></div>
-        <div class="delivery-card"><h3>Поводы</h3><p>Подарок, угощение гостям, дополнение к торту.</p></div>
-        <div class="delivery-card"><h3>Доставка</h3><p>Привезём вместе с тортом или отдельно.</p></div>
+        <div class="delivery-card"><h3>Для двоих или себя</h3><p>Небольшой десерт без остатков «на неделю».</p></div>
+        <div class="delivery-card"><h3>В подарок</h3><p>Приятный сюрприз с надписью или рисунком.</p></div>
+        <div class="delivery-card"><h3>Маленький праздник</h3><p>Камерный повод, где большой торт избыточен.</p></div>
+        <div class="delivery-card"><h3>Дополнение к торту</h3><p>Разнообразить стол и удобно угостить гостей.</p></div>
       </div>
     </div>
   </section>
 
   <section class="cta-band">
     <div class="container cta-inner">
-      <h2>Хотите такой заказ?</h2>
-      <p>Напишите в Telegram — обсудим детали, дизайн и вкус.</p>
+      <h2>Не определились с форматом?</h2>
+      <p>Напишите в Telegram — подскажем, что лучше подойдёт под ваш повод и бюджет.</p>
       <a href="#" class="btn btn-light js-tg">Написать в Telegram</a>
     </div>
   </section>
@@ -81,7 +95,7 @@
     <div class="container footer-inner">
       <div class="footer-col">
         <a href="index.html" class="logo footer-logo">cake<span class="dot">.</span>smile</a>
-        <p class="footer-tag">Торты и десерты ручной работы на любой повод.</p>
+        <p class="footer-tag">Кондитерская с индивидуальным подходом.</p>
       </div>
       <div class="footer-col">
         <h4>Разделы</h4>
@@ -105,6 +119,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=45"></script>
+  <script src="script.js?v=46"></script>
 </body>
 </html>
