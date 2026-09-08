@@ -260,6 +260,16 @@ img { max-width: 100%; display: block; }
 .review blockquote { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--ink); margin-bottom: 16px; }
 .review figcaption { font-weight: 600; color: var(--bordeaux); font-size: 0.9rem; letter-spacing: 0.04em; }
 
+/* ===== Ценовой блок (premium) ===== */
+.pricebox { max-width: 660px; margin: 0 auto; text-align: center; background: linear-gradient(160deg, #7a2036 0%, #4f1526 100%); color: #f3e7e2; border-radius: 16px; padding: 36px 30px; box-shadow: var(--shadow); }
+.pricebox .eyebrow { color: var(--lilac); }
+.pricebox .eyebrow::after { background: var(--lilac); margin-left: auto; margin-right: auto; }
+.pricebox .amount { font-family: var(--serif); font-size: 2.5rem; color: #fff; line-height: 1.1; }
+.pricebox .amount small { display: block; margin-top: 10px; font-family: var(--sans); font-size: .96rem; color: #e8d5da; letter-spacing: .01em; }
+.pricebox .amount .plus { color: var(--lilac); }
+.info-note a { color: var(--bordeaux); font-weight: 600; }
+.info-note a:hover { color: var(--lilac); }
+
 /* ===== CTA band ===== */
 .cta-band { background: var(--bordeaux); color: #fff; padding: 70px 0; text-align: center; }
 .cta-inner h2 { color: #fff; font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-bottom: 12px; }
