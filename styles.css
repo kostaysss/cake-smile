@@ -66,6 +66,17 @@ img { max-width: 100%; display: block; }
 .link-arrow { font-weight: 600; color: var(--bordeaux); font-size: 0.9rem; letter-spacing: 0.02em; transition: color .2s ease; }
 .link-arrow:hover { color: var(--lilac); }
 
+/* ===== Верхняя контактная панель ===== */
+.topbar { background: var(--ink); color: #e9dcdf; font-size: 0.82rem; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 40px; padding: 6px 0; flex-wrap: wrap; }
+.topbar-contacts { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.topbar-contacts a { color: #fff; font-weight: 600; display: inline-flex; align-items: center; }
+.topbar-contacts a:hover { color: var(--lilac); }
+.topbar-hours { color: #c7a9b2; }
+.topbar-msg { display: flex; gap: 10px; }
+.topbar-msg a { color: #e9dcdf; font-weight: 600; padding: 3px 13px; border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; transition: border-color .18s ease, color .18s ease; }
+.topbar-msg a:hover { border-color: var(--lilac); color: #fff; }
+
 /* ===== Header ===== */
 .site-header {
   position: sticky; top: 0; z-index: 50;
@@ -289,6 +300,11 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
+  .topbar-hours { display: none; }
+  .topbar-inner { min-height: 36px; gap: 10px; }
+  .topbar-contacts { gap: 12px; }
+  .topbar { font-size: 0.78rem; }
+  .topbar-msg a { padding: 2px 10px; }
   .header-inner { display: flex; justify-content: space-between; }
   .nav, .nav-cta { display: none; }
   .burger { display: flex; }

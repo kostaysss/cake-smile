@@ -3,14 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Дегустации в cake.smile — попробуйте вкусы заранее и выберите начинку для торта с уверенностью. Как проходит дегустация и как записаться. Заказ в Telegram." />
+  <meta name="description" content="Дегустация в cake.smile — набор из 12 начинок за 2 500 ₽. Попробуйте вкусы до заказа торта. Стоимость учитывается при заказе. Самовывоз или доставка." />
   <meta name="theme-color" content="#6B1F32" />
-  <title>Дегустации — cake.smile</title>
+  <title>Дегустация — cake.smile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=43" />
+  <link rel="stylesheet" href="styles.css?v=44" />
+  <style>
+    .price-card { max-width: 720px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 38px; text-align: center; box-shadow: 0 24px 50px -34px rgba(58,20,32,.4); }
+    .price-card .amount { font-family: var(--serif); font-size: 3rem; color: var(--bordeaux); line-height: 1; }
+    .price-card .amount small { display: block; margin-top: 10px; font-size: 1rem; color: var(--muted); font-family: var(--sans); letter-spacing: .02em; }
+    .price-rules { list-style: none; margin: 28px auto 0; max-width: 580px; text-align: left; display: grid; gap: 14px; }
+    .price-rules li { display: flex; gap: 13px; color: var(--text); font-size: .98rem; align-items: flex-start; }
+    .price-rules li b { color: var(--bordeaux); }
+    .price-rules .mark { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--lilac-soft); border: 1px solid var(--lilac); color: var(--bordeaux); display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; margin-top: 1px; }
+    .filling-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .filling-item .ph { aspect-ratio: 1 / 1; border-radius: 12px; }
+    .filling-item h3 { font-family: var(--serif); font-weight: 400; font-size: 1.04rem; color: var(--ink); text-align: center; margin-top: 10px; letter-spacing: .01em; }
+    @media (max-width: 900px) { .filling-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 560px) { .filling-grid { grid-template-columns: repeat(2, 1fr); } .price-card { padding: 28px 20px; } .price-card .amount { font-size: 2.4rem; } }
+  </style>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -29,55 +43,113 @@
     </div>
   </header>
 
-  <section class="section subhero">
+  <!-- Заметный блок -->
+  <section class="section" id="tasting-hero">
     <div class="container">
-      <nav class="breadcrumb"><a href="index.html">Главная</a> / Дегустации</nav>
-      <div class="subhero-inner">
-        <div>
-          <span class="format-weight">Дегустации</span>
-          <h1>Убедитесь во вкусе заранее</h1>
-          <p class="lead">Попробуйте наши вкусы до заказа торта. Дегустация помогает выбрать начинку осознанно и быть уверенным в результате на вашем празднике.</p>
-          <div class="subhero-actions">
-            <a href="#" class="btn btn-primary js-tg">Записаться в Telegram</a>
-            <a href="index.html#fillings" class="btn btn-outline">Авторские вкусы</a>
-          </div>
+      <div class="tasting">
+        <div class="ph"><span>фото</span></div>
+        <div class="tasting-body">
+          <span class="eyebrow">Наша дегустация</span>
+          <h2>Убедитесь во вкусе заранее</h2>
+          <p>Попробуйте вкусы до заказа торта. Это лучший способ сделать правильный выбор для вашего праздника.</p>
+          <a href="#conditions" class="btn btn-light">Условия и цены</a>
         </div>
-        <div class="ph ph-subhero"><span>фото</span></div>
       </div>
     </div>
   </section>
 
+  <!-- Как проходит -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Зачем это нужно</span>
-        <h2>Выбор вкуса — без сомнений</h2>
+        <span class="eyebrow">Как это устроено</span>
+        <h2>Дегустация за 4 простых шага</h2>
+        <p class="section-sub">Пробуете вкусы вживую и заказываете торт без сомнений.</p>
       </div>
-      <div class="prose">
-        <p>Торт заказывают заранее, а попробовать его до праздника обычно нельзя. Дегустация решает эту проблему: вы пробуете вкусы вживую и выбираете тот, что понравится вам и гостям.</p>
-        <p>Это особенно важно для больших и свадебных тортов, где ошибиться с начинкой не хочется. Мы поможем сравнить варианты и подобрать сочетание под ваш повод.</p>
+      <div class="delivery-grid">
+        <div class="delivery-card"><h3>1. Заявка</h3><p>Напишите нам в Telegram — оформим набор на удобную дату.</p></div>
+        <div class="delivery-card"><h3>2. Получение</h3><p>Забираете набор самовывозом или мы привозим его вам.</p></div>
+        <div class="delivery-card"><h3>3. Дегустация</h3><p>Пробуете 12 начинок и выбираете любимые сочетания.</p></div>
+        <div class="delivery-card"><h3>4. Заказ торта</h3><p>Определились со вкусом — собираем ваш торт под ТЗ.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Условия и цены -->
+  <section class="section" id="conditions">
     <div class="container">
-      <div class="section-head"><span class="eyebrow">Как это устроено</span><h2>Формат дегустации</h2></div>
-      <div class="delivery-grid">
-        <div class="delivery-card"><h3>Что входит</h3><p>Набор актуальных вкусов на пробу — от классики до авторских сочетаний.</p></div>
-        <div class="delivery-card"><h3>Как записаться</h3><p>Напишите в Telegram — согласуем удобные дату, время и формат.</p></div>
-        <div class="delivery-card"><h3>Для кого</h3><p>Идеально перед заказом свадебного или большого праздничного торта.</p></div>
-        <div class="delivery-card"><h3>Что дальше</h3><p>Определились со вкусом — собираем заказ и закрепляем дату.</p></div>
+      <div class="section-head">
+        <span class="eyebrow">Условия</span>
+        <h2>Стоимость дегустации</h2>
+        <p class="section-sub">В набор входит 12 начинок — попробуйте всю палитру вкусов.</p>
       </div>
-      <p class="info-note">Точный состав набора, условия и стоимость дегустации подскажем в Telegram.</p>
+      <div class="price-card">
+        <div class="amount">2 500 ₽<small>Набор из 12 начинок</small></div>
+        <ul class="price-rules">
+          <li><span class="mark">1</span><span>При заказе торта <b>от 4 кг</b> — <b>50% стоимости набора (1 250 ₽)</b> вычитается из цены торта.</span></li>
+          <li><span class="mark">2</span><span>При заказе торта <b>от 8 кг</b> — стоимость дегустации <b>вычитается полностью</b>.</span></li>
+          <li><span class="mark">3</span><span>Дегустацию можно заказать <b>и без последующего заказа торта</b> — в этом случае стоимость набора не возвращается.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Важно -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Важно</span><h2>Как получить набор</h2></div>
+      <div class="delivery-grid">
+        <div class="delivery-card"><h3>Место</h3><p>Дегустация проходит не на территории производства — вы получаете готовый набор.</p></div>
+        <div class="delivery-card"><h3>Самовывоз</h3><p>Заберите набор самостоятельно в согласованное время.</p></div>
+        <div class="delivery-card"><h3>Доставка</h3><p>Привезём набор к вам — удобно и без лишних поездок.</p></div>
+        <div class="delivery-card"><h3>Сроки</h3><p>Заказать можно в любой день, желательно оформить за 2–3 дня.</p></div>
+      </div>
+      <p class="info-note">Точные условия, дату и способ получения согласуем в Telegram при оформлении.</p>
+    </div>
+  </section>
+
+  <!-- 12 начинок (визуально) -->
+  <section class="section" id="fillings-visual">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Состав набора</span>
+        <h2>12 начинок в наборе</h2>
+        <p class="section-sub">Реальный вид вкусов — фото добавим в галерею.</p>
+      </div>
+      <div class="filling-grid">
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Медовик</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Нежная ваниль</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Красный бархат</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Эстерхази</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Двойной шоколад</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Сникерс</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Клубничный чизкейк</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Фисташка-малина</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Банан-финик</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Солёная карамель</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Морковный</h3></div>
+        <div class="filling-item"><div class="ph"><span>фото</span></div><h3>Тирамису</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы о дегустации -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Отзывы</span><h2>О дегустации</h2></div>
+      <div class="reviews">
+        <figure class="review"><div class="stars">★★★★★</div><blockquote>Попробовали все вкусы из набора и выбрали без сомнений. Очень удобно перед большим заказом.</blockquote><figcaption>Ольга</figcaption></figure>
+        <figure class="review"><div class="stars">★★★★★</div><blockquote>12 начинок реально помогли определиться со свадебным тортом. Часть стоимости потом вернули.</blockquote><figcaption>Игорь и Настя</figcaption></figure>
+        <figure class="review"><div class="stars">★★★★★</div><blockquote>Набор привезли домой, всё свежее и аккуратно упаковано. Спасибо за сервис!</blockquote><figcaption>Екатерина</figcaption></figure>
+      </div>
     </div>
   </section>
 
   <section class="cta-band">
     <div class="container cta-inner">
       <h2>Хотите попробовать заранее?</h2>
-      <p>Напишите в Telegram — расскажем о ближайших дегустациях.</p>
-      <a href="#" class="btn btn-light js-tg">Записаться в Telegram</a>
+      <p>Напишите в Telegram — оформим дегустационный набор на удобную дату.</p>
+      <a href="#" class="btn btn-light js-tg">Заказать дегустацию</a>
     </div>
   </section>
 
@@ -85,7 +157,7 @@
     <div class="container footer-inner">
       <div class="footer-col">
         <a href="index.html" class="logo footer-logo">cake<span class="dot">.</span>smile</a>
-        <p class="footer-tag">Торты и десерты ручной работы на любой повод.</p>
+        <p class="footer-tag">Кондитерская с индивидуальным подходом.</p>
       </div>
       <div class="footer-col">
         <h4>Разделы</h4>
@@ -109,6 +181,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=43"></script>
+  <script src="script.js?v=44"></script>
 </body>
 </html>
