@@ -178,9 +178,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== Дегустация (бордо-блок) ===== */
 .tasting { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--rad-lg); color: #f3e7ea; box-shadow: var(--shadow);
-  background:
-    radial-gradient(130% 130% at 18% 42%, rgba(169,145,180,.32) 0%, rgba(169,145,180,.10) 36%, transparent 64%),
-    linear-gradient(150deg, #7a2036 0%, #4f1526 100%); }
+  background: linear-gradient(145deg, #b6a0c0 0%, #a991b4 20%, #8a5570 46%, #6b1f32 68%, #4f1526 100%); }
 .tasting::before { content: ""; position: absolute; width: 260px; height: 260px; border: 1px solid rgba(169,145,180,.35); border-radius: 50%; right: 42%; top: -120px; }
 .tasting .ph { background: transparent; border: none; min-height: 360px; height: 100%; }
 .tasting .ph::after { content: none; }
@@ -403,7 +401,7 @@ img { max-width: 100%; display: block; }
     background: radial-gradient(120% 62% at 50% 20%, rgba(107,31,50,.95) 0%, rgba(107,31,50,.55) 30%, rgba(138,85,112,.22) 52%, transparent 66%), var(--li); }
   .hero-split-text { padding: 48px 34px; }
   .hero-photo-card { order: -1; padding: 40px 34px; }
-  .tasting { grid-template-columns: 1fr; }
+  .tasting { grid-template-columns: 1fr; background: linear-gradient(180deg, #b6a0c0 0%, #a991b4 16%, #8a5570 48%, #6b1f32 74%, #4f1526 100%); }
   .tasting .ph { min-height: 220px; order: -1; }
   .tasting-body { padding: 38px 34px; }
 }
