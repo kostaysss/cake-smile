@@ -73,14 +73,6 @@ img { max-width: 100%; display: block; }
   -webkit-backdrop-filter: blur(12px) saturate(150%); backdrop-filter: blur(12px) saturate(150%);
   transition: background .22s, color .22s, border-color .22s, transform .22s, box-shadow .22s;
 }
-/* блик-проблеск, пробегающий при наведении */
-.btn::after {
-  content: ""; position: absolute; top: 0; left: -130%; width: 60%; height: 100%; z-index: -1;
-  background: linear-gradient(100deg, transparent, rgba(255,255,255,.4), transparent);
-  transform: skewX(-18deg); transition: left .55s ease; pointer-events: none;
-}
-.btn:hover::after { left: 140%; }
-
 .btn-primary {
   background: linear-gradient(135deg, rgba(122,32,54,.88), rgba(79,21,38,.82));
   color: #fff; border-color: rgba(255,255,255,.30);
