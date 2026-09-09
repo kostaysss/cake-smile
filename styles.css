@@ -177,9 +177,12 @@ img { max-width: 100%; display: block; }
 .hero-photo-cap { font-family: var(--serif); color: #f3e7ea; text-align: center; font-size: 1.05rem; padding: 16px 4px 0; position: relative; z-index: 1; width: 100%; }
 
 /* ===== Дегустация (бордо-блок) ===== */
-.tasting { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; background: var(--bx); border-radius: var(--rad-lg); color: #f3e7ea; box-shadow: var(--shadow); }
+.tasting { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--rad-lg); color: #f3e7ea; box-shadow: var(--shadow);
+  background:
+    radial-gradient(130% 130% at 18% 42%, rgba(169,145,180,.32) 0%, rgba(169,145,180,.10) 36%, transparent 64%),
+    linear-gradient(150deg, #7a2036 0%, #4f1526 100%); }
 .tasting::before { content: ""; position: absolute; width: 260px; height: 260px; border: 1px solid rgba(169,145,180,.35); border-radius: 50%; right: 42%; top: -120px; }
-.tasting .ph { background: rgba(255,255,255,.05); border: none; min-height: 360px; height: 100%; }
+.tasting .ph { background: transparent; border: none; min-height: 360px; height: 100%; }
 .tasting .ph::after { content: none; }
 .tasting .ph span { color: rgba(255,255,255,.5); }
 .tasting .ph::before { color: rgba(255,255,255,.14); }
