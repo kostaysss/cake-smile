@@ -155,28 +155,23 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    ГЛАВНАЯ
    ============================================================ */
-/* ===== Hero — фото невесты во всю ширину, в полный рост ===== */
-.hero-split { position: relative; overflow: hidden; background: var(--bx); padding: 0; border-bottom: 1px solid var(--bx-d); height: clamp(600px, 80vw, 1500px); }
-/* фото на всю ширину и высоту блока; кадрируются только верхние деревья */
-.hero-photo-card { position: absolute; inset: 0; z-index: 0; margin: 0; padding: 0; max-width: none; background: none; border: none; border-radius: 0; box-shadow: none; display: block; overflow: hidden; }
-.hero-photo-card::before, .hero-photo-card::after { content: none; }
-.hero-photo { width: 100%; height: 100%; max-width: none; aspect-ratio: auto; object-fit: cover; object-position: center 70%; border-radius: 0; box-shadow: none; }
-.hero-photo-cap { display: none; }
-/* затемнение слева, чтобы текст читался поверх фото */
-.hero-split::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(58,20,32,.94) 0%, rgba(58,20,32,.74) 24%, rgba(58,20,32,.34) 46%, rgba(58,20,32,.06) 64%, transparent 78%); }
-.hero-split-inner { position: relative; z-index: 2; display: flex; align-items: center; height: 100%; padding: 40px 0; border-radius: 0; overflow: visible; box-shadow: none; }
-.hero-split-text { background: none; padding: 0; max-width: 560px; display: flex; flex-direction: column; justify-content: center; }
-.hero-split-text .eyebrow { color: var(--li); }
-.hero-split-text .eyebrow::before { background: var(--li); }
-.hero-brand { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: #fff; margin-bottom: 18px; text-shadow: 0 4px 24px rgba(0,0,0,.35); }
-.hero-brand .dot { color: var(--li); }
-.hero-slogan { font-size: 1.12rem; color: rgba(255,255,255,.92); margin-bottom: 30px; max-width: 34ch; font-weight: 500; text-shadow: 0 2px 16px rgba(0,0,0,.35); }
+/* ===== Hero — колор-блок: сиреневая панель + бордо-панель с фото ===== */
+.hero-split { padding: 40px 0 0; background: var(--cr); }
+.hero-split-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; align-items: stretch; border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow); }
+.hero-split-text { background: var(--li); padding: 70px 58px; display: flex; flex-direction: column; justify-content: center; }
+.hero-split-text .eyebrow { color: var(--bx); }
+.hero-split-text .eyebrow::before { background: var(--bx); }
+.hero-brand { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--ink); margin-bottom: 18px; }
+.hero-brand .dot { color: var(--bx); }
+.hero-slogan { font-size: 1.12rem; color: var(--ink); margin-bottom: 30px; max-width: 34ch; font-weight: 500; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-/* кнопки на тёмном фоне */
-.hero-split .btn-primary { background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(246,239,230,.76)); color: var(--bx); border-color: rgba(255,255,255,.85); box-shadow: 0 16px 32px -14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.9); }
-.hero-split .btn-primary:hover { background: linear-gradient(135deg, #fff, rgba(246,239,230,.88)); }
-.hero-split .btn-outline { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.65); color: #fff; }
-.hero-split .btn-outline:hover { background: rgba(255,255,255,.24); border-color: #fff; color: #fff; }
+.hero-split-text .btn-outline { border-color: var(--bx); color: var(--bx); }
+.hero-split-text .btn-outline:hover { background: var(--bx); color: #fff; }
+.hero-photo-card { background: var(--bx); margin: 0; max-width: none; border-radius: 0; padding: 46px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-photo-card::before { content: ""; position: absolute; width: 320px; height: 320px; border: 1px solid rgba(169,145,180,.45); border-radius: 50%; right: -110px; top: -110px; }
+.hero-photo-card::after { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(169,145,180,.3); border-radius: 50%; left: -70px; bottom: -70px; }
+.hero-photo { width: 100%; max-width: 340px; aspect-ratio: 3/4; object-fit: cover; border-radius: 6px; position: relative; z-index: 1; box-shadow: 0 40px 70px -30px rgba(0,0,0,.6); }
+.hero-photo-cap { font-family: var(--serif); color: #f3e7ea; text-align: center; font-size: 1.05rem; padding: 16px 4px 0; position: relative; z-index: 1; width: 100%; }
 
 /* ===== Дегустация (бордо-блок) ===== */
 .tasting { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; background: var(--bx); border-radius: var(--rad-lg); color: #f3e7ea; box-shadow: var(--shadow); }
@@ -398,11 +393,9 @@ img { max-width: 100%; display: block; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
-  .hero-split { height: auto; min-height: 88vh; }
-  .hero-photo { object-position: center 34%; }
-  .hero-split::after { background: linear-gradient(180deg, rgba(58,20,32,.12) 0%, rgba(58,20,32,.5) 52%, rgba(58,20,32,.92) 100%); }
-  .hero-split-inner { align-items: flex-end; padding: 40px 0 44px; }
-  .hero-split-text { max-width: none; }
+  .hero-split-inner { grid-template-columns: 1fr; }
+  .hero-split-text { padding: 48px 34px; }
+  .hero-photo-card { order: -1; padding: 40px 34px; }
   .tasting { grid-template-columns: 1fr; }
   .tasting .ph { min-height: 220px; order: -1; }
   .tasting-body { padding: 38px 34px; }
@@ -421,8 +414,9 @@ img { max-width: 100%; display: block; }
   .nav.open a { text-transform: none; font-size: 1rem; letter-spacing: 0; }
   .section { padding: 54px 0; }
   .section-head { margin-bottom: 34px; }
-  .hero-split { min-height: 84vh; }
-  .hero-split-inner { padding: 34px 0 38px; }
+  .hero-split { padding: 22px 0 0; }
+  .hero-split-text { padding: 40px 24px; }
+  .hero-photo-card { padding: 34px 24px; }
   .hero-actions, .subhero-actions, .showcase-actions { flex-direction: column; align-items: stretch; gap: 12px; }
   .hero-actions .btn, .subhero-actions .btn, .showcase-actions .btn { width: 100%; }
   .tasting-body { padding: 30px 24px; }
