@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — 3D-карточки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+  --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd;
+  --serif:"Forum",serif; --disp:"Cormorant Garamond",serif; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:
+  radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr);}
+a{color:inherit;text-decoration:none}
+
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1200px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.lab-in .lg{font-family:var(--serif);font-size:1.15rem;color:#fff;margin-right:auto}
+.lab-in .lg b{color:var(--li)}
+.lab-in a.j{font-size:.76rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#d8c4ca;padding:6px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px}
+.lab-in a.j:hover{color:#fff;border-color:var(--li);background:rgba(169,145,180,.18)}
+
+.note{max-width:1200px;margin:0 auto;padding:28px 26px 4px}
+.note h1{font-family:var(--disp);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:#7a5563;max-width:74ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:74ch}
+.note .tip b{color:var(--bx)}
+
+.vhead{max-width:1200px;margin:60px auto 0;padding:0 26px;display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.vhead .n{font-family:var(--disp);font-weight:600;font-size:2.2rem;color:var(--li)}
+.vhead .t{font-family:var(--disp);font-weight:600;font-size:1.7rem;color:var(--ink)}
+.vhead .d{color:#7a5563;font-size:.92rem;max-width:56ch}
+.vhead .tag{margin-left:auto;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:6px 13px;border-radius:999px}
+.stage{max-width:1200px;margin:26px auto 0;padding:34px 26px 8px}
+
+.row{display:flex;gap:26px;flex-wrap:wrap;justify-content:center}
+
+/* base tile visuals (shared) */
+.tile{position:relative;width:300px;height:390px;border-radius:14px;overflow:hidden;background:var(--bx)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(58,20,32,.85))}
+.tile .lab{position:absolute;left:0;right:0;bottom:0;padding:22px}
+.tile .lab h3{font-family:var(--serif);font-weight:400;color:#fff;font-size:1.5rem}
+.tile .lab span{display:block;margin-top:6px;color:var(--li-soft);font-size:.82rem;font-weight:600}
+
+/* ============ 1. НАКЛОН ЗА КУРСОРОМ ============ */
+.t1-wrap{perspective:900px}
+.t1{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;transition:transform .12s ease,box-shadow .2s ease;box-shadow:0 30px 60px -30px rgba(58,20,32,.55);will-change:transform}
+.t1-wrap:hover .t1{box-shadow:0 44px 80px -34px rgba(58,20,32,.7)}
+.t1 img{transform:translateZ(0)}
+.t1 .lab{transform:translateZ(46px)}
+.t1 .glare{position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 42%);opacity:0;transition:opacity .2s;mix-blend-mode:screen}
+.t1-wrap:hover .glare{opacity:1}
+
+/* ============ 2. СЛОИ (CSS, pop-out) ============ */
+.t2-wrap{perspective:1000px}
+.t2{transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;box-shadow:0 22px 46px -30px rgba(58,20,32,.5)}
+.t2-wrap:hover .t2{transform:translateY(-10px) rotateX(6deg);box-shadow:0 46px 80px -34px rgba(58,20,32,.7)}
+.t2 .frame{position:absolute;inset:12px;border:1px solid rgba(255,255,255,.5);border-radius:8px;transform:translateZ(20px);opacity:0;transition:opacity .35s}
+.t2-wrap:hover .frame{opacity:1}
+.t2 .lab{transform:translateZ(40px);transition:transform .35s}
+
+/* ============ 3. ОБЪЁМНЫЙ БЛОК (extruded) ============ */
+.t3{box-shadow:10px 10px 0 0 var(--li), 20px 20px 0 0 var(--bx);transition:transform .2s ease,box-shadow .2s ease;border:1px solid rgba(255,255,255,.14)}
+.t3-wrap:hover .t3{transform:translate(6px,6px);box-shadow:6px 6px 0 0 var(--li), 12px 12px 0 0 var(--bx)}
+.t3-wrap{padding-right:24px;padding-bottom:24px}
+
+/* ============ 4. ПЕРЕВОРОТ (flip) ============ */
+.t4-wrap{perspective:1200px;width:300px;height:390px}
+.t4{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.15,.2,1)}
+.t4-wrap:hover .t4{transform:rotateY(180deg)}
+.t4 .face{position:absolute;inset:0;border-radius:14px;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 26px 54px -32px rgba(58,20,32,.55)}
+.t4 .front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t4 .front .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(58,20,32,.85))}
+.t4 .front .lab{position:absolute;left:0;right:0;bottom:0;padding:22px}
+.t4 .front h3{font-family:var(--serif);color:#fff;font-size:1.5rem}
+.t4 .back{transform:rotateY(180deg);background:linear-gradient(160deg,var(--bx),var(--bx-d));color:#f3e7ea;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;padding:30px}
+.t4 .back h3{font-family:var(--disp);font-weight:600;color:#fff;font-size:1.7rem}
+.t4 .back p{font-size:.92rem;color:#e8d5da}
+.t4 .back .b{margin-top:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;padding:11px 20px;border-radius:9px;font-weight:700;font-size:.82rem;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+.foot{max-width:1200px;margin:70px auto;padding:0 26px;text-align:center;color:#7a5563}
+.foot b{color:var(--bx)}
+
+@media(max-width:640px){ .tile,.t4-wrap{width:88vw;max-width:340px} }
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <div class="lab-in">
+    <span class="lg">cake<b>.</b>smile · 3D-карточки</span>
+    <a class="j" href="#v1">1 · Наклон</a>
+    <a class="j" href="#v2">2 · Слои</a>
+    <a class="j" href="#v3">3 · Объём</a>
+    <a class="j" href="#v4">4 · Переворот</a>
+  </div>
+</div>
+
+<div class="note">
+  <h1>Четыре варианта <em>3D-карточек</em></h1>
+  <p>Наведи курсор на карточки, чтобы почувствовать эффект (на телефоне — просто коснись). Всё на тех же трёх цветах. Выбери номер — раскатаю на каталог главной страницы.</p>
+  <div class="tip">💡 <b>Моя рекомендация:</b> для премиального ощущения лучше всего «<b>1 · Наклон</b>» (тонкая глубина, надпись выступает вперёд) или «<b>2 · Слои</b>» (мягкий подъём без резких движений). «Объём» — смелее и заметнее, «Переворот» — игривый, но на каждый день может отвлекать.</p>
+</div>
+
+<!-- 1 -->
+<section id="v1">
+  <div class="vhead"><span class="n">01</span><span class="t">Наклон за курсором</span><span class="d">Карточка слегка наклоняется в 3D вслед за мышью, надпись «выступает» вперёд, по поверхности скользит мягкий блик. Самый живой и премиальный.</span><span class="tag">интерактив · рекомендую</span></div>
+  <div class="stage"><div class="row">
+    <div class="t1-wrap"><article class="tile t1"><img src="assets/wedding.png" alt=""><div class="grad"></div><div class="glare"></div><div class="lab"><h3>Свадебный торт</h3><span>Подробнее →</span></div></article></div>
+    <div class="t1-wrap"><article class="tile t1"><img src="assets/pavlova.png" alt=""><div class="grad"></div><div class="glare"></div><div class="lab"><h3>Павлова</h3><span>Подробнее →</span></div></article></div>
+    <div class="t1-wrap"><article class="tile t1"><img src="assets/kids.png" alt=""><div class="grad"></div><div class="glare"></div><div class="lab"><h3>Детский праздник</h3><span>Подробнее →</span></div></article></div>
+  </div></div>
+</section>
+
+<!-- 2 -->
+<section id="v2">
+  <div class="vhead"><span class="n">02</span><span class="t">Слои</span><span class="d">Без слежения за мышью: при наведении карточка мягко приподнимается и слегка разворачивается, внутри появляется тонкая рамка, надпись выходит на передний план. Спокойно и дорого.</span><span class="tag">только CSS</span></div>
+  <div class="stage"><div class="row">
+    <div class="t2-wrap"><article class="tile t2"><img src="assets/mini.png" alt=""><div class="grad"></div><div class="frame"></div><div class="lab"><h3>Мини-позиции</h3><span>Подробнее →</span></div></article></div>
+    <div class="t2-wrap"><article class="tile t2"><img src="assets/tiramisu.png" alt=""><div class="grad"></div><div class="frame"></div><div class="lab"><h3>Тирамису</h3><span>Подробнее →</span></div></article></div>
+    <div class="t2-wrap"><article class="tile t2"><img src="assets/company.png" alt=""><div class="grad"></div><div class="frame"></div><div class="lab"><h3>Для компании</h3><span>Подробнее →</span></div></article></div>
+  </div></div>
+</section>
+
+<!-- 3 -->
+<section id="v3">
+  <div class="vhead"><span class="n">03</span><span class="t">Объёмный блок</span><span class="d">Под карточкой — цветной «выступ» из сирени и бордо: она будто лежит приподнятым блоком. При наведении блок «вдавливается». Смело и заметно.</span><span class="tag">заметный</span></div>
+  <div class="stage"><div class="row">
+    <div class="t3-wrap"><article class="tile t3"><img src="assets/birthday.jpg" alt=""><div class="grad"></div><div class="lab"><h3>День рождения</h3><span>Подробнее →</span></div></article></div>
+    <div class="t3-wrap"><article class="tile t3"><img src="assets/wedding.png" alt=""><div class="grad"></div><div class="lab"><h3>Свадебный торт</h3><span>Подробнее →</span></div></article></div>
+    <div class="t3-wrap"><article class="tile t3"><img src="assets/pavlova.png" alt=""><div class="grad"></div><div class="lab"><h3>Павлова</h3><span>Подробнее →</span></div></article></div>
+  </div></div>
+</section>
+
+<!-- 4 -->
+<section id="v4">
+  <div class="vhead"><span class="n">04</span><span class="t">Переворот</span><span class="d">При наведении карточка переворачивается на 180° и показывает изнанку с кратким описанием и кнопкой. Эффектно, но лучше для отдельных акцентов, а не всего каталога.</span><span class="tag">игривый</span></div>
+  <div class="stage"><div class="row">
+    <div class="t4-wrap"><div class="t4">
+      <div class="face front"><img src="assets/company.png" alt=""><div class="grad"></div><div class="lab"><h3>Для компании</h3></div></div>
+      <div class="face back"><h3>Для компании</h3><p>Корпоративные торты и капкейки с логотипом. От 3000 ₽/кг.</p><span class="b">Подробнее →</span></div>
+    </div></div>
+    <div class="t4-wrap"><div class="t4">
+      <div class="face front"><img src="assets/mini.png" alt=""><div class="grad"></div><div class="lab"><h3>Мини-позиции</h3></div></div>
+      <div class="face back"><h3>Мини-позиции</h3><p>Бенто, капкейки, макаронс, трайфлы — для двоих и в подарок.</p><span class="b">Подробнее →</span></div>
+    </div></div>
+    <div class="t4-wrap"><div class="t4">
+      <div class="face front"><img src="assets/kids.png" alt=""><div class="grad"></div><div class="lab"><h3>Детский праздник</h3></div></div>
+      <div class="face back"><h3>Детский праздник</h3><p>Любимые герои, фигурки, рисунок и фотопечать. От 1,5 кг.</p><span class="b">Подробнее →</span></div>
+    </div></div>
+  </div></div>
+</section>
+
+<div class="foot">Понравился вариант — напиши номер (<b>1</b>, <b>2</b>, <b>3</b> или <b>4</b>). Можно смешать: например, каталог — «Наклон», а отдельные акценты — «Переворот».</div>
+
+<script>
+document.querySelectorAll('.t1-wrap').forEach(function(w){
+  var card=w.querySelector('.t1');
+  w.addEventListener('pointermove',function(e){
+    var r=w.getBoundingClientRect();
+    var px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+    card.style.setProperty('--ry',((px-0.5)*14).toFixed(2)+'deg');
+    card.style.setProperty('--rx',((0.5-py)*12).toFixed(2)+'deg');
+    card.style.setProperty('--mx',(px*100).toFixed(1)+'%');
+    card.style.setProperty('--my',(py*100).toFixed(1)+'%');
+  });
+  w.addEventListener('pointerleave',function(){
+    card.style.setProperty('--rx','0deg');
+    card.style.setProperty('--ry','0deg');
+  });
+});
+</script>
+</body>
+</html>
