@@ -155,10 +155,13 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    ГЛАВНАЯ
    ============================================================ */
-/* ===== Hero — колор-блок: сиреневая панель + бордо-панель с фото ===== */
+/* ===== Hero — сиреневый фон + мягкое бордовое свечение вокруг фото ===== */
 .hero-split { padding: 40px 0 0; background: var(--cr); }
-.hero-split-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; align-items: stretch; border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow); }
-.hero-split-text { background: var(--li); padding: 70px 58px; display: flex; flex-direction: column; justify-content: center; }
+.hero-split-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; align-items: stretch; border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow);
+  background:
+    radial-gradient(120% 130% at 88% 50%, rgba(107,31,50,.95) 0%, rgba(107,31,50,.6) 30%, rgba(138,85,112,.25) 52%, transparent 70%),
+    var(--li); }
+.hero-split-text { background: none; padding: 70px 58px; display: flex; flex-direction: column; justify-content: center; }
 .hero-split-text .eyebrow { color: var(--bx); }
 .hero-split-text .eyebrow::before { background: var(--bx); }
 .hero-brand { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--ink); margin-bottom: 18px; }
@@ -167,7 +170,7 @@ img { max-width: 100%; display: block; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-split-text .btn-outline { border-color: var(--bx); color: var(--bx); }
 .hero-split-text .btn-outline:hover { background: var(--bx); color: #fff; }
-.hero-photo-card { background: var(--bx); margin: 0; max-width: none; border-radius: 0; padding: 46px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-photo-card { background: none; margin: 0; max-width: none; border-radius: 0; padding: 46px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
 .hero-photo-card::before { content: ""; position: absolute; width: 320px; height: 320px; border: 1px solid rgba(169,145,180,.45); border-radius: 50%; right: -110px; top: -110px; }
 .hero-photo-card::after { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(169,145,180,.3); border-radius: 50%; left: -70px; bottom: -70px; }
 .hero-photo { width: 100%; max-width: 340px; aspect-ratio: 3/4; object-fit: cover; border-radius: 6px; position: relative; z-index: 1; box-shadow: 0 40px 70px -30px rgba(0,0,0,.6); }
@@ -393,7 +396,8 @@ img { max-width: 100%; display: block; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
-  .hero-split-inner { grid-template-columns: 1fr; }
+  .hero-split-inner { grid-template-columns: 1fr;
+    background: radial-gradient(120% 62% at 50% 20%, rgba(107,31,50,.95) 0%, rgba(107,31,50,.55) 30%, rgba(138,85,112,.22) 52%, transparent 66%), var(--li); }
   .hero-split-text { padding: 48px 34px; }
   .hero-photo-card { order: -1; padding: 40px 34px; }
   .tasting { grid-template-columns: 1fr; }
