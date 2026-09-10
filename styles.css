@@ -242,6 +242,21 @@ img { max-width: 100%; display: block; }
 .flavor-name { font-family: var(--serif); font-size: 1.24rem; color: var(--ink); line-height: 1.2; }
 .flavor-desc { color: var(--muted); font-size: .9rem; }
 
+/* ===== Начинки — плитки-разрезы с названием поверх фото (Вариант B) ===== */
+.flavor-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.flavor-tile { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--bx); box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
+.flavor-tile:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.flavor-tile .ph { position: absolute; inset: 0; border: none; border-radius: 0; }
+.flavor-tile .ph::after { content: none; }
+.flavor-tile .ph span { color: rgba(255,255,255,.5); }
+.flavor-tile .ph::before { color: rgba(255,255,255,.16); }
+.flavor-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* затемнение к низу карточки — чтобы название читалось поверх фото-разреза */
+.flavor-tile::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 40%, rgba(58,20,32,.4) 62%, rgba(58,20,32,.9) 100%); pointer-events: none; }
+.flavor-tile h3 { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; font-family: var(--serif); font-weight: 400; color: #fff; font-size: 1.14rem; padding: 16px 16px 18px; text-align: center; line-height: 1.22; }
+@media (max-width: 900px) { .flavor-tiles { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .flavor-tiles { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+
 /* ===== Начинки (список) ===== */
 .fillings-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
 .filling { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
