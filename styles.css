@@ -253,7 +253,7 @@ img { max-width: 100%; display: block; }
 .flavor-tile:hover .flavor-photo { transform: scale(1.06); }
 .flavor-ph::after { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(255,255,255,.5); border-radius: 6px; pointer-events: none; transition: border-color .3s ease; }
 .flavor-tile:hover .flavor-ph::after { border-color: rgba(255,255,255,.85); }
-.flavor-cap { padding: 15px 8px 17px; text-align: center; }
+.flavor-cap { padding: 11px 8px 7px; text-align: center; }
 .flavor-cap .e { display: inline-block; font-family: var(--sans); font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--li-d); }
 .flavor-cap .e::after { content: ""; display: block; width: 0; height: 1px; margin: 6px auto 0; background: var(--li); transition: width .4s ease; }
 .flavor-tile:hover .flavor-cap .e::after { width: 34px; }
