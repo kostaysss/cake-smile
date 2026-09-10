@@ -300,6 +300,7 @@ img { max-width: 100%; display: block; }
 .subhero .lead { color: var(--muted); font-size: 1.08rem; margin-bottom: 26px; max-width: 46ch; }
 .subhero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .ph-subhero { aspect-ratio: 4/3; border-radius: var(--rad-lg); box-shadow: var(--shadow-sm); }
+.subhero-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--rad-lg); box-shadow: var(--shadow-sm); }
 .prose { max-width: 720px; margin: 0 auto; }
 .prose p { color: var(--muted); margin-bottom: 16px; }
 .prose p:last-child { margin-bottom: 0; }
