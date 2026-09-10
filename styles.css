@@ -296,6 +296,14 @@ img { max-width: 100%; display: block; }
 .subhero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .ph-subhero { aspect-ratio: 4/3; border-radius: var(--rad-lg); box-shadow: var(--shadow-sm); }
 .subhero-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--rad-lg); box-shadow: var(--shadow-sm); }
+/* фото-карточка с подписью-лентой снизу (вариант D) */
+.subhero-photo-card { position: relative; margin: 0; border-radius: var(--rad-lg); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-sm); }
+.subhero-photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.subhero-photo-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(58,20,32,.85)); pointer-events: none; }
+.subhero-photo-card .sp-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 20px 24px; color: #fff; }
+.subhero-photo-card .sp-cap .e { display: inline-flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: .64rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--li); }
+.subhero-photo-card .sp-cap .e::before { content: ""; width: 22px; height: 2px; border-radius: 2px; background: var(--li); }
+.subhero-photo-card .sp-cap b { display: block; font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 1.5rem; margin-top: 6px; line-height: 1.15; }
 .prose { max-width: 720px; margin: 0 auto; }
 .prose p { color: var(--muted); margin-bottom: 16px; }
 .prose p:last-child { margin-bottom: 0; }
@@ -410,7 +418,7 @@ img { max-width: 100%; display: block; }
   .flavor-grid { grid-template-columns: repeat(2, 1fr); }
   .reviews { grid-template-columns: 1fr; }
   .subhero-inner { grid-template-columns: 1fr; gap: 30px; }
-  .subhero .ph-subhero { order: -1; }
+  .subhero .ph-subhero, .subhero .subhero-photo-card { order: -1; }
   .showcase { grid-template-columns: 1fr; }
   .showcase .ph-showcase { min-height: 240px; order: -1; }
   .showcase-body { padding: 36px 32px; border-left: none; border-top: 6px solid var(--li); }
