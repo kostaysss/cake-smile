@@ -258,7 +258,7 @@ img { max-width: 100%; display: block; }
 .flavor-cap .e { display: inline-block; font-family: var(--sans); font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--li-d); }
 .flavor-cap .e::after { content: ""; display: block; width: 0; height: 1px; margin: 5px auto 0; background: var(--li); transition: width .4s ease; }
 .flavor-tile:hover .flavor-cap .e::after { width: 34px; }
-.flavor-cap h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); font-size: 1.2rem; margin-top: 4px; line-height: 1.2; }
+.flavor-cap h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; color: var(--ink); font-size: 1.14rem; margin-top: 4px; line-height: 1.25; }
 @media (max-width: 900px) { .flavor-tiles { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .flavor-tiles { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 
