@@ -309,14 +309,17 @@ img { max-width: 100%; display: block; }
 .prose p:last-child { margin-bottom: 0; }
 
 /* ===== Плитки-детали (delivery) ===== */
-.delivery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.delivery-card { position: relative; overflow: hidden; background: var(--cr2); border: 1px solid var(--line); border-radius: var(--rad); padding: 30px 26px 28px; box-shadow: var(--shadow-sm); transition: transform .26s, box-shadow .26s, border-color .26s; }
-.delivery-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--bx), var(--li)); }
+.delivery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: dcard; }
+.delivery-card { position: relative; overflow: hidden; background: var(--cr2); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px 24px; box-shadow: var(--shadow-sm); transition: transform .26s, box-shadow .26s, border-color .26s; }
+/* Крупный контурный номер (стиль «Вариант B») */
+.delivery-card::before { counter-increment: dcard; content: counter(dcard, decimal-leading-zero); display: block; font-family: "Playfair Display", Georgia, serif; font-weight: 600; font-size: 3.2rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--li); margin-bottom: 12px; }
+/* На карточках с иконкой (главная — блок доставки) номер не нужен — оставляем иконку */
+.delivery-card:has(.d-ico)::before { content: none; }
 .delivery-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--li); }
 .section-alt .delivery-card { background: #fff; }
 .d-ico { width: 54px; height: 54px; border-radius: 12px; background: var(--li-soft); display: flex; align-items: center; justify-content: center; color: var(--bx); margin-bottom: 18px; }
 .d-ico svg { width: 26px; height: 26px; }
-.delivery-card h3 { font-size: 1.22rem; margin-bottom: 12px; }
+.delivery-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .delivery-card p { color: var(--muted); font-size: .92rem; }
 
 /* ===== Десерты / категории (карточки-плитки) ===== */
