@@ -42,7 +42,7 @@ body {
 }
 h1,h2,h3,h4 { font-family: var(--serif); color: var(--ink); line-height: 1.12; font-weight: 400; letter-spacing: .005em; }
 /* Крупные заголовки — изящная антиква Cormorant, с выделением ключевого слова */
-h1, h2 { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: .008em; }
+h1, h2 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: 0; }
 h1 em, h2 em, .hl { font-style: italic; font-weight: 600; color: var(--li-d); }
 .tasting h2 em, .tasting .hl { color: var(--li); }
 .cta-band h2 em, .cta-band .hl, .section-lilac h2 em { color: var(--bx); }
@@ -232,7 +232,7 @@ img { max-width: 100%; display: block; }
 /* ===== Каталог вкусов (страница) ===== */
 .flavor-cat { margin-bottom: 46px; }
 .flavor-cat:last-child { margin-bottom: 0; }
-.cat-title { font-family: var(--serif); font-size: 1.6rem; color: var(--ink); margin-bottom: 22px; padding-bottom: 12px; border-bottom: 2px solid var(--li-line); display: flex; align-items: baseline; gap: 12px; }
+.cat-title { font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 1.5rem; color: var(--ink); margin-bottom: 22px; padding-bottom: 12px; border-bottom: 2px solid var(--li-line); display: flex; align-items: baseline; gap: 12px; }
 .cat-title .cat-count { font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--li-d); }
 .flavor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .flavor-card { background: var(--cr2); border: 1px solid var(--line); border-left: 4px solid var(--li); border-radius: var(--rad); padding: 22px 24px; transition: transform .2s, box-shadow .2s, border-color .2s; }
