@@ -254,7 +254,7 @@ img { max-width: 100%; display: block; }
 /* тонкая рамка внутри самого фото-разреза */
 .flavor-ph::after { content: ""; position: absolute; inset: 10px; border: 1px solid rgba(255,255,255,.55); border-radius: 6px; pointer-events: none; transition: border-color .3s ease; }
 .flavor-tile:hover .flavor-ph::after { border-color: rgba(255,255,255,.9); }
-.flavor-cap { padding: 12px 8px 15px; text-align: center; }
+.flavor-cap { padding: 10px 8px 6px; text-align: center; }
 .flavor-cap .e { display: inline-block; font-family: var(--sans); font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--li-d); }
 .flavor-cap .e::after { content: ""; display: block; width: 0; height: 1px; margin: 6px auto 0; background: var(--li); transition: width .4s ease; }
 .flavor-tile:hover .flavor-cap .e::after { width: 34px; }
