@@ -213,6 +213,7 @@ img { max-width: 100%; display: block; }
 /* ===== Витрина (showcase) ===== */
 .showcase { display: grid; grid-template-columns: 1fr 1fr; background: var(--cr2); border: 1px solid var(--line); border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow); }
 .ph-showcase { min-height: 380px; height: 100%; }
+.showcase-photo { width: 100%; height: 100%; min-height: 380px; object-fit: cover; display: block; }
 .showcase-body { padding: 52px; display: flex; flex-direction: column; justify-content: center; gap: 15px; border-left: 6px solid var(--li); }
 .showcase-body h2 { font-size: clamp(2.2rem, 3.4vw, 2.9rem); }
 .showcase-body p { color: var(--muted); max-width: 42ch; }
@@ -426,7 +427,7 @@ img { max-width: 100%; display: block; }
   .subhero-inner { grid-template-columns: 1fr; gap: 30px; }
   .subhero .ph-subhero, .subhero .subhero-photo-card { order: -1; }
   .showcase { grid-template-columns: 1fr; }
-  .showcase .ph-showcase { min-height: 240px; order: -1; }
+  .showcase .ph-showcase, .showcase .showcase-photo { min-height: 240px; order: -1; }
   .showcase-body { padding: 36px 32px; border-left: none; border-top: 6px solid var(--li); }
   .partners-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
