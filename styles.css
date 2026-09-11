@@ -166,7 +166,7 @@ img { max-width: 100%; display: block; }
 .hero-split-text .eyebrow::before { background: var(--bx); }
 .hero-brand { font-family: "Parisienne", cursive; font-size: clamp(3.6rem, 7.4vw, 6.4rem); line-height: 1.02; color: var(--ink); margin-bottom: 14px; }
 .hero-brand .dot { color: var(--bx); }
-.hero-slogan { font-size: 1.12rem; color: var(--ink); margin-bottom: 30px; max-width: 34ch; font-weight: 500; }
+.hero-slogan { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.2rem; line-height: 1.56; color: var(--ink); margin-bottom: 30px; max-width: 40ch; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-split-text .btn-outline { border-color: var(--bx); color: var(--bx); }
 .hero-split-text .btn-outline:hover { background: var(--bx); color: #fff; }
