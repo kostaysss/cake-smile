@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — шрифт подзаголовка · 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Lora:ital,wght@0,500;0,600;0,700;1,600&family=Spectral:ital,wght@0,500;0,600;1,600&family=Vollkorn:ital,wght@0,500;0,600;0,700;1,600&family=Bitter:ital,wght@0,500;0,600;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,600&family=Alegreya:ital,wght@0,500;0,600;1,600&family=PT+Serif:wght@700&family=Parisienne&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1180px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1180px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+
+.vhead{max-width:1180px;margin:52px auto 0;padding:0 26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.vhead .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+.vhead .tag{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:6px 12px;border-radius:999px}
+
+.stage{max-width:1180px;margin:16px auto 0;padding:0 26px}
+.hero{border-radius:18px;overflow:hidden;box-shadow:0 30px 64px -38px rgba(58,20,32,.45);
+  background:radial-gradient(120% 130% at 88% 50%,rgba(107,31,50,.95) 0%,rgba(107,31,50,.6) 30%,rgba(138,85,112,.25) 52%,transparent 70%),var(--li)}
+.hero-in{max-width:720px;padding:58px 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--bx);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:3px;background:var(--bx);border-radius:2px}
+.brand{font-family:"Parisienne",cursive;line-height:1.02;color:var(--ink);margin-bottom:12px;font-size:clamp(3.4rem,6.6vw,5.2rem)}
+.brand .dot{color:var(--bx)}
+.slogan{color:var(--ink);margin-bottom:28px;max-width:42ch;font-size:1.12rem;font-weight:600;line-height:1.58}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 26px;border-radius:12px;font-weight:600;font-size:.95rem;font-family:var(--sans);border:1px solid transparent}
+.btn-p{background:var(--bx);color:#fff}
+.btn-o{background:rgba(246,239,230,.28);border-color:var(--bx);color:var(--bx);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+
+/* ==== варианты шрифта подзаголовка (чуть жирнее) ==== */
+.f-playfair .slogan{font-family:"Playfair Display",serif;font-weight:600;font-size:1.14rem;line-height:1.58}
+.f-lora     .slogan{font-family:"Lora",serif;font-weight:600;font-size:1.08rem;line-height:1.6}
+.f-spectral .slogan{font-family:"Spectral",serif;font-weight:600;font-size:1.12rem;line-height:1.58}
+.f-vollkorn .slogan{font-family:"Vollkorn",serif;font-weight:600;font-size:1.12rem;line-height:1.56}
+.f-bitter   .slogan{font-family:"Bitter",serif;font-weight:600;font-size:1.08rem;line-height:1.58}
+.f-source   .slogan{font-family:"Source Serif 4",serif;font-weight:600;font-size:1.12rem;line-height:1.58}
+.f-alegreya .slogan{font-family:"Alegreya",serif;font-weight:600;font-size:1.16rem;line-height:1.54}
+.f-ptserif  .slogan{font-family:"PT Serif",serif;font-weight:700;font-size:1.08rem;line-height:1.56}
+.f-playital .slogan{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:1.18rem;line-height:1.56}
+
+.foot{max-width:1180px;margin:64px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · шрифт подзаголовка · подборка 2 (жирнее)</div></div>
+
+<div class="note">
+  <h1>Ещё варианты <em>шрифта подзаголовка</em> — чуть жирнее</h1>
+  <p>Тот же блок и текст. Все шрифты взяты в более плотном начертании (вес 600–700), чтобы абзац смотрелся насыщеннее, а не бледно. Каждый поддерживает кириллицу. Выбери код — применю к подзаголовку.</p>
+  <div class="tip">💡 <b>Рекомендация:</b> «<b>Lora 600</b>» или «<b>Source Serif</b>» — плотный, «дорогой» и отлично читаемый серив. «<b>Vollkorn</b>» — тёплый и мягкий. «<b>Playfair 600</b>» — нарядно, в один стиль с заголовками сайта.</div>
+</div>
+
+<div id="stage"></div>
+
+<div class="foot">Понравился — напиши код (например, «<b>Lora</b>», «<b>Source Serif</b>», «<b>Vollkorn</b>», «<b>Bitter</b>», «<b>Spectral</b>», «<b>Alegreya</b>», «<b>PT Serif</b>», «<b>Playfair</b>» или «<b>Playfair-курсив</b>»). Применю к подзаголовку.</div>
+
+<script>
+var TEXT="Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях, ответственности за результат и сервисе на каждом этапе.";
+var FONTS=[
+ {c:"lora", t:"Lora — 600", tag:"рекомендую · дорогой серив"},
+ {c:"source", t:"Source Serif 4 — 600", tag:"рекомендую · чистый"},
+ {c:"vollkorn", t:"Vollkorn — 600", tag:"тёплый, мягкий"},
+ {c:"spectral", t:"Spectral — 600", tag:"с характером"},
+ {c:"bitter", t:"Bitter — 600", tag:"современный слэб"},
+ {c:"alegreya", t:"Alegreya — 600", tag:"литературный"},
+ {c:"ptserif", t:"PT Serif — 700", tag:"плотный, солидный"},
+ {c:"playfair", t:"Playfair Display — 600", tag:"в стиль заголовков"},
+ {c:"playital", t:"Playfair Display — курсив 600", tag:"нарядный акцент"}
+];
+document.getElementById('stage').innerHTML=FONTS.map(function(f){
+  return '<div class="vhead"><span class="n">'+f.t+'</span><span class="tag">'+f.tag+'</span></div>'+
+    '<div class="stage"><div class="hero f-'+f.c+'"><div class="hero-in">'+
+      '<span class="eyebrow">Кондитерская с индивидуальным подходом</span>'+
+      '<h1 class="brand">cake<span class="dot">.</span>smile</h1>'+
+      '<p class="slogan">'+TEXT+'</p>'+
+      '<div class="acts"><a class="btn btn-p">Написать в Telegram</a><a class="btn btn-o">Наши дегустации</a></div>'+
+    '</div></div></div>';
+}).join('');
+</script>
+</body>
+</html>
