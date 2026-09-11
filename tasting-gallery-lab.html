@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — 3 фото на странице дегустаций</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,500;0,600;1,600&family=Forum&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1080px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1080px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+
+.vhead{max-width:1080px;margin:56px auto 0;padding:0 26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.vhead .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+.vhead .tag{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:6px 12px;border-radius:999px}
+.vsub{max-width:1080px;margin:2px auto 0;padding:0 26px;color:var(--muted);font-size:.9rem}
+.stage{max-width:1080px;margin:18px auto 0;padding:0 26px}
+.gimg{width:100%;height:100%;object-fit:cover;display:block}
+
+/* A. Мозаика 2+1 */
+.vA .grid{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
+.vA .cell{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);box-shadow:0 26px 50px -38px rgba(58,20,32,.4)}
+.vA .big{grid-row:1 / span 2;min-height:440px}
+.vA .sm{min-height:212px}
+
+/* B. Полароид-коллаж */
+.vB .row{display:flex;justify-content:center;align-items:flex-start;padding:16px 0}
+.vB .pol{background:#fff;border-radius:3px;padding:12px 12px 42px;box-shadow:0 26px 52px -32px rgba(58,20,32,.5);width:30%}
+.vB .pol .ph{aspect-ratio:3/4;overflow:hidden;border-radius:1px}
+.vB .pol:nth-child(1){transform:rotate(-4deg);z-index:1}
+.vB .pol:nth-child(2){transform:rotate(2.5deg);margin:16px -12px 0;z-index:3;width:32%}
+.vB .pol:nth-child(3){transform:rotate(3.5deg);z-index:2}
+
+/* C. Ровный триптих */
+.vC .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vC .cell{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 50px -38px rgba(58,20,32,.4)}
+.vC .cell::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.4);border-radius:16px;pointer-events:none}
+
+/* D. Журнальная мозаика со смещением */
+.vD .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.vD .cell{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:0 26px 50px -38px rgba(58,20,32,.4)}
+.vD .cell:nth-child(2){margin-top:40px}
+.vD .cell:nth-child(1){aspect-ratio:3/3.4}
+.vD .cell:nth-child(3){aspect-ratio:3/3.4}
+
+/* E. Крупное + лента снизу */
+.vE .grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+.vE .cell{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);box-shadow:0 26px 50px -38px rgba(58,20,32,.4);min-height:360px}
+.vE .cell.big{grid-row:1;min-height:360px}
+
+@media(max-width:720px){
+  .vA .grid,.vE .grid{grid-template-columns:1fr;grid-template-rows:none}
+  .vA .big{grid-row:auto;min-height:0;aspect-ratio:3/4}
+  .vA .sm{aspect-ratio:16/10}
+  .vC .grid,.vD .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
+  .vD .cell:nth-child(2){margin-top:0}
+  .vB .row{flex-direction:column;align-items:center;gap:16px}
+  .vB .pol,.vB .pol:nth-child(2){width:72%;margin:0;transform:rotate(-2deg)}
+}
+
+.foot{max-width:1080px;margin:64px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · 3 фото на странице дегустаций</div></div>
+
+<div class="note">
+  <h1>Пять вариантов <em>мозаики / коллажа</em></h1>
+  <p>Твои три фото — как их можно разместить на странице дегустаций (отдельная страница с полной информацией). Показал одни и те же снимки в разной компоновке. Всё на трёх цветах, в стиле сайта. Выбери код — так и вставлю на страницу.</p>
+  <div class="tip">💡 <b>Рекомендация:</b> «<b>A · Мозаика 2+1</b>» — крупный кадр + два поменьше, как в каталоге, смотрится «дорого». «<b>B · Полароид-коллаж</b>» — тёплая ностальгия, в стиль блока «О нас». «<b>C · Триптих</b>» — чисто и ровно.</p>
+</div>
+
+<div id="stage"></div>
+
+<div class="foot">Понравился — напиши код (<b>A</b>, <b>B</b>, <b>C</b>, <b>D</b> или <b>E</b>). Вставлю выбранный вариант на страницу дегустаций.</div>
+
+<script>
+var I=['assets/tasting-1.jpg','assets/tasting-2.jpg','assets/tasting-3.jpg'];
+function im(i){return '<img class="gimg" src="'+I[i]+'" alt="Дегустационный набор cake.smile">';}
+var VS=[
+ {c:"A", t:"A · Мозаика 2+1", tag:"рекомендую", sub:"Один крупный кадр слева и два поменьше справа.",
+  html:'<div class="grid"><div class="cell big">'+im(0)+'</div><div class="cell sm">'+im(1)+'</div><div class="cell sm">'+im(2)+'</div></div>'},
+ {c:"B", t:"B · Полароид-коллаж", tag:"в стиль «О нас»", sub:"Полароиды под углами с нахлёстом.",
+  html:'<div class="row"><div class="pol"><div class="ph">'+im(0)+'</div></div><div class="pol"><div class="ph">'+im(1)+'</div></div><div class="pol"><div class="ph">'+im(2)+'</div></div></div>'},
+ {c:"C", t:"C · Ровный триптих", tag:"чисто", sub:"Три равных кадра в ряд.",
+  html:'<div class="grid"><div class="cell">'+im(0)+'</div><div class="cell">'+im(1)+'</div><div class="cell">'+im(2)+'</div></div>'},
+ {c:"D", t:"D · Журнальная мозаика", tag:"живо", sub:"Средний кадр выше, боковые чуть ниже и короче.",
+  html:'<div class="grid"><div class="cell">'+im(0)+'</div><div class="cell">'+im(1)+'</div><div class="cell">'+im(2)+'</div></div>'},
+ {c:"E", t:"E · Крупный + два", tag:"акцент", sub:"Широкий кадр слева, два узких справа.",
+  html:'<div class="grid"><div class="cell big">'+im(0)+'</div><div class="cell">'+im(1)+'</div><div class="cell">'+im(2)+'</div></div>'}
+];
+document.getElementById('stage').innerHTML=VS.map(function(v){
+  return '<div class="vhead"><span class="n">'+v.t+'</span><span class="tag">'+v.tag+'</span></div>'+
+    '<div class="vsub">'+v.sub+'</div>'+
+    '<div class="stage v'+v.c+'">'+v.html+'</div>';
+}).join('');
+</script>
+</body>
+</html>
