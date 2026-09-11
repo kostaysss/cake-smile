@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
 .logo { font-family: "Parisienne", cursive; font-size: 2.1rem; color: var(--ink); letter-spacing: 0; line-height: 1; }
 .logo .dot { color: var(--bx); }
 .nav { display: flex; gap: 28px; justify-self: center; }
-.nav a { font-weight: 700; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); position: relative; padding: 4px 0; }
+.nav a { font-family: var(--serif); font-weight: 400; font-size: .92rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); position: relative; padding: 4px 0; }
 .nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--bx); transition: width .22s; }
 .nav a:hover { color: var(--bx); }
 .nav a:hover::after { width: 100%; }
