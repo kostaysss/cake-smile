@@ -202,7 +202,7 @@ img { max-width: 100%; display: block; }
 .cat-card:hover .cat-media::after { opacity: 1; transform: scale(1); }
 .cat-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 38%, rgba(58,20,32,.35) 62%, rgba(58,20,32,.86)); z-index: 1; }
 .cat-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 22px 22px 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
-.cat-body h3 { color: #fff; font-size: 1.32rem; }
+.cat-body h3 { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; color: #fff; font-size: 1.34rem; }
 .cat-more { font-family: var(--sans); font-weight: 700; font-size: .82rem; color: var(--li-soft); white-space: nowrap; transform: translateY(4px); opacity: 0; transition: opacity .22s, transform .22s; }
 .cat-card:hover .cat-more { opacity: 1; transform: translateY(0); }
 @media (hover: none) { .cat-more { opacity: 1; transform: none; } }
