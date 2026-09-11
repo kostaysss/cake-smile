@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — оформление фото «О нас»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,500;0,600;1,600&family=Forum&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1120px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1120px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+
+.grid{max-width:1120px;margin:36px auto 0;padding:0 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 34px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.item .vh{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.item .vh .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.15rem;color:var(--ink)}
+.item .vh .tag{margin-left:auto;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:4px 9px;border-radius:999px}
+.slot{max-width:330px}
+.cap{margin-top:16px;text-align:center;color:var(--muted);font-size:.92rem;line-height:1.5}
+.cap b{color:var(--bx);font-weight:700}
+
+.photo{position:relative;overflow:hidden;aspect-ratio:4/5}
+.photo img{width:100%;height:100%;object-fit:cover}
+
+/* A. Паспарту */
+.vA .frame{background:var(--cr2);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 34px 64px -42px rgba(58,20,32,.5)}
+.vA .photo{border-radius:8px}
+.vA .photo::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.45);box-shadow:inset 0 0 0 1px rgba(169,145,180,.28);border-radius:8px}
+
+/* B. Двойная рамка со смещением */
+.vB .wrap{position:relative;padding:0 16px 16px 0}
+.vB .wrap::before{content:"";position:absolute;right:0;bottom:0;width:calc(100% - 24px);height:calc(100% - 24px);border:1.5px solid var(--li);border-radius:16px}
+.vB .photo{position:relative;z-index:1;border:7px solid #fff;border-radius:14px;box-shadow:0 30px 60px -40px rgba(58,20,32,.5)}
+
+/* C. Ар-деко уголки */
+.vC .photo{border-radius:12px;box-shadow:0 30px 60px -40px rgba(58,20,32,.5)}
+.vC .photo::after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.5);border-radius:6px;pointer-events:none}
+.vC .cn{position:absolute;width:24px;height:24px;border:2px solid var(--li);z-index:2}
+.vC .cn.tl{top:8px;left:8px;border-right:none;border-bottom:none}
+.vC .cn.tr{top:8px;right:8px;border-left:none;border-bottom:none}
+.vC .cn.bl{bottom:8px;left:8px;border-right:none;border-top:none}
+.vC .cn.br{bottom:8px;right:8px;border-left:none;border-top:none}
+
+/* D. Лента-подпись на фото */
+.vD .photo{border-radius:16px;box-shadow:0 30px 60px -40px rgba(58,20,32,.5)}
+.vD .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(58,20,32,.86))}
+.vD .rib{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px 22px;color:#fff}
+.vD .rib .e{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:var(--li)}
+.vD .rib .e::before{content:"";width:20px;height:2px;background:var(--li)}
+.vD .rib b{display:block;font-family:"Playfair Display",serif;font-weight:500;font-size:1.3rem;margin-top:5px}
+
+/* E. Винтаж-полароид */
+.vE .frame{background:#fff;border-radius:3px;padding:14px 14px 54px;box-shadow:0 30px 58px -34px rgba(58,20,32,.55);transform:rotate(-2.2deg);transition:transform .3s}
+.vE .frame:hover{transform:rotate(0deg)}
+.vE .photo{border-radius:1px}
+.vE .hand{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:"Parisienne",cursive;font-size:1.5rem;color:var(--ink)}
+.vE .slotpad{padding-top:8px}
+
+/* F. Рамка с бейджем-годом (стекло) */
+.vF .photo{border-radius:16px;box-shadow:0 30px 60px -40px rgba(58,20,32,.5)}
+.vF .badge{position:absolute;left:14px;top:14px;z-index:2;padding:8px 14px;border-radius:11px;color:#fff;font-family:"Playfair Display",serif;font-weight:600;font-size:1rem;letter-spacing:.02em;
+  background:linear-gradient(180deg,rgba(58,20,32,.32),rgba(58,20,32,.5));-webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4);border:1px solid rgba(255,255,255,.32);box-shadow:0 12px 26px -14px rgba(0,0,0,.5)}
+.vF .photo::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.4);border-radius:10px;pointer-events:none}
+
+.foot{max-width:1120px;margin:60px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · оформление фото «О нас»</div></div>
+
+<div class="note">
+  <h1>Шесть вариантов <em>оформления фото</em></h1>
+  <p>То самое детское фото Кати в разном премиум-обрамлении — чтобы оно смотрелось как часть истории, а не просто картинка. Всё на трёх цветах. Подпись оставил как на сайте (в вариантах-лентах она уходит на фото). Выбери код — применю в блоке «О нас».</p>
+  <div class="tip">💡 <b>Рекомендация:</b> «<b>E · Винтаж-полароид</b>» — идеально под детское фото, тёплая ностальгия (наведи — выпрямляется). «<b>A · Паспарту</b>» — музейно и чисто. «<b>B · Двойная рамка</b>» — лёгкая глубина. «<b>D · Лента-подпись</b>» — журнальная подача с подписью прямо на фото.</p>
+</div>
+
+<div id="stage" class="grid"></div>
+
+<div class="foot">Понравился — напиши код (<b>A</b>, <b>B</b>, <b>C</b>, <b>D</b>, <b>E</b> или <b>F</b>). Применю к фото в блоке «О нас».</div>
+
+<script>
+var IMG='<div class="photo"><img src="assets/about-katya.jpg" alt="Катя в детстве готовит десерт"></div>';
+var CAP='<div class="cap"><b>Катя</b> — основатель кондитерского цеха. Врач по образованию, руководитель — по жизни.</div>';
+var VS=[
+ {c:"A", t:"A · Паспарту", tag:"музейно", html:'<div class="frame">'+IMG+'</div>'+CAP},
+ {c:"B", t:"B · Двойная рамка", tag:"глубина", html:'<div class="wrap">'+IMG+'</div>'+CAP},
+ {c:"C", t:"C · Ар-деко уголки", tag:"элегантно", html:'<div class="photo"><img src="assets/about-katya.jpg" alt="Катя в детстве готовит десерт"><span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span></div>'+CAP},
+ {c:"D", t:"D · Лента-подпись", tag:"журнально", html:'<div class="photo"><img src="assets/about-katya.jpg" alt="Катя в детстве готовит десерт"><div class="rib"><span class="e">Начало пути</span><b>Катя</b></div></div>'},
+ {c:"E", t:"E · Винтаж-полароид", tag:"рекомендую", html:'<div class="slotpad"><div class="frame">'+IMG+'<div class="hand">Катя, начало пути</div></div></div>'+CAP},
+ {c:"F", t:"F · Рамка с годом", tag:"акцент", html:'<div class="photo"><img src="assets/about-katya.jpg" alt="Катя в детстве готовит десерт"><span class="badge">С детства</span></div>'+CAP}
+];
+document.getElementById('stage').innerHTML=VS.map(function(v){
+  return '<div class="item v'+v.c+'"><div class="vh"><span class="n">'+v.t+'</span><span class="tag">'+v.tag+'</span></div>'+
+    '<div class="slot">'+v.html+'</div></div>';
+}).join('');
+</script>
+</body>
+</html>
