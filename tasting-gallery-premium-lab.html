@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — премиум-оформление фото дегустаций</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,600&family=Forum&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif; --serif:"Forum",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1120px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1120px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+.vhead{max-width:1120px;margin:58px auto 0;padding:0 26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.vhead .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+.vhead .tag{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:6px 12px;border-radius:999px}
+.vsub{max-width:1120px;margin:2px auto 0;padding:0 26px;color:var(--muted);font-size:.9rem}
+.stage{max-width:1120px;margin:20px auto 0;padding:0 26px}
+.gimg{width:100%;height:100%;object-fit:cover;display:block}
+.cap{margin-top:12px;text-align:center;font-family:var(--serif);text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--bx)}
+
+/* A. Паспарту-триптих */
+.vA .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.vA .mat{background:var(--cr2);border:1px solid var(--line);border-radius:16px;padding:14px 14px 6px;box-shadow:0 30px 58px -40px rgba(58,20,32,.5)}
+.vA .ph{position:relative;aspect-ratio:3/4;border-radius:9px;overflow:hidden}
+.vA .ph::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(169,145,180,.25);border-radius:9px}
+.vA .cap{padding-bottom:8px}
+
+/* B. Арочные рамки */
+.vB .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.vB .arch{position:relative;aspect-ratio:3/4;border-radius:180px 180px 16px 16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 58px -40px rgba(58,20,32,.5)}
+.vB .arch::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.55);border-radius:150px 150px 8px 8px;pointer-events:none}
+
+/* C. Единая витрина */
+.vC .frame{background:var(--cr2);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 34px 66px -42px rgba(58,20,32,.5)}
+.vC .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vC .ph{position:relative;aspect-ratio:3/4;border-radius:11px;overflow:hidden}
+.vC .ph::after{content:"";position:absolute;inset:0;border:1px solid rgba(169,145,180,.3);border-radius:11px;pointer-events:none}
+
+/* D. Крупный центр + два (арка) */
+.vD .grid{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:22px;align-items:center}
+.vD .cell{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 58px -40px rgba(58,20,32,.5)}
+.vD .side{aspect-ratio:3/3.7}
+.vD .mid{aspect-ratio:3/4;border-radius:170px 170px 16px 16px}
+.vD .mid::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.5);border-radius:150px 150px 8px 8px;pointer-events:none}
+
+/* E. Стеклянные подписи */
+.vE .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vE .cell{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:0 30px 58px -40px rgba(58,20,32,.5)}
+.vE .cell::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(58,20,32,.6));z-index:1}
+.vE .glass{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;padding:10px 14px;border-radius:12px;color:#fff;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.06));-webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4);border:1px solid rgba(255,255,255,.32);text-align:center}
+.vE .glass span{font-family:var(--serif);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem}
+
+@media(max-width:760px){
+  .vA .grid,.vB .grid,.vC .grid,.vE .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
+  .vD .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
+  .vD .side,.vD .mid{aspect-ratio:3/4}
+}
+.foot{max-width:1120px;margin:64px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · премиум-оформление фото дегустаций</div></div>
+
+<div class="note">
+  <h1>Пять премиум-вариантов <em>оформления</em></h1>
+  <p>Та же тройка фото набора — в разном премиум-обрамлении. Всё строго на трёх цветах (бордо / сирень / крем), без золота: «дорого» достигается рамками-паспарту, арками, единой витриной и матовым стеклом. Выбери код — применю на странице дегустаций.</p>
+  <div class="tip">💡 <b>Рекомендация:</b> «<b>A · Паспарту-триптих</b>» — музейно и чисто. «<b>B · Арки</b>» — бутиковый премиум-акцент. «<b>C · Витрина</b>» — как единая дорогая карточка. «<b>E · Стекло</b>» — современно, с матовыми подписями.</p>
+</div>
+
+<div id="stage"></div>
+
+<div class="foot">Понравился — напиши код (<b>A</b>, <b>B</b>, <b>C</b>, <b>D</b> или <b>E</b>). Применю на странице дегустаций.</div>
+
+<script>
+var I=['assets/tasting-1.jpg','assets/tasting-2.jpg','assets/tasting-3.jpg'];
+var LB=['Коллекция','Разрез','Упаковка'];
+function im(i){return '<img class="gimg" src="'+I[i]+'" alt="Дегустационный набор cake.smile">';}
+var VS=[
+ {c:"A", t:"A · Паспарту-триптих", tag:"музейно", sub:"Каждый кадр в рамке-паспарту с тонкой окантовкой и подписью.",
+  html:'<div class="grid">'+[0,1,2].map(i=>'<div class="mat"><div class="ph">'+im(i)+'</div><div class="cap">'+LB[i]+'</div></div>').join('')+'</div>'},
+ {c:"B", t:"B · Арочные рамки", tag:"бутиково", sub:"Скруглённый арочный верх — элегантный премиум-акцент.",
+  html:'<div class="grid">'+[0,1,2].map(i=>'<div class="arch">'+im(i)+'</div>').join('')+'</div>'},
+ {c:"C", t:"C · Единая витрина", tag:"дорого", sub:"Три кадра в одной светлой рамке-карточке.",
+  html:'<div class="frame"><div class="grid">'+[0,1,2].map(i=>'<div class="ph">'+im(i)+'</div>').join('')+'</div></div>'},
+ {c:"D", t:"D · Крупный центр (арка)", tag:"акцент", sub:"Центральный кадр крупнее и с аркой, боковые — компактнее.",
+  html:'<div class="grid"><div class="cell side">'+im(0)+'</div><div class="cell mid">'+im(1)+'</div><div class="cell side">'+im(2)+'</div></div>'},
+ {c:"E", t:"E · Стеклянные подписи", tag:"современно", sub:"Фото с матовой стеклянной подписью снизу.",
+  html:'<div class="grid">'+[0,1,2].map(i=>'<div class="cell">'+im(i)+'<div class="glass"><span>'+LB[i]+'</span></div></div>').join('')+'</div>'}
+];
+document.getElementById('stage').innerHTML=VS.map(function(v){
+  return '<div class="vhead"><span class="n">'+v.t+'</span><span class="tag">'+v.tag+'</span></div>'+
+    '<div class="vsub">'+v.sub+'</div>'+
+    '<div class="stage v'+v.c+'">'+v.html+'</div>';
+}).join('');
+</script>
+</body>
+</html>
