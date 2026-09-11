@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — шрифт названий каталога</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Spectral:wght@500;600&family=Lora:wght@500;600&family=Tenor+Sans&family=Yeseva+One&family=Prata&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1120px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1120px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+.grid{max-width:1120px;margin:34px auto 0;padding:0 26px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px 22px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+.item .vh{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.item .vh .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.1rem;color:var(--ink)}
+.item .vh .tag{margin-left:auto;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:3px 8px;border-radius:999px}
+
+.card{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--bx);box-shadow:0 26px 50px -34px rgba(58,20,32,.5)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(58,20,32,.35) 62%,rgba(58,20,32,.9));z-index:1}
+.body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 18px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.title{color:#fff;font-size:1.32rem;line-height:1.1}
+.more{font-family:var(--sans);font-weight:700;font-size:.72rem;color:var(--li-soft);white-space:nowrap}
+
+.f-forum   .title{font-family:"Forum",serif}
+.f-play    .title{font-family:"Playfair Display",serif;font-weight:500;font-size:1.26rem}
+.f-playit  .title{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.34rem}
+.f-prata   .title{font-family:"Prata",serif;font-size:1.16rem;letter-spacing:.01em}
+.f-yeseva  .title{font-family:"Yeseva One",serif;font-size:1.24rem}
+.f-spectral .title{font-family:"Spectral",serif;font-weight:600;font-size:1.24rem}
+.f-lora    .title{font-family:"Lora",serif;font-weight:600;font-size:1.2rem}
+.f-tenor   .title{font-family:"Tenor Sans",sans-serif;font-size:1.14rem;letter-spacing:.02em}
+
+.foot{max-width:1120px;margin:60px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · шрифт названий каталога</div></div>
+
+<div class="note">
+  <h1>Восемь вариантов <em>шрифта названий</em></h1>
+  <p>Название на карточке каталога (например, «Свадебный торт») в разных шрифтах — прямо на карточке с фото и градиентом, как на сайте. Все шрифты с кириллицей. Меняется только шрифт названия, всё остальное без изменений. Выбери код — применю ко всем карточкам каталога.</p>
+  <div class="tip">💡 <b>Рекомендация:</b> «<b>Playfair</b>» — в единый стиль с заголовками сайта. «<b>Prata</b>» — высокий контраст, модно и дорого. «<b>Yeseva One</b>» — тёплый бутиковый характер. «<b>Playfair-курсив</b>» — самый нарядный.</p>
+</div>
+
+<div id="stage" class="grid"></div>
+
+<div class="foot">Понравился — напиши код (<b>Playfair</b>, <b>Playfair-курсив</b>, <b>Prata</b>, <b>Yeseva</b>, <b>Spectral</b>, <b>Lora</b> или <b>Tenor</b>). Применю ко всем карточкам каталога.</div>
+
+<script>
+var IMG='assets/wedding.png';
+var FONTS=[
+ {c:"forum", t:"Forum", tag:"сейчас"},
+ {c:"play", t:"Playfair Display", tag:"рекомендую"},
+ {c:"playit", t:"Playfair — курсив", tag:"нарядно"},
+ {c:"prata", t:"Prata", tag:"рекомендую · fashion"},
+ {c:"yeseva", t:"Yeseva One", tag:"бутиково"},
+ {c:"spectral", t:"Spectral", tag:"с характером"},
+ {c:"lora", t:"Lora", tag:"спокойно"},
+ {c:"tenor", t:"Tenor Sans", tag:"минимал"}
+];
+document.getElementById('stage').innerHTML=FONTS.map(function(f){
+  return '<div class="item"><div class="vh"><span class="n">'+f.t+'</span><span class="tag">'+f.tag+'</span></div>'+
+   '<div class="card f-'+f.c+'"><img src="'+IMG+'" alt="Свадебный торт"><div class="body"><span class="title">Свадебный торт</span><span class="more">Подробнее →</span></div></div></div>';
+}).join('');
+</script>
+</body>
+</html>
