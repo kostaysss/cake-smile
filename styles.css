@@ -164,7 +164,7 @@ img { max-width: 100%; display: block; }
 .hero-split-text { background: none; padding: 70px 58px; display: flex; flex-direction: column; justify-content: center; }
 .hero-split-text .eyebrow { color: var(--bx); }
 .hero-split-text .eyebrow::before { background: var(--bx); }
-.hero-brand { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--ink); margin-bottom: 18px; }
+.hero-brand { font-family: "Parisienne", cursive; font-size: clamp(3.6rem, 7.4vw, 6.4rem); line-height: 1.02; color: var(--ink); margin-bottom: 14px; }
 .hero-brand .dot { color: var(--bx); }
 .hero-slogan { font-size: 1.12rem; color: var(--ink); margin-bottom: 30px; max-width: 34ch; font-weight: 500; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -477,7 +477,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 400px) {
   .container { padding: 0 16px; }
-  .hero-brand { font-size: 2.7rem; }
+  .hero-brand { font-size: 3.4rem; }
   .section { padding: 44px 0; }
   .dessert-grid { grid-template-columns: 1fr; }
   .flavor-grid { grid-template-columns: 1fr; }
