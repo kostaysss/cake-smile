@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — текст подзаголовка</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,600&family=Parisienne&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1180px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1180px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+
+.vhead{max-width:1180px;margin:52px auto 0;padding:0 26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.vhead .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+.vhead .tag{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:6px 12px;border-radius:999px}
+
+.stage{max-width:1180px;margin:16px auto 0;padding:0 26px}
+.hero{border-radius:18px;overflow:hidden;box-shadow:0 30px 64px -38px rgba(58,20,32,.45);
+  background:radial-gradient(120% 130% at 88% 50%,rgba(107,31,50,.95) 0%,rgba(107,31,50,.6) 30%,rgba(138,85,112,.25) 52%,transparent 70%),var(--li)}
+.hero-in{max-width:720px;padding:58px 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--bx);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:3px;background:var(--bx);border-radius:2px}
+.brand{font-family:"Parisienne",cursive;line-height:1.02;color:var(--ink);margin-bottom:12px;font-size:clamp(3.4rem,6.6vw,5.2rem)}
+.brand .dot{color:var(--bx)}
+.slogan{font-size:1.12rem;color:var(--ink);margin-bottom:28px;max-width:40ch;font-weight:500;line-height:1.6}
+.slogan em{font-style:normal;color:var(--bx);font-weight:600}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 26px;border-radius:12px;font-weight:600;font-size:.95rem;font-family:var(--sans);border:1px solid transparent}
+.btn-p{background:var(--bx);color:#fff}
+.btn-o{background:rgba(246,239,230,.28);border-color:var(--bx);color:var(--bx);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+
+.foot{max-width:1180px;margin:64px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · текст подзаголовка</div></div>
+
+<div class="note">
+  <h1>Семь вариантов <em>подзаголовка</em> героя</h1>
+  <p>Тот же блок, что встречает пользователя. Меняется только текст под «cake.smile» — смысл сохранён (безупречный торт = минимум, ценность в деталях, ответственности и сервисе), но поданы по-разному: где-то лаконичнее, где-то теплее. Ключевые слова выделены бордо. Выбери номер — поставлю на сайт.</p>
+  <div class="tip">💡 <b>Рекомендация:</b> <b>№2</b> — коротко и премиально; <b>№4</b> — тепло и по-человечески; <b>№6</b> — с лёгким эмоциональным акцентом. №1 — текущий.</div>
+</div>
+
+<div id="stage"></div>
+
+<div class="foot">Понравился — напиши номер (например, «<b>2</b>»). Поставлю этот текст в подзаголовок героя. Можно и подредактировать любой из них.</div>
+
+<script>
+var VARIANTS=[
+ {tag:"сейчас", html:"Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях, ответственности за результат и сервисе на каждом этапе."},
+ {tag:"лаконично · премиум", html:"Безупречный вкус и оформление — <em>само собой</em>. Всё остальное решают детали, ответственность и сервис на каждом этапе."},
+ {tag:"сдержанно", html:"Идеальный вкус и вид — по умолчанию. А настоящая ценность рождается в <em>деталях</em>, ответственности за результат и заботе на каждом шаге."},
+ {tag:"тепло · по-человечески", html:"Красивый и вкусный торт для нас — это база. Дальше начинается главное: внимание к <em>деталям</em>, ответственность за результат и забота на каждом этапе."},
+ {tag:"коротко · слоганно", html:"Безупречный торт — минимум, который мы гарантируем. Всё лучшее — в <em>деталях</em>, ответственности и сервисе."},
+ {tag:"эмоционально", html:"Вкус, который запоминается, и вид, который впечатляет. А в основе — <em>детали</em>, честность в работе и сервис, на который можно положиться."},
+ {tag:"доверие · про клиента", html:"Ваш замысел мы воплощаем точно — вкусно и красиво. И отвечаем за каждую <em>деталь</em>: от первого сообщения до готового торта."}
+];
+document.getElementById('stage').innerHTML=VARIANTS.map(function(v,i){
+  return '<div class="vhead"><span class="n">№'+(i+1)+'</span><span class="tag">'+v.tag+'</span></div>'+
+    '<div class="stage"><div class="hero"><div class="hero-in">'+
+      '<span class="eyebrow">Кондитерская с индивидуальным подходом</span>'+
+      '<h1 class="brand">cake<span class="dot">.</span>smile</h1>'+
+      '<p class="slogan">'+v.html+'</p>'+
+      '<div class="acts"><a class="btn btn-p">Написать в Telegram</a><a class="btn btn-o">Наши дегустации</a></div>'+
+    '</div></div></div>';
+}).join('');
+</script>
+</body>
+</html>
