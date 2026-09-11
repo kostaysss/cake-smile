@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>cake.smile — 3 фото в разделе «О нас»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,500;0,600;1,600&family=Forum&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420; --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+  --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd; --muted:#7a5563; --line:#e2d6c9; --sans:"Manrope",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+body{font-family:var(--sans);color:var(--ink);background:radial-gradient(60% 40% at 100% 0%,rgba(169,145,180,.16),transparent 60%),var(--cr)}
+.lab-top{position:sticky;top:0;z-index:100;background:var(--ink);color:#f3e7ea}
+.lab-in{max-width:1080px;margin:0 auto;padding:11px 26px;font-family:"Playfair Display",serif;font-size:1.15rem;color:#fff}
+.lab-in b{color:var(--li)}
+.note{max-width:1080px;margin:0 auto;padding:26px 26px 4px}
+.note h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.note h1 em{font-style:italic;color:var(--li-d)}
+.note p{color:var(--muted);max-width:80ch;margin-top:10px}
+.note .tip{margin-top:14px;background:var(--li-soft);border:1px solid var(--li-line);border-radius:14px;padding:14px 18px;color:var(--bx);font-size:.95rem;max-width:80ch}
+.note .tip b{color:var(--bx)}
+
+.vhead{max-width:1080px;margin:56px auto 0;padding:0 26px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.vhead .n{font-family:"Playfair Display",serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+.vhead .tag{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bx);background:var(--li-soft);border:1px solid var(--li);padding:6px 12px;border-radius:999px}
+.vsub{max-width:1080px;margin:2px auto 0;padding:0 26px;color:var(--muted);font-size:.9rem}
+.stage{max-width:1080px;margin:20px auto 0;padding:0 26px}
+
+.gimg{object-fit:cover;width:100%;height:100%}
+
+/* A. Ровный триптих */
+.vA .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vA .cell{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 50px -36px rgba(58,20,32,.42)}
+.vA .cell::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.4);border-radius:14px;pointer-events:none}
+
+/* B. Полароид-коллаж */
+.vB .row{display:flex;justify-content:center;align-items:flex-start;gap:0;padding:14px 0}
+.vB .pol{background:#fff;border-radius:3px;padding:12px 12px 40px;box-shadow:0 26px 52px -32px rgba(58,20,32,.5);width:31%}
+.vB .pol .ph{aspect-ratio:3/4;overflow:hidden;border-radius:1px}
+.vB .pol:nth-child(1){transform:rotate(-4deg);z-index:1}
+.vB .pol:nth-child(2){transform:rotate(2deg);margin:14px -14px 0;z-index:3;width:33%}
+.vB .pol:nth-child(3){transform:rotate(3.5deg);z-index:2}
+
+/* C. Мозаика 1 + 2 */
+.vC .grid{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:18px}
+.vC .cell{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 48px -36px rgba(58,20,32,.42)}
+.vC .big{grid-row:1 / span 2;aspect-ratio:auto}
+.vC .sm{aspect-ratio:16/10}
+
+/* D. Журнальный ряд со смещением */
+.vD .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.vD .cell{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;box-shadow:0 26px 50px -36px rgba(58,20,32,.42)}
+.vD .cell:nth-child(1){margin-top:26px}
+.vD .cell:nth-child(3){margin-top:26px}
+.vD .cell::after{content:"";position:absolute;left:12px;right:12px;bottom:12px;top:12px;border:1px solid rgba(255,255,255,.5);border-radius:8px;pointer-events:none}
+
+/* E. Ряд в паспарту (единая карта) */
+.vE .frame{background:var(--cr2);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 30px 60px -42px rgba(58,20,32,.45)}
+.vE .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vE .cell{aspect-ratio:3/4;border-radius:9px;overflow:hidden;position:relative}
+.vE .cell::after{content:"";position:absolute;inset:0;border:1px solid rgba(169,145,180,.3);border-radius:9px;pointer-events:none}
+
+@media(max-width:720px){
+  .vA .grid,.vD .grid,.vE .grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
+  .vC .grid{grid-template-columns:1fr;grid-template-rows:none}
+  .vC .big{grid-row:auto;aspect-ratio:3/4}
+  .vB .row{flex-direction:column;align-items:center;gap:16px}
+  .vB .pol,.vB .pol:nth-child(2){width:70%;margin:0;transform:rotate(-2deg)}
+}
+
+.foot{max-width:1080px;margin:64px auto;padding:0 26px;text-align:center;color:var(--muted)}
+.foot b{color:var(--bx)}
+</style>
+</head>
+<body>
+
+<div class="lab-top"><div class="lab-in">cake<b>.</b>smile · 3 фото в разделе «О нас»</div></div>
+
+<div class="note">
+  <h1>Пять вариантов <em>размещения 3 фото</em></h1>
+  <p>Твои три фото — как они могли бы жить в разделе «О нас» (под историей Кати). Показал одни и те же снимки в разной компоновке. Всё на трёх цветах, в стиле сайта. Выбери код — так и вставлю в блок «О нас».</p>
+  <div class="tip">💡 <b>Рекомендация:</b> «<b>B · Полароид-коллаж</b>» — перекликается с полароидом Кати выше, тёплая ностальгия. «<b>A · Ровный триптих</b>» — чисто и аккуратно. «<b>E · Ряд в паспарту</b>» — как единая галерейная карточка.</div>
+</div>
+
+<div id="stage"></div>
+
+<div class="foot">Понравился — напиши код (<b>A</b>, <b>B</b>, <b>C</b>, <b>D</b> или <b>E</b>). Вставлю выбранный вариант в раздел «О нас».</div>
+
+<script>
+var I=['assets/about-1.jpg','assets/about-2.jpg','assets/about-3.jpg'];
+function img(i){return '<img class="gimg" src="'+I[i]+'" alt="Фото cake.smile">';}
+var VS=[
+ {c:"A", t:"A · Ровный триптих", tag:"чисто", sub:"Три равных кадра в ряд с тонкой рамкой.",
+  html:'<div class="grid"><div class="cell">'+img(0)+'</div><div class="cell">'+img(1)+'</div><div class="cell">'+img(2)+'</div></div>'},
+ {c:"B", t:"B · Полароид-коллаж", tag:"рекомендую", sub:"Полароиды под лёгкими углами, с нахлёстом — в стиль фото Кати.",
+  html:'<div class="row"><div class="pol"><div class="ph">'+img(0)+'</div></div><div class="pol"><div class="ph">'+img(1)+'</div></div><div class="pol"><div class="ph">'+img(2)+'</div></div></div>'},
+ {c:"C", t:"C · Мозаика 1 + 2", tag:"акцент", sub:"Один крупный кадр и два поменьше рядом.",
+  html:'<div class="grid"><div class="cell big">'+img(0)+'</div><div class="cell sm">'+img(1)+'</div><div class="cell sm">'+img(2)+'</div></div>'},
+ {c:"D", t:"D · Журнальный ряд", tag:"живо", sub:"Три кадра со смещением по вертикали.",
+  html:'<div class="grid"><div class="cell">'+img(0)+'</div><div class="cell">'+img(1)+'</div><div class="cell">'+img(2)+'</div></div>'},
+ {c:"E", t:"E · Ряд в паспарту", tag:"галерейно", sub:"Три кадра в единой светлой рамке-карточке.",
+  html:'<div class="frame"><div class="grid"><div class="cell">'+img(0)+'</div><div class="cell">'+img(1)+'</div><div class="cell">'+img(2)+'</div></div></div>'}
+];
+document.getElementById('stage').innerHTML=VS.map(function(v){
+  return '<div class="vhead"><span class="n">'+v.t+'</span><span class="tag">'+v.tag+'</span></div>'+
+    '<div class="vsub">'+v.sub+'</div>'+
+    '<div class="stage v'+v.c+'">'+v.html+'</div>';
+}).join('');
+</script>
+</body>
+</html>
