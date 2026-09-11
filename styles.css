@@ -356,8 +356,7 @@ img { max-width: 100%; display: block; }
 .about-inner { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; max-width: 1000px; margin: 0 auto 54px; }
 .about-photo-card { margin: 0; }
 .ph-about { aspect-ratio: 4/5; border-radius: var(--rad-lg); box-shadow: var(--shadow-sm); }
-.about-polaroid { background: #fff; border-radius: 3px; padding: 14px 14px 54px; box-shadow: 0 30px 58px -34px rgba(58,20,32,.55); transform: rotate(-2.2deg); transition: transform .35s; }
-.about-polaroid:hover { transform: rotate(0deg); }
+.about-polaroid { background: #fff; border-radius: 3px; padding: 14px 14px 54px; box-shadow: 0 30px 58px -34px rgba(58,20,32,.55); transform: rotate(-2.2deg); }
 .about-polaroid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 1px; display: block; }
 .about-cap { margin-top: 16px; text-align: center; color: var(--muted); font-size: .95rem; line-height: 1.5; }
 .about-cap b { color: var(--bx); font-weight: 700; }
