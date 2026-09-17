@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Parisienne&family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=119" />
+  <link rel="stylesheet" href="styles.css?v=120" />
 </head>
 <body>
 
@@ -236,13 +236,22 @@
         <h2>Свяжитесь с <em>нами</em></h2>
         <p class="section-sub">Быстрее всего — в Telegram. Ответим на вопросы и поможем с заказом.</p>
       </div>
-      <div class="contacts-grid">
-        <div class="contact-card"><span class="clabel">Telegram</span><a href="#" class="js-tg">@cakesmilee</a></div>
-        <div class="contact-card"><span class="clabel">Instagram</span><a href="#">@cake.smile</a></div>
-        <div class="contact-card"><span class="clabel">Телефон</span><a href="tel:+70000000000">+7 (000) 000-00-00</a></div>
-        <div class="contact-card"><span class="clabel">Почта</span><a href="mailto:hello@cakesmile.ru">hello@cakesmile.ru</a></div>
-        <div class="contact-card"><span class="clabel">Адрес</span><p>Город · точка самовывоза (уточняется)</p></div>
-        <div class="contact-card"><span class="clabel">Время работы</span><p>Ежедневно 09:00 — 20:00</p></div>
+      <div class="contacts-v2">
+        <div class="contacts-hero">
+          <div class="ch-ico"><svg class="ic" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg></div>
+          <div class="ch-body">
+            <h3>Напишите в Telegram</h3>
+            <p>Обсудим вкус, декор и дату. Поможем собрать заказ и рассчитаем стоимость.</p>
+            <a class="ch-btn js-tg" href="#"><svg class="ic ic-sm" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>Написать @cakesmilee</a>
+          </div>
+        </div>
+        <div class="contacts-list">
+          <a class="cl-row" href="https://instagram.com/cake.smile" target="_blank" rel="noopener"><span class="cl-i"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span><span class="cl-txt"><span class="clabel">Instagram</span><span class="cl-val">@cake.smile</span></span></a>
+          <a class="cl-row" href="tel:+70000000000"><span class="cl-i"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span class="cl-txt"><span class="clabel">Телефон</span><span class="cl-val">+7 (000) 000-00-00</span></span></a>
+          <a class="cl-row" href="mailto:hello@cakesmile.ru"><span class="cl-i"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span class="cl-txt"><span class="clabel">Почта</span><span class="cl-val">hello@cakesmile.ru</span></span></a>
+          <div class="cl-row"><span class="cl-i"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="cl-txt"><span class="clabel">Адрес</span><span class="cl-val">Город · точка самовывоза (уточняется)</span></span></div>
+          <div class="cl-row"><span class="cl-i"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span class="cl-txt"><span class="clabel">Время работы</span><span class="cl-val">Ежедневно 09:00 — 20:00</span></span></div>
+        </div>
       </div>
     </div>
   </section>
