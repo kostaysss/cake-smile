@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Parisienne&family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=120" />
+  <link rel="stylesheet" href="styles.css?v=121" />
 </head>
 <body>
 
@@ -256,49 +256,56 @@
     </div>
   </section>
 
-  <!-- Расчёт заказа (пока без изменений) -->
-  <section class="section section-lilac" id="calc">
+  <!-- Расчёт заказа -->
+  <section class="section" id="calc">
     <div class="container">
-      <div class="calc-card">
-        <div class="calc-head">
-          <span class="eyebrow">Расчёт заказа</span>
-          <h2>Соберите заявку за <em>3 шага</em></h2>
-          <p class="section-sub">Ответьте на три вопроса — мы подготовим текст заявки и откроем Telegram.</p>
-        </div>
-        <form class="calc-form" id="calcForm">
-          <fieldset class="calc-step">
-            <legend>1. Формат</legend>
-            <div class="chips" data-name="format">
+      <div class="calc-head">
+        <span class="eyebrow">Расчёт заказа</span>
+        <h2>Соберите заявку <em>как конструктор</em></h2>
+        <p class="section-sub">Выбирайте параметры — справа сразу собирается текст заявки для Telegram.</p>
+      </div>
+      <form class="calc-v2" id="calcForm">
+        <div class="calc-fields">
+          <div class="calc-block">
+            <span class="calc-lab">Формат</span>
+            <div class="chips" data-name="format" data-key="Формат">
               <button type="button" class="chip" data-val="Мини-позиции">Мини-позиции</button>
               <button type="button" class="chip" data-val="Свадебный торт">Свадебный</button>
               <button type="button" class="chip" data-val="Торт на праздник">На праздник</button>
               <button type="button" class="chip" data-val="Другое">Другое</button>
             </div>
-          </fieldset>
-          <fieldset class="calc-step">
-            <legend>2. Повод</legend>
-            <div class="chips" data-name="occasion">
+          </div>
+          <div class="calc-block">
+            <span class="calc-lab">Повод</span>
+            <div class="chips" data-name="occasion" data-key="Повод">
               <button type="button" class="chip" data-val="День рождения">День рождения</button>
               <button type="button" class="chip" data-val="Свадьба">Свадьба</button>
               <button type="button" class="chip" data-val="Детский праздник">Детский</button>
               <button type="button" class="chip" data-val="Корпоратив / другое">Другое</button>
             </div>
-          </fieldset>
-          <fieldset class="calc-step">
-            <legend>3. Вкус</legend>
-            <div class="chips" data-name="taste">
+          </div>
+          <div class="calc-block">
+            <span class="calc-lab">Вкус</span>
+            <div class="chips" data-name="taste" data-key="Вкус">
               <button type="button" class="chip" data-val="Классика (медовик, ваниль)">Классика</button>
               <button type="button" class="chip" data-val="Шоколад">Шоколад</button>
               <button type="button" class="chip" data-val="Ягоды / фрукты">Ягоды</button>
               <button type="button" class="chip" data-val="Ещё не решил">Подскажите</button>
             </div>
-          </fieldset>
-          <div class="calc-foot">
-            <button type="submit" class="btn btn-primary js-calc-submit">Отправить заявку в Telegram</button>
-            <p class="calc-note" id="calcNote" hidden>Текст заявки скопирован — вставьте его в чат Telegram 💬</p>
           </div>
-        </form>
-      </div>
+        </div>
+        <aside class="calc-summary">
+          <h3>Ваша заявка</h3>
+          <p class="cs-sub">Собирается по мере выбора</p>
+          <div class="cs-list">
+            <div class="cs-line" data-k="Формат"><span class="k">Формат</span><span class="v empty">не выбрано</span></div>
+            <div class="cs-line" data-k="Повод"><span class="k">Повод</span><span class="v empty">не выбрано</span></div>
+            <div class="cs-line" data-k="Вкус"><span class="k">Вкус</span><span class="v empty">не выбрано</span></div>
+          </div>
+          <button type="submit" class="cs-btn js-calc-submit"><svg class="ic ic-sm" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>Отправить в Telegram</button>
+          <p class="calc-note" id="calcNote" hidden>Текст заявки скопирован — вставьте его в чат Telegram 💬</p>
+        </aside>
+      </form>
     </div>
   </section>
 
@@ -331,6 +338,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=119"></script>
+  <script src="script.js?v=121"></script>
 </body>
 </html>

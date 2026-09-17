@@ -276,6 +276,29 @@ img { max-width: 100%; display: block; }
 .calc-foot { text-align: center; margin-top: 34px; }
 .calc-note { margin-top: 16px; color: var(--bx); font-weight: 600; }
 
+/* Расчёт заказа — конструктор с живой заявкой */
+.calc-v2 { display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start; max-width: 980px; margin: 0 auto; }
+.calc-fields { background: var(--cr2); border: 1px solid var(--line); border-radius: var(--rad-lg); padding: 38px; box-shadow: var(--shadow-sm); }
+.calc-block { margin-bottom: 28px; }
+.calc-block:last-child { margin-bottom: 0; }
+.calc-lab { display: block; font-family: var(--sans); font-weight: 700; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
+.calc-summary { position: sticky; top: 90px; background: linear-gradient(160deg, var(--li), var(--li-d)); color: #fff; border-radius: var(--rad-lg); padding: 32px; box-shadow: var(--shadow); }
+.calc-summary h3 { color: #fff; font-size: 1.4rem; margin-bottom: 4px; }
+.cs-sub { font-size: .85rem; opacity: .8; margin-bottom: 20px; }
+.cs-line { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.18); font-size: .92rem; }
+.cs-line .k { opacity: .75; }
+.cs-line .v { font-weight: 600; text-align: right; color: #fff; }
+.cs-line .v.empty { opacity: .45; font-weight: 400; font-style: italic; }
+.cs-btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; margin-top: 24px; background: #fff; color: var(--bx); font-family: var(--sans); font-weight: 700; font-size: .95rem; padding: 14px 24px; border: none; border-radius: 100px; cursor: pointer; transition: transform .2s, box-shadow .2s; box-shadow: 0 10px 24px -14px rgba(58,20,32,.5); }
+.cs-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(58,20,32,.55); }
+.calc-summary .calc-note { color: #fff; opacity: .92; }
+
+@media (max-width: 820px) {
+  .calc-v2 { grid-template-columns: 1fr; }
+  .calc-summary { position: static; }
+  .calc-fields { padding: 26px; }
+}
+
 /* ============================================================
    ВНУТРЕННИЕ СТРАНИЦЫ
    ============================================================ */

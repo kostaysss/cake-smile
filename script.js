@@ -44,6 +44,12 @@
         if (!chip) return;
         group.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("active"); });
         chip.classList.add("active");
+        // Живая сводка «Ваша заявка»
+        var key = group.getAttribute("data-key");
+        if (key) {
+          var line = document.querySelector('.cs-line[data-k="' + key + '"] .v');
+          if (line) { line.textContent = chip.textContent.trim(); line.classList.remove("empty"); }
+        }
       });
     });
 
