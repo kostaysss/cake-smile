@@ -84,6 +84,19 @@
     });
   }
 
+  /* ===== Соц-иконки в футере (бренд-колонка) ===== */
+  var brandCol = document.querySelector(".site-footer .footer-col");
+  if (brandCol && !brandCol.querySelector(".footer-social")) {
+    var tg = '<svg class="ic" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>';
+    var ig = '<svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg>';
+    var soc = document.createElement("div");
+    soc.className = "footer-social";
+    soc.innerHTML =
+      '<a href="' + TG_LINK + '" target="_blank" rel="noopener" aria-label="Telegram">' + tg + "</a>" +
+      '<a href="https://instagram.com/cake.smile" target="_blank" rel="noopener" aria-label="Instagram">' + ig + "</a>";
+    brandCol.appendChild(soc);
+  }
+
   /* ===== Год в подвале ===== */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();

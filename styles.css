@@ -468,16 +468,26 @@ a.cl-row:hover .cl-val { color: var(--bx); }
 .cta-band .btn-light:hover { background: linear-gradient(135deg, rgba(107,31,50,.97), rgba(79,21,38,.93)); border-color: rgba(255,255,255,.45); }
 
 /* ===== Footer ===== */
-.site-footer { background: var(--ink); color: #e9dcdf; padding: 60px 0 26px; position: relative; }
-.site-footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--bx), var(--li)); }
-.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.site-footer { background: radial-gradient(1200px 420px at 15% -10%, rgba(169,145,180,.26), transparent 60%), linear-gradient(180deg, #46182a, #2c0f18); color: #e9dcdf; padding: 66px 0 26px; position: relative; overflow: hidden; }
+.site-footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--li), var(--bx), transparent); }
+.site-footer::after { content: "cake smile"; position: absolute; right: -8px; bottom: -36px; font-family: "Parisienne", cursive; font-size: 9rem; line-height: 1; color: rgba(255,255,255,.045); pointer-events: none; white-space: nowrap; z-index: 0; }
+.site-footer .container { position: relative; z-index: 1; }
+.footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 0; }
+.footer-inner .footer-col + .footer-col { padding-left: 44px; border-left: 1px solid; border-image: linear-gradient(180deg, transparent, rgba(169,145,180,.5), transparent) 1; }
 .footer-logo { color: #fff; }
-.footer-tag { color: #c7a9b2; margin-top: 12px; max-width: 28ch; }
-.footer-col h4 { color: #fff; font-family: var(--sans); font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
-.footer-col a { display: block; color: #cbb2ba; padding: 5px 0; transition: color .18s; }
-.footer-col a:hover { color: var(--li); }
-.footer-muted { display: block; color: #9c8088; font-size: .86rem; padding: 5px 0; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,.12); margin-top: 40px; padding-top: 22px; color: #9c8088; font-size: .86rem; }
+.footer-tag { color: #c7a9b2; margin-top: 14px; max-width: 30ch; }
+.footer-social { display: flex; gap: 12px; margin-top: 22px; }
+.footer-social a { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: #e9dcdf; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); transition: .22s; }
+.footer-social a:hover { color: #fff; border-color: var(--li); background: rgba(169,145,180,.22); transform: translateY(-3px); }
+.footer-social .ic { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.footer-col h4 { color: #fff; font-family: var(--sans); font-weight: 700; font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 18px; }
+.footer-col a { color: #cbb2ba; padding: 6px 0; transition: color .2s; }
+.footer-col a:not(.footer-logo) { position: relative; display: block; width: -moz-fit-content; width: fit-content; }
+.footer-col a:not(.footer-logo)::after { content: ""; position: absolute; left: 0; bottom: 2px; width: 0; height: 1px; background: var(--li); transition: width .28s; }
+.footer-col a:not(.footer-logo):hover { color: #fff; }
+.footer-col a:not(.footer-logo):hover::after { width: 100%; }
+.footer-muted { display: block; color: #9c8088; font-size: .86rem; padding: 6px 0; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,.12); margin-top: 46px; padding-top: 22px; color: #9c8088; font-size: .86rem; position: relative; z-index: 1; }
 
 /* ============================================================
    RESPONSIVE
@@ -499,7 +509,8 @@ a.cl-row:hover .cl-val { color: var(--bx); }
   .showcase .ph-showcase, .showcase .showcase-photo { min-height: 240px; order: -1; }
   .showcase-body { padding: 36px 32px; border-left: none; border-top: 6px solid var(--li); }
   .partners-inner { grid-template-columns: 1fr; gap: 28px; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-inner .footer-col + .footer-col { padding-left: 0; border-left: 0; border-image: none; }
 }
 @media (max-width: 900px) {
   .hero-split-inner { grid-template-columns: 1fr;
