@@ -97,6 +97,19 @@
     brandCol.appendChild(soc);
   }
 
+  /* ===== Кнопка «Написать в Telegram» в мобильном меню ===== */
+  var navMenu = document.getElementById("nav");
+  if (navMenu && !navMenu.querySelector(".nav-mobile-cta")) {
+    var plane = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 2.6 11.3c-1 .4-1 1.3 0 1.6l4.8 1.5 1.8 5.7c.2.6.8.7 1.2.3l2.7-2.5 4.7 3.4c.6.4 1.3.1 1.5-.6L23.4 5.2c.2-.8-.5-1.4-1.5-.9z" fill="currentColor"/></svg>';
+    var mcta = document.createElement("a");
+    mcta.className = "nav-mobile-cta";
+    mcta.setAttribute("href", TG_LINK);
+    mcta.setAttribute("target", "_blank");
+    mcta.setAttribute("rel", "noopener");
+    mcta.innerHTML = plane + "Написать в Telegram";
+    navMenu.appendChild(mcta);
+  }
+
   /* ===== Год в подвале ===== */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
