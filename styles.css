@@ -570,3 +570,17 @@ img { max-width: 100%; display: block; }
   .dessert-grid { grid-template-columns: 1fr; }
   .flavor-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ПОЯВЛЕНИЕ ПРИ ПРОКРУТКЕ — блоки возникают хаотично (JS добавляет классы)
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transition: opacity .62s cubic-bezier(.22,.61,.36,1), transform .62s cubic-bezier(.22,.61,.36,1); will-change: opacity, transform; }
+  .reveal.rv-up    { transform: translateY(36px); }
+  .reveal.rv-down  { transform: translateY(-30px); }
+  .reveal.rv-left  { transform: translateX(-42px); }
+  .reveal.rv-right { transform: translateX(42px); }
+  .reveal.rv-scale { transform: scale(.9); }
+  .reveal.rv-tilt  { transform: translateY(30px) rotate(-1.4deg); }
+  .reveal.is-in    { opacity: 1; transform: none; }
+}

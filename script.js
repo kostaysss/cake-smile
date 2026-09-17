@@ -100,4 +100,42 @@
   /* ===== Год в подвале ===== */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  /* ===== Появление блоков при прокрутке (хаотичный порядок) ===== */
+  (function () {
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var sel = [
+      ".section-head", ".hero-split-text", ".hero-photo-card",
+      ".tasting", ".showcase", ".subhero",
+      ".contacts-hero", ".cl-row", ".calc-fields", ".calc-summary",
+      "[class*='-card']", "[class*='-grid'] > *",
+      ".pricebox", ".info-note", ".info-card", ".step",
+      ".ph-gal", ".ag-pol", ".about-polaroid",
+      ".footer-col"
+    ].join(",");
+
+    var all = Array.prototype.slice.call(document.querySelectorAll(sel));
+    // только внешние элементы (без отмеченного предка) — чтобы не было вложенных анимаций
+    var nodes = all.filter(function (n) {
+      return !all.some(function (m) { return m !== n && m.contains(n); });
+    });
+
+    var variants = ["rv-up", "rv-down", "rv-left", "rv-right", "rv-scale", "rv-tilt"];
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+
+    nodes.forEach(function (el) {
+      if (el.getBoundingClientRect().top < vh) return; // уже видно при загрузке — не прячем (без мигания)
+      el.classList.add("reveal", variants[(Math.random() * variants.length) | 0]);
+      el.style.transitionDelay = (Math.random() * 0.14).toFixed(2) + "s";
+      io.observe(el);
+    });
+  })();
 })();
