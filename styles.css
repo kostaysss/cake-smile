@@ -584,3 +584,26 @@ img { max-width: 100%; display: block; }
   .reveal.rv-tilt  { transform: translateY(30px) rotate(-1.4deg); }
   .reveal.is-in    { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   МОБИЛЬНАЯ ПОЛИРОВКА — телефоны
+   ============================================================ */
+@media (max-width: 560px) {
+  /* Типографика: спокойнее заголовки, читабельнее слоган и подписи */
+  .section-head h2, .calc-head h2 { font-size: 1.95rem; }
+  .hero-slogan { font-size: 1.02rem; line-height: 1.62; }
+  .section-sub { font-size: .98rem; }
+  .eyebrow { font-size: .82rem; letter-spacing: .18em; }
+  .cl-row .clabel { font-size: .72rem; }
+  /* Премиум-блоки: комфортные отступы */
+  .contacts-hero, .calc-summary { padding: 28px; }
+  .contacts-hero h3 { font-size: 1.7rem; }
+  .contacts-list { gap: 10px; }
+  .chips { gap: 9px; }
+  /* Крупнее зоны нажатия в мобильном меню */
+  .nav.open a { padding: 8px 0; }
+  /* Футер: аккуратный вензель + удобные соц-иконки */
+  .site-footer { padding: 50px 0 24px; }
+  .site-footer::after { font-size: 6rem; bottom: -22px; right: -4px; }
+  .footer-social a { width: 46px; height: 46px; }
+}
