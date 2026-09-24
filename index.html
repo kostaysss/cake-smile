@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Parisienne&family=Forum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=131" />
+  <link rel="stylesheet" href="styles.css?v=132" />
 </head>
 <body>
 
@@ -204,10 +204,21 @@
       </div>
 
       <h3 class="reviews-head">Что говорят наши гости</h3>
-      <div class="reviews">
-        <figure class="review"><div class="stars">★★★★★</div><blockquote>Заказывали торт на юбилей — гости были в восторге. Красиво и очень вкусно.</blockquote><figcaption>Анна</figcaption></figure>
-        <figure class="review"><div class="stars">★★★★★</div><blockquote>Сначала сходили на дегустацию, выбрали вкус — и не прогадали. Всё как хотелось.</blockquote><figcaption>Дмитрий</figcaption></figure>
-        <figure class="review"><div class="stars">★★★★★</div><blockquote>Свадебный торт был безупречен — и внешне, и на вкус. Спасибо за работу!</blockquote><figcaption>Марина</figcaption></figure>
+      <p class="reviews-sub">Отзывы клиентов из Telegram</p>
+      <div class="reviews-rail">
+        <button class="rev-nav rev-prev" type="button" aria-label="Предыдущие отзывы">‹</button>
+        <button class="rev-nav rev-next" type="button" aria-label="Следующие отзывы">›</button>
+        <div class="reviews-track" id="reviewsTrack">
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">У</span><span class="rev-who"><span class="rev-name">Ульяна Ф.</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Большое спасибо за торт! Как всегда всё прекрасно 🤍 Единственное — начинка оказалась не шоколад-вишня, а с солёной карамелью и арахисом, но это никак не испортило впечатления. Было вкусно!</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">A</span><span class="rev-who"><span class="rev-name">Anzhelika</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Спасибо за замечательный торт! Очень красивый и очень-очень вкусный! Всем невероятно понравился 🩷</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">Н</span><span class="rev-who"><span class="rev-name">Надежда</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Доверили вам свой свадебный торт… и вы сделали НАМНОГО ЛУЧШЕ ОЖИДАЕМОГО! И мы, и гости в полном восторге от вида и вкуса. Вы самые лучшие! 🙏</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">А</span><span class="rev-who"><span class="rev-name">Александра</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Спасибо большое за тортик! Мы и все гости в восторге, просто разлетелся сразу. Выглядел фантастически, таял во рту!</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">А</span><span class="rev-who"><span class="rev-name">Арина</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Именинник оценил торт, по вкусу понравилось всем гостям! Плотный, пропитанный, шоколадный 😂 Гости даже попросили поделиться контактами. Всё было супер 🥰</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">Е</span><span class="rev-who"><span class="rev-name">Евгения</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Добрый день! Торт очень вкусный и красивый! Спасибо большое 🥰</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">Л</span><span class="rev-who"><span class="rev-name">Лилия</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Очень приятно поразились размерам порций! Появился фаворит из начинок — манго-маракуйя, просто покорил. Всё очень вкусно, на второй день даже больше понравилось!</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">Е</span><span class="rev-who"><span class="rev-name">Елена Е.</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Спасибо большое, очень красиво получилось. Который раз заказываю и всегда на высоте. И прекрасная упаковка, которую не встречала у других. Буду возвращаться только к вам!</p></figure>
+          <figure class="rev-item"><div class="rev-top"><span class="rev-av">С</span><span class="rev-who"><span class="rev-name">София</span><span class="rev-src"><span class="st">★★★★★</span> · Telegram</span></span></div><p class="rev-txt">Мы даже в шоке, сколько комплиментов получил ваш тортик — все гости сказали, насколько он сочный и вкусный! Как нам повезло найти вас 💙</p></figure>
+        </div>
       </div>
     </div>
   </section>
@@ -338,6 +349,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=131"></script>
+  <script src="script.js?v=132"></script>
 </body>
 </html>

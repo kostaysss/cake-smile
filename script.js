@@ -114,6 +114,22 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  /* ===== Карусель отзывов (стрелки + перетаскивание) ===== */
+  (function () {
+    var rail = document.querySelector(".reviews-rail");
+    if (!rail) return;
+    var track = rail.querySelector(".reviews-track");
+    var prev = rail.querySelector(".rev-prev");
+    var next = rail.querySelector(".rev-next");
+    var step = function () { return Math.max(240, track.clientWidth * 0.85); };
+    if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+    if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    var down = false, sx = 0, sl = 0;
+    track.addEventListener("pointerdown", function (e) { down = true; sx = e.clientX; sl = track.scrollLeft; });
+    track.addEventListener("pointermove", function (e) { if (!down) return; track.scrollLeft = sl - (e.clientX - sx); });
+    window.addEventListener("pointerup", function () { down = false; });
+  })();
+
   /* ===== Появление блоков при прокрутке (хаотичный порядок) ===== */
   (function () {
     if (!("IntersectionObserver" in window)) return;
