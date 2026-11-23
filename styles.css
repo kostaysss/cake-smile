@@ -481,6 +481,24 @@ img { max-width: 100%; display: block; }
 .ph-partners { aspect-ratio: 4/3; border-radius: var(--rad-lg); }
 .partners-photo { aspect-ratio: 4/3; border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow); margin: 0; }
 .partners-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 64%; display: block; }
+/* Сотрудничество — премиум-панель (лиловая, как контакты) */
+.partners-panel { display: grid; grid-template-columns: 1.02fr .98fr; min-height: 440px; border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow); }
+.pp-text { position: relative; background: linear-gradient(155deg, var(--li), var(--li-d)); color: #fff; padding: 66px 54px; display: flex; flex-direction: column; justify-content: center; }
+.pp-text::before { content: ""; position: absolute; top: 0; left: 54px; right: 54px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent); }
+.pp-label { font-family: var(--serif); letter-spacing: .32em; text-transform: uppercase; font-size: .72rem; color: rgba(255,255,255,.85); }
+.partners-panel h2 { color: #fff; margin: 18px 0 20px; }
+.partners-panel h2 em { color: #fbeef2; }
+.pp-lead { font-size: 1.06rem; line-height: 1.7; color: rgba(255,255,255,.92); margin-bottom: 30px; max-width: 46ch; }
+.pp-btn { align-self: flex-start; font-family: var(--serif); letter-spacing: .12em; text-transform: uppercase; font-size: .76rem; padding: 15px 34px; border: 1px solid rgba(255,255,255,.85); color: #fff; background: transparent; transition: background .25s, color .25s; }
+.pp-btn:hover { background: #fff; color: var(--bx); }
+.pp-photo { position: relative; margin: 0; }
+.pp-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 64%; display: block; }
+.pp-photo::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255,255,255,.4); pointer-events: none; }
+@media (max-width: 820px) {
+  .partners-panel { grid-template-columns: 1fr; min-height: 0; }
+  .pp-text { padding: 46px 30px; }
+  .pp-photo { min-height: 320px; }
+}
 
 /* ===== CTA — сиреневый блок ===== */
 .cta-band { background: var(--li); color: var(--ink); padding: 74px 0; text-align: center; position: relative; overflow: hidden; }
