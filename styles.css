@@ -151,7 +151,7 @@ img { max-width: 100%; display: block; }
 .hero-split { padding: 40px 0 0; background: var(--cr); }
 /* Герой — иммерсивное фото с текстом поверх */
 .hero-immersive { position: relative; border-radius: var(--rad-lg); overflow: hidden; min-height: 800px; display: flex; align-items: flex-end; box-shadow: 0 40px 80px -46px rgba(58,20,32,.6); }
-.hero-im-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
+.hero-im-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .hero-im-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,12,20,.14) 0%, transparent 26%, transparent 46%, rgba(40,12,20,.72) 82%, rgba(40,12,20,.9) 100%); }
 .hero-im-inner { position: relative; z-index: 2; padding: 0 7% 58px; max-width: 660px; }
 .hero-im-inner .eyebrow { color: #e9c9d4; }
