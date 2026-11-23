@@ -150,18 +150,18 @@ img { max-width: 100%; display: block; }
 /* ===== Hero — сиреневый фон + мягкое бордовое свечение вокруг фото ===== */
 .hero-split { padding: 40px 0 0; background: var(--cr); }
 /* Герой — иммерсивное фото с текстом поверх */
-.hero-immersive { position: relative; border-radius: var(--rad-lg); overflow: hidden; min-height: 800px; display: flex; align-items: flex-end; box-shadow: 0 40px 80px -46px rgba(58,20,32,.6); }
-.hero-im-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
-.hero-im-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,12,20,.14) 0%, transparent 26%, transparent 46%, rgba(40,12,20,.72) 82%, rgba(40,12,20,.9) 100%); }
-.hero-im-inner { position: relative; z-index: 2; padding: 0 7% 58px; max-width: 660px; }
-.hero-im-inner .eyebrow { color: #e9c9d4; }
-.hero-im-inner .eyebrow::before { background: #e9c9d4; }
-.hero-brand { font-family: "Parisienne", cursive; font-size: clamp(3.6rem, 7.4vw, 6.4rem); line-height: 1.02; color: #fff; margin-bottom: 14px; }
-.hero-brand .dot { color: #e4b9c8; }
-.hero-slogan { font-family: "Spectral", Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.26rem; line-height: 1.55; color: #f3e7ec; margin-bottom: 30px; max-width: 42ch; }
+.hero-split2 { display: grid; grid-template-columns: 1.02fr .98fr; min-height: 580px; border-radius: var(--rad-lg); overflow: hidden; box-shadow: 0 40px 80px -46px rgba(58,20,32,.6); }
+.hero-sp-text { background: linear-gradient(150deg, var(--li), var(--li-d)); padding: 62px 56px; display: flex; flex-direction: column; justify-content: center; }
+.hero-sp-text .eyebrow { color: rgba(255,255,255,.74); }
+.hero-sp-text .eyebrow::before { background: rgba(255,255,255,.74); }
+.hero-brand { font-family: "Parisienne", cursive; font-size: clamp(3.2rem, 5.6vw, 5rem); line-height: 1.02; color: var(--ink); margin-bottom: 12px; }
+.hero-brand .dot { color: var(--bx); }
+.hero-slogan { font-family: "Spectral", Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.22rem; line-height: 1.55; color: #fff; margin-bottom: 28px; max-width: 40ch; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-im-inner .btn-outline { border-color: rgba(255,255,255,.8); color: #fff; }
-.hero-im-inner .btn-outline:hover { background: #fff; color: var(--bx); border-color: #fff; }
+.hero-sp-text .btn-outline { border-color: rgba(255,255,255,.85); color: #fff; }
+.hero-sp-text .btn-outline:hover { background: #fff; color: var(--bx); border-color: #fff; }
+.hero-sp-photo { position: relative; background: #2c0f18; }
+.hero-sp-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 
 /* ===== Дегустация (бордо-блок) ===== */
 .tasting { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--rad-lg); color: #f3e7ea; box-shadow: var(--shadow);
@@ -536,10 +536,9 @@ img { max-width: 100%; display: block; }
   .footer-inner .footer-col + .footer-col { padding-left: 0; border-left: 0; border-image: none; }
 }
 @media (max-width: 900px) {
-  .hero-immersive { min-height: 600px; }
-  .hero-im-photo { object-position: center 50%; }
-  .hero-im-scrim { background: linear-gradient(180deg, rgba(40,12,20,.2) 0%, transparent 35%, rgba(40,12,20,.6) 75%, rgba(40,12,20,.92) 100%); }
-  .hero-im-inner { padding: 0 30px 40px; max-width: none; }
+  .hero-split2 { grid-template-columns: 1fr; min-height: 0; }
+  .hero-sp-text { padding: 46px 34px; }
+  .hero-sp-photo { min-height: 440px; }
   .tasting { grid-template-columns: 1fr; background: linear-gradient(180deg, #b6a0c0 0%, #a991b4 16%, #8a5570 48%, #6b1f32 74%, #4f1526 100%); }
   .tasting .ph { min-height: 220px; order: -1; }
   .tasting-media { order: -1; padding: 0; aspect-ratio: 4 / 3; }
@@ -567,8 +566,8 @@ img { max-width: 100%; display: block; }
   .section { padding: 54px 0; }
   .section-head { margin-bottom: 34px; }
   .hero-split { padding: 22px 0 0; }
-  .hero-immersive { min-height: 540px; }
-  .hero-im-inner { padding: 0 24px 36px; }
+  .hero-sp-text { padding: 40px 24px; }
+  .hero-sp-photo { min-height: 360px; }
   .hero-actions, .subhero-actions, .showcase-actions { flex-direction: column; align-items: stretch; gap: 12px; }
   .hero-actions .btn, .subhero-actions .btn, .showcase-actions .btn { width: 100%; }
   .tasting-body { padding: 30px 24px; }
