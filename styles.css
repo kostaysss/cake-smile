@@ -21,7 +21,7 @@
   --muted: #7a5563;
   --line:  #e2d6c9;
 
-  --serif: "Forum", Georgia, "Times New Roman", serif;
+  --serif: "Tenor Sans", Georgia, sans-serif;
   --sans:  "Manrope", system-ui, -apple-system, sans-serif;
   --maxw: 1200px;
   --rad: 10px;
@@ -33,7 +33,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--sans); color: var(--text); line-height: 1.65;
+  font-family: "Lora", Georgia, serif; color: var(--text); line-height: 1.65;
   background:
     radial-gradient(60% 40% at 100% 0%, rgba(169,145,180,.16), transparent 60%),
     var(--cr);
@@ -42,8 +42,8 @@ body {
 }
 h1,h2,h3,h4 { font-family: var(--serif); color: var(--ink); line-height: 1.12; font-weight: 400; letter-spacing: .005em; }
 /* Крупные заголовки — изящная антиква Cormorant, с выделением ключевого слова */
-h1, h2 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: 0; }
-h1 em, h2 em, .hl { font-style: italic; font-weight: 600; color: var(--li-d); }
+h1, h2 { font-family: "Tenor Sans", Georgia, sans-serif; font-weight: 400; letter-spacing: .01em; }
+h1 em, h2 em, .hl { font-family: "Lora", Georgia, serif; font-style: italic; font-weight: 600; color: var(--li-d); }
 .tasting h2 em, .tasting .hl { color: var(--li); }
 .cta-band h2 em, .cta-band .hl, .section-lilac h2 em { color: var(--bx); }
 a { color: inherit; text-decoration: none; }
@@ -158,7 +158,7 @@ img { max-width: 100%; display: block; }
 .hero-im-inner .eyebrow::before { background: #e9c9d4; }
 .hero-brand { font-family: "Parisienne", cursive; font-size: clamp(3.6rem, 7.4vw, 6.4rem); line-height: 1.02; color: #fff; margin-bottom: 14px; }
 .hero-brand .dot { color: #e4b9c8; }
-.hero-slogan { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.2rem; line-height: 1.56; color: #f3e7ec; margin-bottom: 30px; max-width: 42ch; }
+.hero-slogan { font-family: "Lora", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.2rem; line-height: 1.56; color: #f3e7ec; margin-bottom: 30px; max-width: 42ch; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-im-inner .btn-outline { border-color: rgba(255,255,255,.8); color: #fff; }
 .hero-im-inner .btn-outline:hover { background: #fff; color: var(--bx); border-color: #fff; }
@@ -198,7 +198,7 @@ img { max-width: 100%; display: block; }
 .cat-card:hover .cat-media::after { opacity: 1; transform: scale(1); }
 .cat-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 38%, rgba(58,20,32,.35) 62%, rgba(58,20,32,.86)); z-index: 1; }
 .cat-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 22px 22px 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
-.cat-body h3 { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; color: #fff; font-size: 1.34rem; }
+.cat-body h3 { font-family: "Lora", Georgia, serif; font-style: italic; font-weight: 500; color: #fff; font-size: 1.34rem; }
 .cat-more { font-family: var(--sans); font-weight: 700; font-size: .82rem; color: var(--li-soft); white-space: nowrap; transform: translateY(4px); opacity: 0; transition: opacity .22s, transform .22s; }
 .cat-card:hover .cat-more { opacity: 1; transform: translateY(0); }
 @media (hover: none) { .cat-more { opacity: 1; transform: none; } }
@@ -228,7 +228,7 @@ img { max-width: 100%; display: block; }
 /* ===== Каталог вкусов (страница) ===== */
 .flavor-cat { margin-bottom: 46px; }
 .flavor-cat:last-child { margin-bottom: 0; }
-.cat-title { font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 1.5rem; color: var(--ink); margin-bottom: 22px; padding-bottom: 12px; border-bottom: 2px solid var(--li-line); display: flex; align-items: baseline; gap: 12px; }
+.cat-title { font-family: "Lora", Georgia, serif; font-weight: 500; font-size: 1.5rem; color: var(--ink); margin-bottom: 22px; padding-bottom: 12px; border-bottom: 2px solid var(--li-line); display: flex; align-items: baseline; gap: 12px; }
 .cat-title .cat-count { font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--li-d); }
 .flavor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .flavor-card { background: var(--cr2); border: 1px solid var(--line); border-left: 4px solid var(--li); border-radius: var(--rad); padding: 22px 24px; transition: transform .2s, box-shadow .2s, border-color .2s; }
@@ -254,7 +254,7 @@ img { max-width: 100%; display: block; }
 .flavor-cap .e { display: inline-block; font-family: var(--sans); font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--li-d); }
 .flavor-cap .e::after { content: ""; display: block; width: 0; height: 1px; margin: 5px auto 0; background: var(--li); transition: width .4s ease; }
 .flavor-tile:hover .flavor-cap .e::after { width: 34px; }
-.flavor-cap h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; color: var(--ink); font-size: 1.14rem; margin-top: 4px; line-height: 1.25; }
+.flavor-cap h3 { font-family: "Lora", Georgia, serif; font-weight: 500; color: var(--ink); font-size: 1.14rem; margin-top: 4px; line-height: 1.25; }
 @media (max-width: 900px) { .flavor-tiles { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .flavor-tiles { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 
@@ -326,7 +326,7 @@ img { max-width: 100%; display: block; }
 .subhero-photo-card .sp-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 20px 24px; color: #fff; }
 .subhero-photo-card .sp-cap .e { display: inline-flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: .64rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--li); }
 .subhero-photo-card .sp-cap .e::before { content: ""; width: 22px; height: 2px; border-radius: 2px; background: var(--li); }
-.subhero-photo-card .sp-cap b { display: block; font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 1.5rem; margin-top: 6px; line-height: 1.15; }
+.subhero-photo-card .sp-cap b { display: block; font-family: "Lora", Georgia, serif; font-weight: 500; font-size: 1.5rem; margin-top: 6px; line-height: 1.15; }
 .prose { max-width: 720px; margin: 0 auto; }
 .prose p { color: var(--muted); margin-bottom: 16px; }
 .prose p:last-child { margin-bottom: 0; }
@@ -335,7 +335,7 @@ img { max-width: 100%; display: block; }
 .delivery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: dcard; }
 .delivery-card { position: relative; overflow: hidden; background: var(--cr2); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px 24px; box-shadow: var(--shadow-sm); transition: transform .26s, box-shadow .26s, border-color .26s; }
 /* Крупный контурный номер (стиль «Вариант B») */
-.delivery-card::before { counter-increment: dcard; content: counter(dcard, decimal-leading-zero); display: block; font-family: "Playfair Display", Georgia, serif; font-weight: 600; font-size: 3.2rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--li); margin-bottom: 12px; }
+.delivery-card::before { counter-increment: dcard; content: counter(dcard, decimal-leading-zero); display: block; font-family: "Lora", Georgia, serif; font-weight: 600; font-size: 3.2rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--li); margin-bottom: 12px; }
 /* На карточках с иконкой (главная — блок доставки) номер не нужен — оставляем иконку */
 .delivery-card:has(.d-ico)::before { content: none; }
 .delivery-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--li); }

@@ -151,7 +151,7 @@
       return !all.some(function (m) { return m !== n && m.contains(n); });
     });
 
-    var variants = ["rv-up", "rv-down", "rv-left", "rv-right", "rv-scale", "rv-tilt"];
+    var variants = ["rv-up", "rv-down", "rv-scale"];
     var vh = window.innerHeight || document.documentElement.clientHeight;
 
     var io = new IntersectionObserver(function (entries) {
