@@ -285,8 +285,8 @@ img { max-width: 100%; display: block; }
 /* Расчёт заказа — конструктор с живой заявкой */
 .calc-v2 { display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start; max-width: 980px; margin: 0 auto; }
 .calc-fields { display: grid; grid-template-columns: 240px 1fr; gap: 30px; align-items: stretch; background: var(--cr2); border: 1px solid var(--line); border-radius: var(--rad-lg); padding: 38px; box-shadow: var(--shadow-sm); }
-.calc-photo { margin: 0; border-radius: var(--rad-md); overflow: hidden; aspect-ratio: 2 / 3; box-shadow: 0 10px 28px -16px rgba(58,20,32,.45); align-self: start; }
-.calc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.calc-photo { margin: 0; border-radius: var(--rad-md); overflow: hidden; box-shadow: 0 10px 28px -16px rgba(58,20,32,.45); align-self: stretch; }
+.calc-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .calc-blocks { display: flex; flex-direction: column; justify-content: center; }
 .calc-block { margin-bottom: 28px; }
 .calc-block:last-child { margin-bottom: 0; }
@@ -308,7 +308,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 560px) {
   .calc-fields { grid-template-columns: 1fr; gap: 22px; padding: 26px; }
-  .calc-photo { max-width: 300px; margin: 0 auto; }
+  .calc-photo { max-width: 300px; margin: 0 auto; aspect-ratio: 2 / 3; }
 }
 
 /* ============================================================
