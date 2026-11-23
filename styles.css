@@ -480,7 +480,7 @@ img { max-width: 100%; display: block; }
 .partners-text p { color: var(--muted); margin-bottom: 16px; }
 .ph-partners { aspect-ratio: 4/3; border-radius: var(--rad-lg); }
 .partners-photo { aspect-ratio: 4/3; border-radius: var(--rad-lg); overflow: hidden; box-shadow: var(--shadow); margin: 0; }
-.partners-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; display: block; }
+.partners-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 64%; display: block; }
 
 /* ===== CTA — сиреневый блок ===== */
 .cta-band { background: var(--li); color: var(--ink); padding: 74px 0; text-align: center; position: relative; overflow: hidden; }
