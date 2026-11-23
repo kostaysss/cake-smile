@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карточки дизайнов — варианты · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd;
+    --text:#4a3b3e; --muted:#7a5563; --line:#e2d6c9;
+    --serif:"Playfair Display", Georgia, serif; --forum:"Forum", Georgia, serif;
+    --sans:"Manrope", system-ui, sans-serif;
+    --maxw:1180px; --rad:12px;
+    --shadow:0 30px 64px -38px rgba(58,20,32,.45);
+    --shadow-sm:0 18px 40px -30px rgba(58,20,32,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--text);background:var(--cr);line-height:1.5}
+  img{display:block}
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:26px 0;text-align:center}
+  .lab-top h1{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin-bottom:6px}
+  .lab-top p{font-size:.92rem;opacity:.82}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px}
+  .variant-tag{padding:40px 0 16px}
+  .variant-tag span.vt{display:inline-block;font-family:var(--sans);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:7px 16px;border-radius:100px}
+  .variant-tag small{display:block;margin-top:10px;color:var(--muted);font-size:.92rem;max-width:640px}
+  .demo{padding-bottom:52px;border-bottom:1px dashed var(--li-line)}
+  .tagchip{display:inline-block;font-family:var(--sans);font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
+
+  /* ===== V1 — Оверлей со стилем ===== */
+  .v1-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .v1-card{position:relative;aspect-ratio:4/5;border-radius:var(--rad);overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm)}
+  .v1-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .v1-card:hover img{transform:scale(1.07)}
+  .v1-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;background:linear-gradient(to top,rgba(40,12,20,.82),rgba(40,12,20,.15) 45%,transparent 70%)}
+  .v1-ov .tagchip{align-self:flex-start;background:rgba(255,255,255,.22);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);margin-bottom:auto}
+  .v1-name{font-family:var(--serif);color:#fff;font-size:1.15rem;line-height:1.2}
+  .v1-more{color:#f0d9df;font-size:.82rem;font-weight:600;margin-top:6px;opacity:0;transform:translateY(8px);transition:.3s}
+  .v1-card:hover .v1-more{opacity:1;transform:none}
+
+  /* ===== V2 — Журнальная карточка ===== */
+  .v2-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .v2-card{background:var(--cr2);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s}
+  .v2-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .v2-media{aspect-ratio:1/1;overflow:hidden}
+  .v2-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .v2-card:hover .v2-media img{transform:scale(1.06)}
+  .v2-body{padding:16px 16px 18px}
+  .v2-body .tagchip{background:var(--li-soft);color:var(--bx);margin-bottom:9px}
+  .v2-name{font-family:var(--serif);color:var(--ink);font-size:1.12rem;margin-bottom:5px}
+  .v2-desc{color:var(--muted);font-size:.85rem;line-height:1.45}
+
+  /* ===== V3 — Ступенчатая мозаика ===== */
+  .v3-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}
+  .v3-card{position:relative;border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer}
+  .v3-card:nth-child(odd){margin-top:0}
+  .v3-card:nth-child(even){margin-top:38px}
+  .v3-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .6s ease}
+  .v3-card:hover img{transform:scale(1.06)}
+  .v3-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(to top,rgba(40,12,20,.8),transparent);color:#fff;font-family:var(--serif);font-size:1.05rem;transform:translateY(6px);opacity:.92;transition:.3s}
+  .v3-card:hover .v3-cap{transform:none;opacity:1}
+
+  /* ===== V4 — Тег в углу + имя ===== */
+  .v4-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .v4-card{position:relative;aspect-ratio:1/1;border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;border:1px solid var(--li-line)}
+  .v4-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .v4-card:hover img{transform:scale(1.06)}
+  .v4-corner{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.9);color:var(--bx);box-shadow:0 4px 12px -4px rgba(58,20,32,.4)}
+  .v4-name{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 14px;background:linear-gradient(to top,rgba(40,12,20,.75),transparent);color:#fff;font-family:var(--serif);font-size:1.02rem}
+  .v4-card::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.5);border-radius:8px;opacity:0;transition:.4s;pointer-events:none}
+  .v4-card:hover::after{opacity:1}
+
+  @media(max-width:820px){
+    .v1-grid,.v2-grid,.v3-grid,.v4-grid{grid-template-columns:1fr 1fr;gap:14px}
+    .v3-card:nth-child(even){margin-top:24px}
+  }
+  @media(max-width:460px){
+    .v1-grid,.v2-grid,.v3-grid,.v4-grid{grid-template-columns:1fr}
+    .v3-card:nth-child(even){margin-top:0}
+  }
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Карточки «Найдите свой стиль» — варианты</h1><p>4 подхода. Наведи мышкой. Скажи номер — внедрю на главную.</p></div>
+
+<div class="wrap">
+
+  <!-- V1 -->
+  <div class="variant-tag"><span class="vt">Вариант 1 · Оверлей со стилем</span><small>Фото чуть выше (4:5), снизу на градиенте — название стиля и тег категории, при наведении фото увеличивается и появляется «Смотреть». Кинематографично.</small></div>
+  <div class="demo"><div class="v1-grid">
+    <div class="v1-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-1.jpg" alt=""><div class="v1-ov"><span class="tagchip">Ягоды</span><div class="v1-name">Ягодная классика</div><div class="v1-more">Смотреть →</div></div></div>
+    <div class="v1-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-2.jpg" alt=""><div class="v1-ov"><span class="tagchip">Love</span><div class="v1-name">Романтичное сердце</div><div class="v1-more">Смотреть →</div></div></div>
+    <div class="v1-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-3.jpg" alt=""><div class="v1-ov"><span class="tagchip">Свадьба</span><div class="v1-name">Свадебный винтаж</div><div class="v1-more">Смотреть →</div></div></div>
+    <div class="v1-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-4.jpg" alt=""><div class="v1-ov"><span class="tagchip">Арт</span><div class="v1-name">Авторская форма</div><div class="v1-more">Смотреть →</div></div></div>
+  </div></div>
+
+  <!-- V2 -->
+  <div class="variant-tag"><span class="vt">Вариант 2 · Журнальная карточка</span><small>Фото сверху, ниже — подпись: тег, название и короткое описание стиля. Всегда видно, читается как каталог/журнал. Солиднее и информативнее.</small></div>
+  <div class="demo"><div class="v2-grid">
+    <div class="v2-card"><div class="v2-media"><img src="https://kostaysss.github.io/cake-smile/assets/design-1.jpg" alt=""></div><div class="v2-body"><span class="tagchip">Ягоды</span><div class="v2-name">Ягодная классика</div><div class="v2-desc">Крем, свежая малина и атласные банты</div></div></div>
+    <div class="v2-card"><div class="v2-media"><img src="https://kostaysss.github.io/cake-smile/assets/design-2.jpg" alt=""></div><div class="v2-body"><span class="tagchip">Love</span><div class="v2-name">Романтичное сердце</div><div class="v2-desc">Кремовые розы и ягодный потёк</div></div></div>
+    <div class="v2-card"><div class="v2-media"><img src="https://kostaysss.github.io/cake-smile/assets/design-3.jpg" alt=""></div><div class="v2-body"><span class="tagchip">Свадьба</span><div class="v2-name">Свадебный винтаж</div><div class="v2-desc">Ажурный крем, инжир и виноград</div></div></div>
+    <div class="v2-card"><div class="v2-media"><img src="https://kostaysss.github.io/cake-smile/assets/design-4.jpg" alt=""></div><div class="v2-body"><span class="tagchip">Арт</span><div class="v2-name">Авторская форма</div><div class="v2-desc">Скульптурный дизайн под вашу идею</div></div></div>
+  </div></div>
+
+  <!-- V3 -->
+  <div class="variant-tag"><span class="vt">Вариант 3 · Ступенчатая мозаика</span><small>Карточки чуть разной высоты и со смещением по вертикали — живая, «несерийная» галерея. Название стиля появляется снизу. Динамично и модно.</small></div>
+  <div class="demo"><div class="v3-grid">
+    <div class="v3-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-1.jpg" alt=""><div class="v3-cap">Ягодная классика</div></div>
+    <div class="v3-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-2.jpg" alt=""><div class="v3-cap">Романтичное сердце</div></div>
+    <div class="v3-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-3.jpg" alt=""><div class="v3-cap">Свадебный винтаж</div></div>
+    <div class="v3-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-4.jpg" alt=""><div class="v3-cap">Авторская форма</div></div>
+  </div></div>
+
+  <!-- V4 -->
+  <div class="variant-tag"><span class="vt">Вариант 4 · Тег в углу</span><small>Минимализм: квадратные фото с чипом-категорией в углу и названием снизу, плюс тонкая рамка при наведении. Ближе к текущему, но с подписями и акцентом.</small></div>
+  <div class="demo"><div class="v4-grid">
+    <div class="v4-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-1.jpg" alt=""><span class="tagchip v4-corner">Ягоды</span><div class="v4-name">Ягодная классика</div></div>
+    <div class="v4-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-2.jpg" alt=""><span class="tagchip v4-corner">Love</span><div class="v4-name">Романтичное сердце</div></div>
+    <div class="v4-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-3.jpg" alt=""><span class="tagchip v4-corner">Свадьба</span><div class="v4-name">Свадебный винтаж</div></div>
+    <div class="v4-card"><img src="https://kostaysss.github.io/cake-smile/assets/design-4.jpg" alt=""><span class="tagchip v4-corner">Арт</span><div class="v4-name">Авторская форма</div></div>
+  </div></div>
+
+  <div style="text-align:center;padding:40px 0 70px;color:var(--muted);font-size:.95rem">Напиши номер (1–4) — внедрю на главную. Можно комбинировать (например «2, но фото 4:5 как в 1»). Названия стилей и теги тоже поменяем на любые.</div>
+</div>
+</body>
+</html>

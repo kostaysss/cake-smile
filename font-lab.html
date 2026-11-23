@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шрифты — варианты · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --line:#e2d6c9; --muted:#7a5563;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Manrope",system-ui,sans-serif;background:var(--cr);color:var(--ink)}
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:24px 0;text-align:center}
+  .lab-top h1{font-family:"Playfair Display",serif;font-weight:600;font-size:1.5rem;margin-bottom:6px}
+  .lab-top p{font-size:.9rem;opacity:.82;max-width:640px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:900px;margin:0 auto;padding:30px 24px 70px}
+
+  .opt{background:var(--cr2);border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:22px;box-shadow:0 18px 40px -30px rgba(58,20,32,.35)}
+  .opt-tag{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .opt-tag b{font-family:"Manrope";font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:6px 14px;border-radius:100px}
+  .opt-tag .pair{font-family:"Manrope";font-weight:600;font-size:.95rem;color:var(--ink)}
+  .opt-tag .note{font-family:"Manrope";color:var(--muted);font-size:.86rem}
+
+  .wordmark{font-family:"Parisienne",cursive;font-size:2.6rem;line-height:1;color:var(--ink);margin-bottom:14px}
+  .wordmark .dot{color:var(--bx)}
+  .e{display:inline-flex;align-items:center;gap:10px;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--bx);margin-bottom:12px}
+  .e::before{content:"";width:24px;height:3px;border-radius:2px;background:var(--bx)}
+  .h{font-size:2.1rem;line-height:1.14;color:var(--ink);margin-bottom:12px;font-weight:600}
+  .h em{font-style:italic;color:var(--li-d)}
+  .b{font-size:1rem;line-height:1.6;color:#4a3b3e;max-width:60ch;margin-bottom:18px}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .btn{font-family:"Manrope";font-weight:700;font-size:.88rem;background:linear-gradient(135deg,var(--bx),var(--bx-d));color:#fff;padding:12px 24px;border-radius:12px}
+  .chip{font-weight:600;font-size:.9rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 18px;color:var(--ink)}
+  .ctitle{font-size:1.15rem;color:var(--ink);font-style:italic;margin-top:4px}
+
+  /* === font sets (заголовки / текст / капсы) === */
+  /* O1 — Cormorant + Manrope */
+  .o1 .h,.o1 .ctitle{font-family:"Cormorant Garamond",serif}
+  .o1 .e{font-family:"Cormorant Garamond",serif;font-weight:600}
+  .o1 .b{font-family:"Manrope",sans-serif}
+  /* O2 — Prata + Golos Text */
+  .o2 .h,.o2 .ctitle{font-family:"Prata",serif;font-weight:400}
+  .o2 .h em{font-style:normal;color:var(--li-d)}
+  .o2 .e{font-family:"Golos Text",sans-serif;font-weight:700}
+  .o2 .b{font-family:"Golos Text",sans-serif}
+  .o2 .btn,.o2 .chip{font-family:"Golos Text",sans-serif}
+  /* O3 — Spectral + Inter */
+  .o3 .h,.o3 .ctitle{font-family:"Spectral",serif}
+  .o3 .e{font-family:"Inter",sans-serif;font-weight:700}
+  .o3 .b{font-family:"Inter",sans-serif}
+  .o3 .btn,.o3 .chip{font-family:"Inter",sans-serif}
+  /* O4 — Tenor Sans + Lora */
+  .o4 .h{font-family:"Tenor Sans",sans-serif;font-weight:400;letter-spacing:.01em}
+  .o4 .h em{font-family:"Lora",serif;font-style:italic}
+  .o4 .ctitle{font-family:"Lora",serif}
+  .o4 .e{font-family:"Tenor Sans",sans-serif}
+  .o4 .b{font-family:"Lora",serif}
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Новые шрифты — варианты</h1><p>4 гармоничные пары (заголовки + текст), все с кириллицей. Логотип «cake.smile» оставил рукописным (Parisienne) для примера. Скажи номер (1–4).</p></div>
+
+<div class="wrap">
+
+  <div class="opt o1">
+    <div class="opt-tag"><b>Вариант 1</b><span class="pair">Cormorant Garamond + Manrope</span><span class="note">роскошный тонкий сериф · утончённо, вне времени</span></div>
+    <div class="wordmark">cake<span class="dot">.</span>smile</div>
+    <span class="e">Дегустации</span>
+    <h2 class="h">Убедитесь во вкусе <em>заранее</em></h2>
+    <p class="b">Попробуйте вкусы до заказа торта — это лучший способ сделать правильный выбор для вашего праздника. Набор из 12 начинок, стоимость учитывается при заказе.</p>
+    <div class="row"><a class="btn">Написать в Telegram</a><span class="chip">Свадебный торт</span><span class="ctitle">Ягодная классика</span></div>
+  </div>
+
+  <div class="opt o2">
+    <div class="opt-tag"><b>Вариант 2</b><span class="pair">Prata + Golos Text</span><span class="note">модный Didone + чистый гротеск · люкс / fashion</span></div>
+    <div class="wordmark">cake<span class="dot">.</span>smile</div>
+    <span class="e">Дегустации</span>
+    <h2 class="h">Убедитесь во вкусе <em>заранее</em></h2>
+    <p class="b">Попробуйте вкусы до заказа торта — это лучший способ сделать правильный выбор для вашего праздника. Набор из 12 начинок, стоимость учитывается при заказе.</p>
+    <div class="row"><a class="btn">Написать в Telegram</a><span class="chip">Свадебный торт</span><span class="ctitle">Ягодная классика</span></div>
+  </div>
+
+  <div class="opt o3">
+    <div class="opt-tag"><b>Вариант 3</b><span class="pair">Spectral + Inter</span><span class="note">благородный книжный сериф + нейтральный гротеск · спокойно, дорого</span></div>
+    <div class="wordmark">cake<span class="dot">.</span>smile</div>
+    <span class="e">Дегустации</span>
+    <h2 class="h">Убедитесь во вкусе <em>заранее</em></h2>
+    <p class="b">Попробуйте вкусы до заказа торта — это лучший способ сделать правильный выбор для вашего праздника. Набор из 12 начинок, стоимость учитывается при заказе.</p>
+    <div class="row"><a class="btn">Написать в Telegram</a><span class="chip">Свадебный торт</span><span class="ctitle">Ягодная классика</span></div>
+  </div>
+
+  <div class="opt o4">
+    <div class="opt-tag"><b>Вариант 4</b><span class="pair">Tenor Sans + Lora</span><span class="note">утончённый капительный заголовок + мягкий серифный текст · бутиково</span></div>
+    <div class="wordmark">cake<span class="dot">.</span>smile</div>
+    <span class="e">Дегустации</span>
+    <h2 class="h">Убедитесь во вкусе <em>заранее</em></h2>
+    <p class="b">Попробуйте вкусы до заказа торта — это лучший способ сделать правильный выбор для вашего праздника. Набор из 12 начинок, стоимость учитывается при заказе.</p>
+    <div class="row"><a class="btn">Написать в Telegram</a><span class="chip">Свадебный торт</span><span class="ctitle">Ягодная классика</span></div>
+  </div>
+
+  <p style="text-align:center;color:var(--muted);font-size:.94rem;margin-top:10px">Напиши номер (1–4) — применю на весь сайт. Логотип можно оставить рукописным (Parisienne) или тоже сменить — скажи.</p>
+</div>
+</body>
+</html>

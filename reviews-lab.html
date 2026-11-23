@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отзывы — варианты карусели · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --line:#e2d6c9; --muted:#7a5563;
+    --serif:"Playfair Display", Georgia, serif; --forum:"Forum", Georgia, serif; --sans:"Manrope", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--cr);color:var(--ink)}
+  img{display:block}
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:24px 0;text-align:center}
+  .lab-top h1{font-family:var(--serif);font-weight:600;font-size:1.55rem;margin-bottom:6px}
+  .lab-top p{font-size:.9rem;opacity:.82}
+  .variant-tag{max-width:1180px;margin:0 auto;padding:40px 24px 6px}
+  .vt{display:inline-block;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:7px 15px;border-radius:100px}
+  .vd{display:block;margin-top:10px;color:var(--muted);font-size:.9rem;max-width:660px}
+  .demo{padding:22px 0 50px;border-bottom:1px dashed var(--li-line)}
+  .rev-head{text-align:center;font-family:var(--serif);font-weight:600;font-size:1.7rem;margin-bottom:6px}
+  .rev-sub{text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:26px}
+
+  /* rail + track (shared) */
+  .rail{position:relative}
+  .track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 40px 20px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+  .track::-webkit-scrollbar{display:none}
+  .track:active{cursor:grabbing}
+  .rev{flex:0 0 auto;scroll-snap-align:center;user-select:none}
+  .rev img{pointer-events:none}
+  .nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--bx),var(--bx-d));color:#fff;font-size:1.3rem;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 12px 26px -12px rgba(107,31,50,.7);z-index:3;transition:transform .2s}
+  .nav-btn:hover{transform:translateY(-50%) scale(1.08)}
+  .nav-prev{left:2px}.nav-next{right:2px}
+  .rail::before,.rail::after{content:"";position:absolute;top:0;bottom:0;width:56px;z-index:2;pointer-events:none}
+  .rail::before{left:0;background:linear-gradient(90deg,var(--cr),transparent)}
+  .rail::after{right:0;background:linear-gradient(270deg,var(--cr),transparent)}
+  .band .rail::before{background:linear-gradient(90deg,var(--li-soft),transparent)}
+  .band .rail::after{background:linear-gradient(270deg,var(--li-soft),transparent)}
+
+  /* ===== V1 — Как есть (единая высота) ===== */
+  .v1 .rev{height:400px;border-radius:14px;overflow:hidden;border:1px solid var(--li-line);box-shadow:0 22px 44px -26px rgba(58,20,32,.5)}
+  .v1 .rev img{height:100%;width:auto}
+
+  /* ===== V2 — В белой рамке на сиреневой подложке ===== */
+  .band{background:var(--li-soft);border-top:1px solid var(--li-line);border-bottom:1px solid var(--li-line);padding:34px 0 30px}
+  .v2 .rev{height:410px;background:#fff;padding:12px;border-radius:18px;box-shadow:0 26px 50px -28px rgba(58,20,32,.55)}
+  .v2 .rev img{height:100%;width:auto;border-radius:10px}
+
+  /* ===== V3 — Единые карточки с шапкой ===== */
+  .v3 .rev{width:300px;height:452px;background:var(--cr2);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 22px 44px -26px rgba(58,20,32,.5)}
+  .v3 .rev-top{display:flex;align-items:center;gap:9px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .v3 .rev-av{width:30px;height:30px;border-radius:50%;background:var(--li-soft);color:var(--bx);display:grid;place-items:center;flex:none}
+  .v3 .rev-av svg{width:17px;height:17px;fill:currentColor}
+  .v3 .rev-stars{color:var(--li-d);font-size:.82rem;letter-spacing:1px}
+  .v3 .rev-src{margin-left:auto;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .v3 .rev-media{flex:1;background:#17212b;display:grid;place-items:center;overflow:hidden}
+  .v3 .rev-media img{max-width:100%;max-height:100%;object-fit:contain}
+
+  .foot{text-align:center;padding:38px 24px 66px;color:var(--muted);font-size:.94rem}
+  @media(max-width:640px){
+    .v1 .rev{height:320px}.v2 .rev{height:330px}.v3 .rev{width:250px;height:380px}
+    .nav-btn{width:40px;height:40px}
+  }
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Отзывы — варианты карусели</h1><p>Все 9 скриншотов, прокрутка слева-направо (стрелки, перетаскивание, свайп). Скажи номер (1–3).</p></div>
+
+<!-- V1 -->
+<div class="variant-tag"><span class="vt">Вариант 1 · Как есть</span><small class="vd">Скриншоты единой высотой, целиком (без обрезки), скруглённые с мягкой тенью. Минимально и достоверно — «живая» лента отзывов.</small></div>
+<section class="demo v1">
+  <h3 class="rev-head">Что говорят наши гости</h3>
+  <p class="rev-sub">Настоящие отзывы из Telegram</p>
+  <div class="rail">
+    <button class="nav-btn nav-prev" aria-label="Назад">‹</button>
+    <button class="nav-btn nav-next" aria-label="Вперёд">›</button>
+    <div class="track">
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-1.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-2.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-3.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-4.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-5.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-6.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-7.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-8.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-9.jpg" alt="Отзыв"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- V2 -->
+<div class="variant-tag"><span class="vt">Вариант 2 · В рамке на подложке</span><small class="vd">Секция на фирменной сиреневой подложке, каждый скриншот — в белой «фото-рамке» с тенью. Премиально, как распечатанные карточки на витрине.</small></div>
+<section class="demo band v2">
+  <h3 class="rev-head">Что говорят наши гости</h3>
+  <p class="rev-sub">Настоящие отзывы из Telegram</p>
+  <div class="rail">
+    <button class="nav-btn nav-prev" aria-label="Назад">‹</button>
+    <button class="nav-btn nav-next" aria-label="Вперёд">›</button>
+    <div class="track">
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-1.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-2.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-3.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-4.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-5.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-6.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-7.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-8.jpg" alt="Отзыв"></figure>
+      <figure class="rev"><img src="https://kostaysss.github.io/cake-smile/assets/review-9.jpg" alt="Отзыв"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- V3 -->
+<div class="variant-tag"><span class="vt">Вариант 3 · Карточки с шапкой</span><small class="vd">Одинаковые карточки с шапкой (★★★★★ + значок Telegram + «Отзыв»), скриншот внутри на тёмной подложке. Аккуратный ряд одного размера, добавляет доверия.</small></div>
+<section class="demo v3">
+  <h3 class="rev-head">Что говорят наши гости</h3>
+  <p class="rev-sub">Настоящие отзывы из Telegram</p>
+  <div class="rail">
+    <button class="nav-btn nav-prev" aria-label="Назад">‹</button>
+    <button class="nav-btn nav-next" aria-label="Вперёд">›</button>
+    <div class="track" id="v3track"></div>
+  </div>
+</section>
+
+<div class="foot">Напиши номер варианта (1–3) — внедрю на главную вместо текстовых отзывов. Можно комбинировать (например «1, но на сиреневой подложке как в 2»).</div>
+
+<script>
+  // сгенерируем карточки V3 (шапка + скрин)
+  (function(){
+    var tg='<svg viewBox="0 0 24 24"><path d="M11.9 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.1 0zm5 7.2c.1 0 .3 0 .5.1a.5.5 0 0 1 .2.4c0 .1 0 .3 0 .4-.2 1.9-1 6.5-1.4 8.6-.1.9-.5 1.2-.8 1.2-.7.1-1.2-.5-1.9-.9-1-.7-1.6-1.1-2.6-1.8-1.2-.8-.4-1.2.3-1.9.2-.2 3.2-3 3.3-3.2 0 0 0-.2-.1-.2s-.2 0-.2 0c-.1 0-1.8 1.1-5 3.3-.5.3-.9.5-1.3.5-.4 0-1.2-.2-1.9-.4-.7-.3-1.3-.4-1.3-.8 0-.2.3-.4.9-.7 3.5-1.5 5.8-2.5 7-3 3.3-1.4 4-1.6 4.5-1.6z"/></svg>';
+    var t=document.getElementById('v3track');
+    for(var i=1;i<=9;i++){
+      var f=document.createElement('figure'); f.className='rev';
+      f.innerHTML='<div class="rev-top"><span class="rev-av">'+tg+'</span><span class="rev-stars">★★★★★</span><span class="rev-src">Telegram</span></div>'+
+                  '<div class="rev-media"><img src="https://kostaysss.github.io/cake-smile/assets/review-'+i+'.jpg" alt="Отзыв"></div>';
+      t.appendChild(f);
+    }
+  })();
+  // стрелки + перетаскивание для всех каруселей
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var track=rail.querySelector('.track');
+    var prev=rail.querySelector('.nav-prev'), next=rail.querySelector('.nav-next');
+    function step(){return Math.max(260, track.clientWidth*0.8);}
+    if(prev)prev.onclick=function(){track.scrollBy({left:-step(),behavior:'smooth'});};
+    if(next)next.onclick=function(){track.scrollBy({left:step(),behavior:'smooth'});};
+    var down=false,sx=0,sl=0,moved=false;
+    track.addEventListener('pointerdown',function(e){down=true;moved=false;sx=e.clientX;sl=track.scrollLeft;});
+    track.addEventListener('pointermove',function(e){if(!down)return;if(Math.abs(e.clientX-sx)>4)moved=true;track.scrollLeft=sl-(e.clientX-sx);});
+    window.addEventListener('pointerup',function(){down=false;});
+  });
+</script>
+</body>
+</html>

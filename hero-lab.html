@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Герой — варианты · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --line:#e2d6c9; --muted:#7a5563;
+    --serif:"Playfair Display", Georgia, serif; --forum:"Forum", Georgia, serif;
+    --sans:"Manrope", system-ui, sans-serif; --script:"Parisienne", cursive;
+    --maxw:1200px; --rad-lg:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--cr);color:var(--ink)}
+  img{display:block}
+  a{text-decoration:none}
+  .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 30px}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--forum);letter-spacing:.24em;text-transform:uppercase;font-size:.82rem;margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:3px;border-radius:2px;background:currentColor}
+  .brand{font-family:var(--script);font-size:clamp(3.6rem,7vw,6rem);line-height:1.02;margin-bottom:14px}
+  .brand .dot{color:var(--bx)}
+  .slogan{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.18rem;line-height:1.55;margin-bottom:30px;max-width:40ch}
+  .acts{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:var(--sans);font-weight:700;font-size:.9rem;letter-spacing:.02em;padding:15px 30px;border-radius:12px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+  .btn-primary{background:linear-gradient(135deg,var(--bx),var(--bx-d));color:#fff;box-shadow:0 14px 30px -14px rgba(107,31,50,.6)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-outline{background:transparent;border-color:currentColor}
+  .btn-outline:hover{transform:translateY(-2px)}
+
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:24px 0;text-align:center}
+  .lab-top h1{font-family:var(--serif);font-weight:600;font-size:1.5rem;margin-bottom:6px}
+  .lab-top p{font-size:.9rem;opacity:.82}
+  .vtag{max-width:var(--maxw);margin:0 auto;padding:40px 30px 16px}
+  .vtag .vt{display:inline-block;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:7px 15px;border-radius:100px}
+  .vtag small{display:block;margin-top:10px;color:var(--muted);font-size:.9rem;max-width:680px}
+  .demo{padding-bottom:50px;border-bottom:1px dashed var(--li-line)}
+
+  /* ============ V1 — Иммерсивное фото ============ */
+  .v1-hero{position:relative;border-radius:var(--rad-lg);overflow:hidden;min-height:560px;display:flex;align-items:center;box-shadow:0 40px 80px -46px rgba(58,20,32,.6)}
+  .v1-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .v1-hero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(40,12,20,.86) 0%,rgba(40,12,20,.6) 36%,rgba(40,12,20,.1) 62%,transparent 80%)}
+  .v1-hero .inner{position:relative;z-index:2;padding:0 7%;max-width:620px;color:#fff}
+  .v1-hero .eyebrow{color:#e9c9d4}
+  .v1-hero .brand{color:#fff}.v1-hero .brand .dot{color:#e4b9c8}
+  .v1-hero .slogan{color:#f3e7ec;opacity:.95}
+  .v1-hero .btn-outline{color:#fff}
+  .v1-hero .btn-outline:hover{background:#fff;color:var(--bx)}
+
+  /* ============ V2 — Чистый сплит (без заливки) ============ */
+  .v2-hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:30px 0}
+  .v2-hero .eyebrow{color:var(--bx)}
+  .v2-hero .brand{color:var(--ink)}
+  .v2-hero .slogan{color:var(--ink)}
+  .v2-hero .btn-outline{color:var(--bx)}
+  .v2-media{position:relative}
+  .v2-media img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 28%;border-radius:var(--rad-lg);box-shadow:0 40px 70px -40px rgba(58,20,32,.5)}
+  .v2-media::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.55);border-radius:14px;pointer-events:none}
+  .v2-media .badge{position:absolute;left:-18px;bottom:30px;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 20px 40px -22px rgba(58,20,32,.5);font-family:var(--serif);font-style:italic;color:var(--bx);font-size:1rem}
+
+  /* ============ V3 — Плавающая карточка на фото ============ */
+  .v3-hero{position:relative;min-height:580px;display:flex;align-items:center}
+  .v3-photo{position:absolute;right:0;top:0;bottom:0;width:66%;border-radius:var(--rad-lg);overflow:hidden;box-shadow:0 40px 80px -44px rgba(58,20,32,.6)}
+  .v3-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .v3-card{position:relative;z-index:2;margin-left:2%;background:rgba(251,247,241,.82);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.7);border-radius:var(--rad-lg);padding:46px 44px;max-width:480px;box-shadow:0 40px 80px -40px rgba(58,20,32,.45)}
+  .v3-card .eyebrow{color:var(--bx)}
+  .v3-card .brand{color:var(--ink)}
+  .v3-card .btn-outline{color:var(--bx)}
+
+  /* ============ V4 — Фото-арка ============ */
+  .v4-hero{display:grid;grid-template-columns:1fr .92fr;gap:54px;align-items:center;padding:20px 0}
+  .v4-hero .eyebrow{color:var(--bx)}
+  .v4-arch{position:relative;justify-self:center;width:100%;max-width:400px}
+  .v4-arch img{width:100%;aspect-ratio:3/4.1;object-fit:cover;object-position:center 26%;border-radius:230px 230px 18px 18px;box-shadow:0 40px 74px -38px rgba(58,20,32,.55)}
+  .v4-arch::before{content:"";position:absolute;inset:-14px;border:1px solid var(--li-line);border-radius:244px 244px 28px 28px;pointer-events:none}
+
+  .foot{text-align:center;padding:40px 30px 70px;color:var(--muted);font-size:.94rem}
+  @media(max-width:860px){
+    .v2-hero,.v4-hero{grid-template-columns:1fr;gap:30px}
+    .v2-media,.v4-arch{order:-1;max-width:420px;margin:0 auto}
+    .v3-photo{position:relative;width:100%;height:280px;margin-bottom:-60px}
+    .v3-hero{flex-direction:column;align-items:stretch}
+    .v3-card{margin:0 16px;max-width:none}
+    .v1-hero{min-height:460px}
+  }
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Главный блок (герой) — варианты</h1><p>4 современных варианта вместо сиреневой «рамки». Скажи номер (1–4).</p></div>
+
+<!-- V1 -->
+<div class="vtag"><span class="vt">Вариант 1 · Иммерсивное фото</span><small>Большое фото во всю ширину блока с мягким затемнением, текст и кнопки поверх. Эффектно, современно, «обложечно».</small></div>
+<section class="demo"><div class="container">
+  <div class="v1-hero">
+    <img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt="">
+    <div class="scrim"></div>
+    <div class="inner">
+      <span class="eyebrow">Кондитерская с индивидуальным подходом</span>
+      <div class="brand">cake<span class="dot">.</span>smile</div>
+      <p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях и сервисе на каждом этапе.</p>
+      <div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- V2 -->
+<div class="vtag"><span class="vt">Вариант 2 · Чистый сплит</span><small>Без цветной заливки: текст на кремовом фоне, фото в аккуратной рамке с тонкой окантовкой и подписью. Воздушно, по-журнальному, дорого.</small></div>
+<section class="demo"><div class="container">
+  <div class="v2-hero">
+    <div class="v2-text">
+      <span class="eyebrow">Кондитерская с индивидуальным подходом</span>
+      <div class="brand">cake<span class="dot">.</span>smile</div>
+      <p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях, ответственности за результат и сервисе на каждом этапе.</p>
+      <div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div>
+    </div>
+    <div class="v2-media"><img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""><span class="badge">Свадебная коллекция</span></div>
+  </div>
+</div></section>
+
+<!-- V3 -->
+<div class="vtag"><span class="vt">Вариант 3 · Плавающая карточка</span><small>Крупное фото справа, а текст — в полупрозрачной «стеклянной» карточке, наезжающей на фото. Многослойно, глубоко, по-современному.</small></div>
+<section class="demo"><div class="container">
+  <div class="v3-hero">
+    <div class="v3-photo"><img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""></div>
+    <div class="v3-card">
+      <span class="eyebrow">Кондитерская с индивидуальным подходом</span>
+      <div class="brand">cake<span class="dot">.</span>smile</div>
+      <p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях и сервисе.</p>
+      <div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- V4 -->
+<div class="vtag"><span class="vt">Вариант 4 · Фото-арка</span><small>Трендовая форма-арка для фото + текст рядом, много воздуха и тонкая окантовка. Элегантно и «бутиково».</small></div>
+<section class="demo"><div class="container">
+  <div class="v4-hero">
+    <div class="v4-text">
+      <span class="eyebrow">Кондитерская с индивидуальным подходом</span>
+      <div class="brand">cake<span class="dot">.</span>smile</div>
+      <p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях, ответственности за результат и сервисе на каждом этапе.</p>
+      <div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div>
+    </div>
+    <div class="v4-arch"><img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""></div>
+  </div>
+</div></section>
+
+<div class="foot">Напиши номер (1–4) — внедрю на главную вместо текущего блока. Можно комбинировать (например «2, но фото-арка как в 4»).</div>
+</body>
+</html>

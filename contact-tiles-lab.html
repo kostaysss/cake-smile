@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакт-плитки — варианты · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd;
+    --text:#4a3b3e; --muted:#7a5563; --line:#e2d6c9;
+    --serif:"Playfair Display", Georgia, serif; --forum:"Forum", Georgia, serif;
+    --sans:"Manrope", system-ui, sans-serif;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--text);line-height:1.55;background:var(--cr)}
+  a{text-decoration:none;color:inherit}
+  .ic{width:20px;height:20px;flex:none;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:26px 0;text-align:center}
+  .lab-top h1{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin-bottom:6px}
+  .lab-top p{font-size:.92rem;opacity:.82}
+  .board{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:34px 40px}
+  @media(max-width:760px){.board{grid-template-columns:1fr}}
+  .col{padding:34px 0}
+  .vt{display:inline-block;font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:6px 14px;border-radius:100px;margin-bottom:8px}
+  .vd{display:block;color:var(--muted);font-size:.88rem;margin-bottom:20px;max-width:40ch}
+  .list{display:flex;flex-direction:column;gap:12px}
+  .lab{display:block;font-family:var(--sans);font-weight:700;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px}
+  .val{font-size:1rem;font-weight:500}
+
+  /* ===== V1 — Акцентная полоса + подъём ===== */
+  .v1 .row{position:relative;display:flex;align-items:center;gap:15px;background:var(--cr2);border:1px solid var(--line);border-radius:14px;padding:15px 20px;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s}
+  .v1 .row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--bx),var(--li-d));transform:scaleY(0);transform-origin:center;transition:transform .28s}
+  .v1 .row:hover{transform:translateY(-3px);box-shadow:0 16px 32px -20px rgba(58,20,32,.4);border-color:var(--li-line)}
+  .v1 .row:hover::before{transform:scaleY(1)}
+  .v1 .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--li-soft);color:var(--bx);flex:none}
+  .v1 .lab{color:var(--li-d)}.v1 .val{color:var(--ink)}
+
+  /* ===== V2 — Градиентные иконки на стекле ===== */
+  .v2 .row{display:flex;align-items:center;gap:15px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);border-radius:16px;padding:15px 20px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 10px 30px -24px rgba(58,20,32,.5), inset 0 1px 0 rgba(255,255,255,.7);transition:.22s}
+  .v2 .row:hover{box-shadow:0 18px 40px -22px rgba(107,31,50,.45);transform:translateY(-2px)}
+  .v2 .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--bx),var(--li-d));color:#fff;flex:none;box-shadow:0 8px 18px -8px rgba(107,31,50,.6)}
+  .v2 .lab{color:var(--li-d)}.v2 .val{color:var(--ink)}
+
+  /* ===== V3 — Минимал-линия (editorial) ===== */
+  .v3 .list{gap:0;border-top:1px solid var(--li-line)}
+  .v3 .row{display:flex;align-items:center;gap:16px;padding:16px 6px;border-bottom:1px solid var(--li-line);transition:padding-left .25s,background .25s}
+  .v3 .row:hover{padding-left:14px;background:rgba(255,255,255,.5)}
+  .v3 .ico{width:42px;height:42px;border-radius:50%;border:1px solid var(--li-line);display:grid;place-items:center;color:var(--bx);flex:none;transition:.25s}
+  .v3 .row:hover .ico{background:var(--bx);color:#fff;border-color:var(--bx)}
+  .v3 .lab{color:var(--li-d);font-family:var(--forum);letter-spacing:.16em;font-weight:400}
+  .v3 .val{font-family:var(--serif);font-size:1.2rem;color:var(--ink)}
+  .v3 .row:hover .val{color:var(--bx)}
+
+  /* ===== V4 — Сиреневые плитки ===== */
+  .v4 .row{display:flex;align-items:center;gap:15px;background:linear-gradient(150deg,#efe7f2,#e4d8ec);border:1px solid var(--li-line);border-radius:16px;padding:15px 20px;transition:.24s}
+  .v4 .row:hover{background:linear-gradient(150deg,var(--li),var(--li-d));border-color:transparent;transform:translateY(-3px);box-shadow:0 18px 34px -20px rgba(138,85,112,.6)}
+  .v4 .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff;color:var(--bx);flex:none;transition:.24s}
+  .v4 .lab{color:var(--li-d);transition:.24s}.v4 .val{color:var(--ink);transition:.24s}
+  .v4 .row:hover .lab{color:rgba(255,255,255,.85)}
+  .v4 .row:hover .val{color:#fff}
+  .v4 .row:hover .ico{background:rgba(255,255,255,.9)}
+
+  .foot{text-align:center;padding:30px 24px 60px;color:var(--muted);font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Контакт-плитки — варианты</h1><p>4 стиля для правых табличек контактов. Скажи номер — внедрю на главную.</p></div>
+
+<div class="board">
+
+  <!-- V1 -->
+  <div class="col v1">
+    <span class="vt">Вариант 1 · Акцентная полоса</span>
+    <span class="vd">Аккуратный апгрейд: подъём с мягкой тенью и градиентная полоса слева, вырастающая при наведении.</span>
+    <div class="list">
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></a>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><span class="lab">Адрес</span><span class="val">Город · точка самовывоза</span></span></div>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span><span class="lab">Время работы</span><span class="val">Ежедневно 09:00 — 20:00</span></span></div>
+    </div>
+  </div>
+
+  <!-- V2 -->
+  <div class="col v2">
+    <span class="vt">Вариант 2 · Градиентные иконки</span>
+    <span class="vd">Матовое стекло + иконки с бордо-сиреневым градиентом и мягким свечением. Дорого и воздушно.</span>
+    <div class="list">
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></a>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><span class="lab">Адрес</span><span class="val">Город · точка самовывоза</span></span></div>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span><span class="lab">Время работы</span><span class="val">Ежедневно 09:00 — 20:00</span></span></div>
+    </div>
+  </div>
+
+  <!-- V3 -->
+  <div class="col v3">
+    <span class="vt">Вариант 3 · Минимал-линия</span>
+    <span class="vd">Без карточек: тонкие линии, круглые иконки (заливаются бордо при наведении), значения крупным Playfair. Журнальный премиум.</span>
+    <div class="list">
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></a>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><span class="lab">Адрес</span><span class="val">Город · самовывоз</span></span></div>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span><span class="lab">Время работы</span><span class="val">Ежедневно 09:00 — 20:00</span></span></div>
+    </div>
+  </div>
+
+  <!-- V4 -->
+  <div class="col v4">
+    <span class="vt">Вариант 4 · Сиреневые плитки</span>
+    <span class="vd">Каждая плитка — сиреневая заливка, при наведении темнеет до фирменного лилового с белым текстом и поднимается. Максимально в стиле бренда.</span>
+    <div class="list">
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></a>
+      <a class="row" href="#"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></a>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><span class="lab">Адрес</span><span class="val">Город · самовывоз</span></span></div>
+      <div class="row"><span class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span><span class="lab">Время работы</span><span class="val">Ежедневно 09:00 — 20:00</span></span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="foot">Напиши номер варианта (1–4) — внедрю в блок контактов на главной. Можно комбинировать.</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отзывы — компактные / белые · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --line:#e2d6c9; --muted:#7a5563;
+    --serif:"Playfair Display", Georgia, serif; --sans:"Manrope", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--cr);color:var(--ink)}
+  img{display:block}
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:24px 0;text-align:center}
+  .lab-top h1{font-family:var(--serif);font-weight:600;font-size:1.5rem;margin-bottom:6px}
+  .lab-top p{font-size:.9rem;opacity:.82}
+  .variant-tag{max-width:1180px;margin:0 auto;padding:38px 24px 4px}
+  .vt{display:inline-block;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:7px 15px;border-radius:100px}
+  .vd{display:block;margin-top:10px;color:var(--muted);font-size:.9rem;max-width:680px}
+  .demo{padding:20px 0 46px;border-bottom:1px dashed var(--li-line)}
+  .rev-head{text-align:center;font-family:var(--serif);font-weight:600;font-size:1.6rem;margin-bottom:4px}
+  .rev-sub{text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:24px}
+
+  .rail{position:relative}
+  .track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;padding:8px 40px 18px;scrollbar-width:none;cursor:grab}
+  .track::-webkit-scrollbar{display:none}
+  .track:active{cursor:grabbing}
+  .card{flex:0 0 auto;scroll-snap-align:start;user-select:none}
+  .nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--bx),var(--bx-d));color:#fff;font-size:1.25rem;cursor:pointer;display:grid;place-items:center;box-shadow:0 12px 26px -12px rgba(107,31,50,.7);z-index:3;transition:transform .2s}
+  .nav-btn:hover{transform:translateY(-50%) scale(1.08)}
+  .nav-prev{left:2px}.nav-next{right:2px}
+  .rail::before,.rail::after{content:"";position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none}
+  .rail::before{left:0;background:linear-gradient(90deg,var(--cr),transparent)}
+  .rail::after{right:0;background:linear-gradient(270deg,var(--cr),transparent)}
+  .stars{color:#e2b23a;font-size:.82rem;letter-spacing:1px}
+
+  /* ===== V1 — Светлая карточка (мессенджер) ===== */
+  .v1 .card{width:290px;height:230px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 18px 40px -26px rgba(58,20,32,.45);display:flex;flex-direction:column}
+  .v1 .top{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+  .v1 .av{width:38px;height:38px;border-radius:50%;background:var(--li-soft);color:var(--bx);display:grid;place-items:center;font-weight:700;font-size:1rem;flex:none}
+  .v1 .who{display:flex;flex-direction:column;min-width:0}
+  .v1 .name{font-weight:700;font-size:.92rem;color:var(--ink)}
+  .v1 .src{font-size:.68rem;color:var(--muted)}
+  .v1 .txt{font-size:.9rem;line-height:1.5;color:#42353a;overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical}
+
+  /* ===== V2 — Цитата (белая, элегантная) ===== */
+  .v2 .card{width:300px;height:236px;position:relative;background:var(--cr2);border:1px solid var(--li-line);border-radius:16px;padding:22px 20px 18px;box-shadow:0 18px 40px -26px rgba(58,20,32,.45);display:flex;flex-direction:column}
+  .v2 .card::before{content:"\201C";position:absolute;top:2px;right:16px;font-family:var(--serif);font-size:3.6rem;color:var(--li);opacity:.35;line-height:1}
+  .v2 .stars{margin-bottom:10px}
+  .v2 .txt{font-family:var(--serif);font-style:italic;font-size:1rem;line-height:1.5;color:var(--ink);overflow:hidden;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical}
+  .v2 .name{margin-top:auto;padding-top:12px;font-weight:700;color:var(--bx);font-size:.9rem}
+
+  /* ===== V3 — Уменьшенные скриншоты (тёмные, как есть) ===== */
+  .v3 .card{height:260px;border-radius:12px;overflow:hidden;border:1px solid var(--li-line);box-shadow:0 16px 34px -24px rgba(58,20,32,.5)}
+  .v3 .card img{height:100%;width:auto;pointer-events:none}
+
+  .foot{text-align:center;padding:36px 24px 64px;color:var(--muted);font-size:.94rem}
+  @media(max-width:640px){
+    .v1 .card,.v2 .card{width:250px}
+    .v3 .card{height:210px}
+    .nav-btn{width:38px;height:38px}
+  }
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Отзывы — компактнее и в белой теме</h1><p>Прокрутка слева-направо (стрелки, перетаскивание, свайп). Скажи номер (1–3).</p></div>
+
+<div class="variant-tag"><span class="vt">Вариант 1 · Светлые карточки (мессенджер)</span><small class="vd">Отзывы воссозданы как аккуратные белые карточки: аватар с буквой, имя, ★★★★★ и текст. Компактно, одинаковый размер, чистая белая тема.</small></div>
+<section class="demo v1">
+  <h3 class="rev-head">Что говорят наши гости</h3><p class="rev-sub">Отзывы клиентов из Telegram</p>
+  <div class="rail"><button class="nav-btn nav-prev">‹</button><button class="nav-btn nav-next">›</button><div class="track" data-mode="light"></div></div>
+</section>
+
+<div class="variant-tag"><span class="vt">Вариант 2 · Цитаты (элегантные)</span><small class="vd">Белые карточки в стиле цитаты: крупная кавычка, текст курсивом (Playfair), звёзды и имя. Более «журнальный», премиальный вид.</small></div>
+<section class="demo v2">
+  <h3 class="rev-head">Что говорят наши гости</h3><p class="rev-sub">Отзывы клиентов из Telegram</p>
+  <div class="rail"><button class="nav-btn nav-prev">‹</button><button class="nav-btn nav-next">›</button><div class="track" data-mode="quote"></div></div>
+</section>
+
+<div class="variant-tag"><span class="vt">Вариант 3 · Уменьшенные скриншоты</span><small class="vd">Для сравнения: настоящие скриншоты, но компактной высотой (260px). Тёмная тема, максимальная достоверность.</small></div>
+<section class="demo v3">
+  <h3 class="rev-head">Что говорят наши гости</h3><p class="rev-sub">Настоящие отзывы из Telegram</p>
+  <div class="rail"><button class="nav-btn nav-prev">‹</button><button class="nav-btn nav-next">›</button><div class="track" data-mode="shot"></div></div>
+</section>
+
+<div class="foot">Напиши номер (1–3) — внедрю на главную. Текст в белых вариантах можно поправить/сократить как захочешь. Можно комбинировать.</div>
+
+<script>
+  var R=[
+    {n:"Ульяна Ф.",t:"Большое спасибо за торт! Как всегда всё прекрасно 🤍 Единственное — начинка оказалась не шоколад-вишня, а с солёной карамелью и арахисом, но это никак не испортило впечатления. Было вкусно!"},
+    {n:"Anzhelika",t:"Спасибо за замечательный торт! Очень красивый и очень-очень вкусный! Всем невероятно понравился 🩷"},
+    {n:"Надежда",t:"Доверили вам свой свадебный торт… и вы сделали НАМНОГО ЛУЧШЕ ОЖИДАЕМОГО! И мы, и гости в полном восторге от вида и вкуса. Вы самые лучшие! 🙏"},
+    {n:"Александра",t:"Спасибо большое за тортик! Мы и все гости в восторге, просто разлетелся сразу. Выглядел фантастически, таял во рту!"},
+    {n:"Арина",t:"Именинник оценил торт, по вкусу понравилось всем гостям! Плотный, пропитанный, шоколадный 😂 Гости даже попросили поделиться контактами. Всё было супер 🥰"},
+    {n:"Евгения",t:"Добрый день! Торт очень вкусный и красивый! Спасибо большое 🥰"},
+    {n:"Лилия",t:"Очень приятно поразились размерам порций! Появился фаворит из начинок — манго-маракуйя, просто покорил. Всё очень вкусно, на второй день даже больше понравилось!"},
+    {n:"Елена Е.",t:"Спасибо большое, очень красиво получилось. Который раз заказываю и всегда на высоте. И прекрасная упаковка, которую не встречала у других. Буду возвращаться только к вам!"},
+    {n:"София",t:"Мы даже в шоке, сколько комплиментов получил ваш тортик — все гости сказали, насколько он сочный и вкусный! Как нам повезло найти вас 💙"}
+  ];
+  var base="https://kostaysss.github.io/cake-smile/assets/review-";
+  document.querySelectorAll('.track').forEach(function(t){
+    var mode=t.getAttribute('data-mode');
+    R.forEach(function(r,i){
+      var c=document.createElement('figure'); c.className='card';
+      if(mode==='light'){
+        c.innerHTML='<div class="top"><span class="av">'+r.n.charAt(0)+'</span><span class="who"><span class="name">'+r.n+'</span><span class="src">★★★★★ · Telegram</span></span></div><div class="txt">'+r.t+'</div>';
+      } else if(mode==='quote'){
+        c.innerHTML='<div class="stars">★★★★★</div><div class="txt">'+r.t+'</div><div class="name">— '+r.n+'</div>';
+      } else {
+        c.innerHTML='<img src="'+base+(i+1)+'.jpg" alt="Отзыв">';
+      }
+      t.appendChild(c);
+    });
+  });
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var track=rail.querySelector('.track');
+    var prev=rail.querySelector('.nav-prev'),next=rail.querySelector('.nav-next');
+    function step(){return Math.max(240,track.clientWidth*0.8);}
+    prev.onclick=function(){track.scrollBy({left:-step(),behavior:'smooth'});};
+    next.onclick=function(){track.scrollBy({left:step(),behavior:'smooth'});};
+    var down=false,sx=0,sl=0;
+    track.addEventListener('pointerdown',function(e){down=true;sx=e.clientX;sl=track.scrollLeft;});
+    track.addEventListener('pointermove',function(e){if(!down)return;track.scrollLeft=sl-(e.clientX-sx);});
+    window.addEventListener('pointerup',function(){down=false;});
+  });
+</script>
+</body>
+</html>

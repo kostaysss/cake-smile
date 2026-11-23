@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заявка — варианты стиля · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --cr3:#efe6dd;
+    --text:#4a3b3e; --muted:#7a5563; --line:#e2d6c9;
+    --serif:"Playfair Display", Georgia, serif; --forum:"Forum", Georgia, serif;
+    --sans:"Manrope", system-ui, sans-serif;
+    --maxw:1100px; --rad:10px; --rad-lg:18px;
+    --shadow:0 30px 64px -38px rgba(58,20,32,.45);
+    --shadow-sm:0 18px 40px -30px rgba(58,20,32,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--text);line-height:1.6;background:var(--cr)}
+  h2,h3{font-family:var(--serif);color:var(--ink);font-weight:400;line-height:1.14}
+  h2 em{font-style:italic;font-weight:600;color:var(--li-d)}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--forum);letter-spacing:.24em;text-transform:uppercase;font-size:.86rem;color:var(--bx);margin-bottom:14px}
+  .eyebrow::before{content:"";width:26px;height:3px;background:var(--bx);border-radius:2px}
+  .calc-head{text-align:center;margin-bottom:32px}
+  .calc-head .eyebrow{justify-content:center}
+  .calc-head h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:10px}
+  .calc-head p{color:var(--muted)}
+
+  /* chips (site style) */
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--text);background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:.18s}
+  .chip:hover{border-color:var(--li);transform:translateY(-1px)}
+  .chip.active{background:linear-gradient(135deg,rgba(122,32,54,.95),rgba(79,21,38,.9));color:#fff;border-color:transparent;box-shadow:0 8px 20px -10px rgba(107,31,50,.55)}
+  .field-lab{display:block;font-family:var(--sans);font-weight:700;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+  .soon{font-family:var(--sans);font-weight:600;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--li-d);background:var(--li-soft);border-radius:100px;padding:3px 9px;margin-left:8px;vertical-align:middle}
+  .inp{width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 15px;transition:.18s}
+  .inp:focus{outline:none;border-color:var(--li);box-shadow:0 0 0 3px rgba(169,145,180,.2)}
+  .btn-tg{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--bx),var(--bx-d));color:#fff;font-family:var(--sans);font-weight:700;font-size:.95rem;padding:15px 32px;border:none;border-radius:100px;cursor:pointer;transition:.2s;box-shadow:0 14px 30px -14px rgba(107,31,50,.6)}
+  .btn-tg:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--bx);border:1px solid var(--li-line);font-family:var(--sans);font-weight:700;font-size:.92rem;padding:14px 26px;border-radius:100px;cursor:pointer;transition:.2s}
+  .btn-ghost:hover{border-color:var(--bx);background:rgba(255,255,255,.5)}
+  .ic{width:20px;height:20px;flex:none;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  /* lab chrome */
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:26px 0;text-align:center}
+  .lab-top h1{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin-bottom:6px}
+  .lab-top p{font-size:.92rem;opacity:.82;max-width:640px;margin:0 auto;padding:0 20px}
+  .variant-tag{max-width:var(--maxw);margin:0 auto;padding:36px 24px 0}
+  .variant-tag span.vt{display:inline-block;font-family:var(--sans);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:7px 16px;border-radius:100px}
+  .variant-tag small{display:block;margin-top:10px;color:var(--muted);font-size:.92rem;max-width:680px}
+  .demo{padding:44px 0 56px;border-bottom:1px dashed var(--li-line);background:var(--li-soft)}
+  .demo .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .card{background:var(--cr2);border:1px solid var(--line);border-radius:var(--rad-lg);box-shadow:var(--shadow)}
+
+  /* ============ V1 — Пошаговый мастер ============ */
+  .v1-card{max-width:720px;margin:0 auto;padding:42px}
+  .v1-progress{display:flex;align-items:center;gap:0;margin-bottom:30px}
+  .v1-dot{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:.85rem;background:#fff;border:1px solid var(--li-line);color:var(--li-d);transition:.25s}
+  .v1-dot.done,.v1-dot.cur{background:var(--bx);color:#fff;border-color:var(--bx)}
+  .v1-bar{flex:1;height:2px;background:var(--li-line);position:relative}
+  .v1-bar.done{background:var(--bx)}
+  .v1-stepwrap{min-height:150px}
+  .v1-step{display:none}.v1-step.show{display:block;animation:fade .3s}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .v1-step .step-n{font-family:var(--forum);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;color:var(--bx);margin-bottom:6px}
+  .v1-step h3{font-size:1.5rem;margin-bottom:18px}
+  .v1-nav{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+  .v1-count{color:var(--muted);font-size:.9rem}
+
+  /* ============ V2 — Конструктор с живой заявкой ============ */
+  .v2-grid{display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:start}
+  .v2-fields{padding:38px}
+  .v2-block{margin-bottom:26px}
+  .v2-summary{position:sticky;top:20px;background:linear-gradient(165deg,var(--bx),var(--bx-d));color:#f6e9ee;border-radius:var(--rad-lg);padding:30px;box-shadow:var(--shadow)}
+  .v2-summary h3{color:#fff;font-size:1.3rem;margin-bottom:4px}
+  .v2-summary .sub{font-size:.85rem;opacity:.75;margin-bottom:20px}
+  .v2-line{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:.9rem}
+  .v2-line .k{opacity:.7}.v2-line .v{font-weight:600;text-align:right;color:#fff}
+  .v2-line .v.empty{opacity:.4;font-weight:400;font-style:italic}
+  .v2-summary .btn-tg{width:100%;justify-content:center;margin-top:22px;background:#fff;color:var(--bx)}
+
+  /* ============ V3 — Секции-карточки ============ */
+  .v3-head{max-width:720px;margin:0 auto 30px}
+  .v3-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;margin:0 auto}
+  .v3-cell{background:var(--cr2);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.2s}
+  .v3-cell:hover{border-color:var(--li-line);box-shadow:var(--shadow-sm)}
+  .v3-cell .n{font-family:var(--serif);font-size:1.1rem;color:var(--li-d);font-style:italic;margin-bottom:10px}
+  .v3-foot{max-width:900px;margin:24px auto 0;text-align:center}
+  .v3-span{grid-column:1/-1}
+
+  /* ============ V4 — Аккордеон ============ */
+  .v4-wrap{max-width:720px;margin:0 auto;padding:14px 34px 34px}
+  .v4-item{border-bottom:1px solid var(--line)}
+  .v4-hd{display:flex;align-items:center;gap:16px;padding:20px 4px;cursor:pointer}
+  .v4-num{width:30px;height:30px;flex:none;border-radius:50%;border:1px solid var(--li-line);display:grid;place-items:center;font-weight:700;font-size:.82rem;color:var(--li-d);transition:.2s}
+  .v4-item.open .v4-num,.v4-item.filled .v4-num{background:var(--bx);color:#fff;border-color:var(--bx)}
+  .v4-t{flex:1;font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .v4-pick{font-family:var(--serif);font-style:italic;color:var(--bx);font-size:1rem}
+  .v4-chev{transition:.25s;color:var(--li-d)}
+  .v4-item.open .v4-chev{transform:rotate(180deg)}
+  .v4-body{max-height:0;overflow:hidden;transition:max-height .3s ease;padding-left:46px}
+  .v4-item.open .v4-body{max-height:220px}
+  .v4-body-inner{padding-bottom:22px}
+  .v4-foot{max-width:720px;margin:0 auto;padding:24px 34px 0;text-align:center}
+
+  @media(max-width:800px){
+    .v2-grid{grid-template-columns:1fr}
+    .v2-summary{position:static}
+    .v3-grid{grid-template-columns:1fr}
+    .v1-card,.v2-fields,.v4-wrap{padding:28px}
+  }
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <h1>Раздел «Заявка» — варианты</h1>
+  <p>4 концепции формы заказа: стильно, понятно и с запасом под новые критерии. Пункты с меткой «пример» — заглушки, чтобы показать, как всё вырастет; потом заменим на твои. Скажи номер — внедрю на главную.</p>
+</div>
+
+<!-- ===================== V1 ===================== -->
+<div class="variant-tag"><span class="vt">Вариант 1 · Пошаговый мастер</span><small>Один вопрос на экране + индикатор прогресса и кнопки «Назад / Далее». Не пугает длинным списком, а ведёт за руку — идеально, когда критериев станет больше. На финале — кнопка в Telegram.</small></div>
+<section class="demo">
+  <div class="wrap">
+    <div class="calc-head"><span class="eyebrow">Расчёт заказа</span><h2>Соберём заявку <em>по шагам</em></h2><p>Отвечайте по одному вопросу — в конце откроем Telegram с готовым текстом.</p></div>
+    <div class="card v1-card" id="v1">
+      <div class="v1-progress" id="v1prog"></div>
+      <div class="v1-stepwrap">
+        <div class="v1-step show" data-step="0"><div class="step-n">Шаг 1 из 5</div><h3>Что за формат?</h3><div class="chips" data-single><span class="chip">Мини-позиции</span><span class="chip">Свадебный торт</span><span class="chip">Торт на праздник</span><span class="chip">Другое</span></div></div>
+        <div class="v1-step" data-step="1"><div class="step-n">Шаг 2 из 5</div><h3>По какому поводу?</h3><div class="chips" data-single><span class="chip">День рождения</span><span class="chip">Свадьба</span><span class="chip">Детский праздник</span><span class="chip">Корпоратив</span></div></div>
+        <div class="v1-step" data-step="2"><div class="step-n">Шаг 3 из 5</div><h3>Какой вкус?</h3><div class="chips" data-single><span class="chip">Классика</span><span class="chip">Шоколад</span><span class="chip">Ягоды / фрукты</span><span class="chip">Подскажите</span></div></div>
+        <div class="v1-step" data-step="3"><div class="step-n">Шаг 4 из 5</div><h3>Сколько гостей / порций? <span class="soon">пример</span></h3><div class="chips" data-single><span class="chip">до 10</span><span class="chip">10–20</span><span class="chip">20–40</span><span class="chip">40+</span></div></div>
+        <div class="v1-step" data-step="4"><div class="step-n">Шаг 5 из 5</div><h3>На какую дату? <span class="soon">пример</span></h3><input class="inp" type="date" style="max-width:260px"><p style="margin-top:16px;color:var(--muted);font-size:.9rem">Дальше откроем Telegram с собранной заявкой.</p></div>
+      </div>
+      <div class="v1-nav">
+        <button class="btn-ghost" id="v1prev" style="visibility:hidden">← Назад</button>
+        <span class="v1-count" id="v1count">Шаг 1 из 5</span>
+        <button class="btn-ghost" id="v1next">Далее →</button>
+        <button class="btn-tg" id="v1send" style="display:none"><svg class="ic" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>Отправить в Telegram</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== V2 ===================== -->
+<div class="variant-tag"><span class="vt">Вариант 2 · Конструктор с живой заявкой</span><small>Слева поля, справа — карточка «Ваша заявка», которая заполняется в реальном времени по мере выбора. Клиент сразу видит, что уходит в Telegram. Премиально и прозрачно; новые критерии просто добавляются в список слева и справа.</small></div>
+<section class="demo">
+  <div class="wrap">
+    <div class="calc-head"><span class="eyebrow">Расчёт заказа</span><h2>Соберите заявку <em>как конструктор</em></h2><p>Выбирайте параметры — справа сразу собирается текст заявки.</p></div>
+    <div class="v2-grid" id="v2">
+      <div class="card v2-fields">
+        <div class="v2-block"><span class="field-lab">Формат</span><div class="chips" data-single data-key="Формат"><span class="chip">Мини-позиции</span><span class="chip">Свадебный</span><span class="chip">На праздник</span><span class="chip">Другое</span></div></div>
+        <div class="v2-block"><span class="field-lab">Повод</span><div class="chips" data-single data-key="Повод"><span class="chip">День рождения</span><span class="chip">Свадьба</span><span class="chip">Детский</span><span class="chip">Другое</span></div></div>
+        <div class="v2-block"><span class="field-lab">Вкус</span><div class="chips" data-single data-key="Вкус"><span class="chip">Классика</span><span class="chip">Шоколад</span><span class="chip">Ягоды</span><span class="chip">Подскажите</span></div></div>
+        <div class="v2-block"><span class="field-lab">Порции <span class="soon">пример</span></span><div class="chips" data-single data-key="Порции"><span class="chip">до 10</span><span class="chip">10–20</span><span class="chip">20–40</span><span class="chip">40+</span></div></div>
+        <div class="v2-block"><span class="field-lab">Дата события <span class="soon">пример</span></span><input class="inp" type="date" data-key="Дата" style="max-width:260px"></div>
+      </div>
+      <div class="v2-summary">
+        <h3>Ваша заявка</h3><div class="sub">Собирается по мере выбора</div>
+        <div id="v2list">
+          <div class="v2-line" data-k="Формат"><span class="k">Формат</span><span class="v empty">не выбрано</span></div>
+          <div class="v2-line" data-k="Повод"><span class="k">Повод</span><span class="v empty">не выбрано</span></div>
+          <div class="v2-line" data-k="Вкус"><span class="k">Вкус</span><span class="v empty">не выбрано</span></div>
+          <div class="v2-line" data-k="Порции"><span class="k">Порции</span><span class="v empty">не выбрано</span></div>
+          <div class="v2-line" data-k="Дата"><span class="k">Дата</span><span class="v empty">не выбрано</span></div>
+        </div>
+        <button class="btn-tg"><svg class="ic" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>Отправить в Telegram</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== V3 ===================== -->
+<div class="variant-tag"><span class="vt">Вариант 3 · Секции-карточки</span><small>Каждый критерий — отдельная аккуратная карточка в сетке. Всё видно сразу, легко сканировать, а новые критерии — это просто ещё одна карточка. Хорошо смотрится и на десктопе, и на мобильном.</small></div>
+<section class="demo">
+  <div class="wrap">
+    <div class="calc-head v3-head"><span class="eyebrow">Расчёт заказа</span><h2>Параметры <em>вашего торта</em></h2><p>Отметьте подходящее в каждой карточке — и отправьте заявку в Telegram.</p></div>
+    <div class="v3-grid" data-scope>
+      <div class="v3-cell"><div class="n">Формат</div><div class="chips" data-single><span class="chip">Мини-позиции</span><span class="chip">Свадебный</span><span class="chip">На праздник</span><span class="chip">Другое</span></div></div>
+      <div class="v3-cell"><div class="n">Повод</div><div class="chips" data-single><span class="chip">День рождения</span><span class="chip">Свадьба</span><span class="chip">Детский</span><span class="chip">Другое</span></div></div>
+      <div class="v3-cell"><div class="n">Вкус</div><div class="chips" data-single><span class="chip">Классика</span><span class="chip">Шоколад</span><span class="chip">Ягоды</span><span class="chip">Подскажите</span></div></div>
+      <div class="v3-cell"><div class="n">Порции <span class="soon">пример</span></div><div class="chips" data-single><span class="chip">до 10</span><span class="chip">10–20</span><span class="chip">20–40</span><span class="chip">40+</span></div></div>
+      <div class="v3-cell"><div class="n">Бюджет <span class="soon">пример</span></div><div class="chips" data-single><span class="chip">до 3 000 ₽</span><span class="chip">3–6 000 ₽</span><span class="chip">6–10 000 ₽</span><span class="chip">от 10 000 ₽</span></div></div>
+      <div class="v3-cell"><div class="n">Получение <span class="soon">пример</span></div><div class="chips" data-single><span class="chip">Самовывоз</span><span class="chip">Доставка</span></div></div>
+    </div>
+    <div class="v3-foot"><button class="btn-tg"><svg class="ic" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>Отправить заявку в Telegram</button></div>
+  </div>
+</section>
+
+<!-- ===================== V4 ===================== -->
+<div class="variant-tag"><span class="vt">Вариант 4 · Аккордеон</span><small>Компактный список: каждый критерий сворачивается, а выбранное значение показывается прямо в шапке строки. Даже с десятком пунктов форма остаётся короткой и не «простыней». Самый экономный по высоте.</small></div>
+<section class="demo">
+  <div class="wrap">
+    <div class="calc-head"><span class="eyebrow">Расчёт заказа</span><h2>Заявка <em>в один экран</em></h2><p>Раскрывайте пункты по очереди — выбранное сразу видно в заголовке.</p></div>
+    <div class="card" style="max-width:720px;margin:0 auto">
+      <div class="v4-wrap" id="v4">
+        <div class="v4-item open"><div class="v4-hd"><span class="v4-num">1</span><span class="v4-t">Формат</span><span class="v4-pick"></span><svg class="ic v4-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div><div class="v4-body"><div class="v4-body-inner"><div class="chips" data-single><span class="chip">Мини-позиции</span><span class="chip">Свадебный</span><span class="chip">На праздник</span><span class="chip">Другое</span></div></div></div></div>
+        <div class="v4-item"><div class="v4-hd"><span class="v4-num">2</span><span class="v4-t">Повод</span><span class="v4-pick"></span><svg class="ic v4-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div><div class="v4-body"><div class="v4-body-inner"><div class="chips" data-single><span class="chip">День рождения</span><span class="chip">Свадьба</span><span class="chip">Детский</span><span class="chip">Другое</span></div></div></div></div>
+        <div class="v4-item"><div class="v4-hd"><span class="v4-num">3</span><span class="v4-t">Вкус</span><span class="v4-pick"></span><svg class="ic v4-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div><div class="v4-body"><div class="v4-body-inner"><div class="chips" data-single><span class="chip">Классика</span><span class="chip">Шоколад</span><span class="chip">Ягоды</span><span class="chip">Подскажите</span></div></div></div></div>
+        <div class="v4-item"><div class="v4-hd"><span class="v4-num">4</span><span class="v4-t">Порции <span class="soon">пример</span></span><span class="v4-pick"></span><svg class="ic v4-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div><div class="v4-body"><div class="v4-body-inner"><div class="chips" data-single><span class="chip">до 10</span><span class="chip">10–20</span><span class="chip">20–40</span><span class="chip">40+</span></div></div></div></div>
+        <div class="v4-item"><div class="v4-hd"><span class="v4-num">5</span><span class="v4-t">Получение <span class="soon">пример</span></span><span class="v4-pick"></span><svg class="ic v4-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div><div class="v4-body"><div class="v4-body-inner"><div class="chips" data-single><span class="chip">Самовывоз</span><span class="chip">Доставка</span></div></div></div></div>
+      </div>
+      <div class="v4-foot"><button class="btn-tg"><svg class="ic" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.9 1.4 1 2 .3l2.5-2.6 4.6 3.4c.7.5 1.7.1 1.9-.7L23 4.9c.2-1-.7-1.8-1.5-1.4Z"/><path d="m8 14 9-7-6.5 8"/></svg>Отправить в Telegram</button></div>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center;padding:40px 24px 70px;color:var(--muted);font-size:.95rem">Напиши номер варианта (1–4) — внедрю на главную. Можно комбинировать элементы разных вариантов.</div>
+
+<script>
+  // single-select chips (generic)
+  document.querySelectorAll('.chips[data-single]').forEach(function(g){
+    g.addEventListener('click', function(e){
+      var c = e.target.closest('.chip'); if(!c) return;
+      g.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
+      c.classList.add('active');
+      g.dispatchEvent(new CustomEvent('pick',{bubbles:true,detail:c.textContent.trim()}));
+    });
+  });
+
+  // V1 wizard
+  (function(){
+    var root=document.getElementById('v1'); if(!root) return;
+    var steps=root.querySelectorAll('.v1-step'), total=steps.length, cur=0;
+    var prog=document.getElementById('v1prog');
+    for(var i=0;i<total;i++){var d=document.createElement('span');d.className='v1-dot';d.textContent=i+1;prog.appendChild(d);if(i<total-1){var b=document.createElement('span');b.className='v1-bar';prog.appendChild(b);}}
+    var prev=document.getElementById('v1prev'),next=document.getElementById('v1next'),send=document.getElementById('v1send'),count=document.getElementById('v1count');
+    function render(){
+      steps.forEach(function(s,i){s.classList.toggle('show',i===cur);});
+      var dots=prog.querySelectorAll('.v1-dot'),bars=prog.querySelectorAll('.v1-bar');
+      dots.forEach(function(d,i){d.classList.toggle('cur',i===cur);d.classList.toggle('done',i<cur);});
+      bars.forEach(function(b,i){b.classList.toggle('done',i<cur);});
+      prev.style.visibility=cur===0?'hidden':'visible';
+      count.textContent='Шаг '+(cur+1)+' из '+total;
+      var last=cur===total-1;
+      next.style.display=last?'none':'inline-block';
+      send.style.display=last?'inline-flex':'none';
+    }
+    next.onclick=function(){if(cur<total-1){cur++;render();}};
+    prev.onclick=function(){if(cur>0){cur--;render();}};
+    render();
+  })();
+
+  // V2 live summary
+  (function(){
+    var root=document.getElementById('v2'); if(!root) return;
+    function set(key,val){var l=root.querySelector('.v2-line[data-k="'+key+'"] .v');if(l){l.textContent=val;l.classList.remove('empty');}}
+    root.querySelectorAll('.chips[data-key]').forEach(function(g){g.addEventListener('pick',function(e){set(g.getAttribute('data-key'),e.detail);});});
+    var date=root.querySelector('input[data-key="Дата"]');
+    if(date)date.addEventListener('change',function(){if(date.value)set('Дата',date.value.split('-').reverse().join('.'));});
+  })();
+
+  // V4 accordion
+  (function(){
+    var root=document.getElementById('v4'); if(!root) return;
+    root.querySelectorAll('.v4-item').forEach(function(it){
+      it.querySelector('.v4-hd').addEventListener('click',function(){
+        var open=it.classList.contains('open');
+        root.querySelectorAll('.v4-item').forEach(function(x){x.classList.remove('open');});
+        if(!open)it.classList.add('open');
+      });
+      it.addEventListener('pick',function(e){
+        it.querySelector('.v4-pick').textContent=e.detail;
+        it.classList.add('filled');
+        var nxt=it.nextElementSibling;
+        setTimeout(function(){if(nxt){root.querySelectorAll('.v4-item').forEach(function(x){x.classList.remove('open');});nxt.classList.add('open');}},180);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

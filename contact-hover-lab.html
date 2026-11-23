@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакт-таблички — наведение · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bx:#6b1f32;--bx-d:#4f1526;--ink:#3a1420;--li:#a991b4;--li-d:#8a6f97;--li-soft:#ece4f0;--li-line:#d8c9e2;--cr:#f6efe6;--cr2:#fbf7f1;--line:#e2d6c9;--muted:#7a5563}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Manrope",system-ui,sans-serif;background:var(--li-soft);color:var(--ink)}
+  .ic{width:20px;height:20px;flex:none;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:22px 0;text-align:center}
+  .lab-top h1{font-family:"Tenor Sans",sans-serif;font-weight:400;font-size:1.4rem;margin-bottom:6px}
+  .lab-top p{opacity:.82;font-size:.9rem}
+  .wrap{max-width:1120px;margin:0 auto;padding:30px 24px 70px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:760px){.wrap{grid-template-columns:1fr}}
+  .block{background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:22px}
+  .block h3{font-family:"Manrope";font-size:.95rem;font-weight:700;margin-bottom:3px}
+  .block small{color:var(--muted);font-size:.84rem;display:block;margin-bottom:16px}
+  .list{display:flex;flex-direction:column;gap:12px}
+
+  /* базовая табличка (как сейчас) */
+  .tile{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;position:relative;overflow:hidden;cursor:pointer}
+  .ti{width:40px;height:40px;border-radius:11px;background:var(--li-soft);color:var(--bx);display:grid;place-items:center;flex:none;transition:.25s}
+  .lab{display:block;font-weight:700;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--li-d);margin-bottom:2px;transition:.25s}
+  .val{font-size:.98rem;font-weight:500;color:var(--ink);transition:.25s}
+
+  /* === H1 — акцентная полоса слева + сдвиг === */
+  .h1{transition:transform .25s,border-color .25s}
+  .h1::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--bx);transition:width .25s}
+  .h1:hover{transform:translateX(6px);border-color:var(--li-line)}
+  .h1:hover::before{width:4px}
+  .h1:hover .ti{background:var(--bx);color:#fff}
+  .h1:hover .val{color:var(--bx)}
+
+  /* === H2 — заливка бордо (флэт) === */
+  .h2{transition:background .25s,border-color .25s}
+  .h2:hover{background:var(--bx);border-color:var(--bx)}
+  .h2:hover .lab{color:rgba(255,255,255,.72)}
+  .h2:hover .val{color:#fff}
+  .h2:hover .ti{background:rgba(255,255,255,.16);color:#fff}
+
+  /* === H3 — рамка + подъём + тень === */
+  .h3{transition:transform .25s,box-shadow .25s,border-color .25s}
+  .h3:hover{transform:translateY(-4px);border-color:var(--li);box-shadow:0 18px 36px -20px rgba(107,31,50,.42)}
+  .h3:hover .ti{background:var(--bx);color:#fff}
+
+  /* === H4 — иконка-поп + лёгкий фон === */
+  .h4{transition:background .25s,border-color .25s}
+  .h4:hover{background:var(--li-soft);border-color:var(--li-line)}
+  .h4:hover .ti{background:var(--bx);color:#fff;transform:scale(1.1) rotate(-4deg)}
+  .h4:hover .val{color:var(--bx)}
+
+  /* === H5 — подчёркивание значения === */
+  .h5{transition:border-color .25s}
+  .h5 .val{position:relative;display:inline-block}
+  .h5 .val::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--bx);transition:width .3s}
+  .h5:hover{border-color:var(--li-line)}
+  .h5:hover .val::after{width:100%}
+  .h5:hover .val{color:var(--bx)}
+  .h5:hover .ti{color:var(--bx);border:1px solid var(--li-line);background:#fff}
+
+  /* === H6 — приближение (scale forward) === */
+  .h6{transition:transform .25s,box-shadow .25s,border-color .25s}
+  .h6:hover{transform:scale(1.035);box-shadow:0 18px 38px -20px rgba(58,20,32,.4);border-color:var(--li-line);z-index:2}
+  .h6:hover .ti{background:var(--bx);color:#fff}
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Таблички контактов — эффект при наведении</h1><p>Наведи мышкой на каждую. Скажи номер (H1–H6).</p></div>
+<div class="wrap">
+
+  <div class="block"><h3>H1 · Полоса слева + сдвиг</h3><small>Табличка едет вправо, слева вырастает бордовая полоса, иконка заливается.</small>
+    <div class="list">
+      <div class="tile h1"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></div>
+      <div class="tile h1"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></div>
+      <div class="tile h1"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>H2 · Заливка бордо (флэт)</h3><small>Табличка заливается сплошным бордо, текст белеет. Смело, без градиента.</small>
+    <div class="list">
+      <div class="tile h2"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></div>
+      <div class="tile h2"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></div>
+      <div class="tile h2"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>H3 · Рамка + подъём + тень</h3><small>Поднимается с мягкой тенью, рамка становится сиреневой. Чисто и спокойно.</small>
+    <div class="list">
+      <div class="tile h3"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></div>
+      <div class="tile h3"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></div>
+      <div class="tile h3"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>H4 · Иконка оживает</h3><small>Иконка заливается и чуть поворачивается, фон слегка сиреневый. Живо и мило.</small>
+    <div class="list">
+      <div class="tile h4"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></div>
+      <div class="tile h4"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></div>
+      <div class="tile h4"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>H5 · Подчёркивание значения</h3><small>Под значением растёт тонкая линия, значение и иконка темнеют. Сдержанно, по-журнальному.</small>
+    <div class="list">
+      <div class="tile h5"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></div>
+      <div class="tile h5"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></div>
+      <div class="tile h5"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>H6 · Приближение</h3><small>Табличка чуть увеличивается к зрителю с тенью, иконка заливается. Мягкий «pop».</small>
+    <div class="list">
+      <div class="tile h6"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg></span><span><span class="lab">Instagram</span><span class="val">@cake.smile</span></span></div>
+      <div class="tile h6"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15 .8 0 1.5-.7 1.5-1.5v-2.6c0-.7-.5-1.3-1.2-1.5l-2.7-.5c-.6-.1-1.2.1-1.5.6l-.7.9C11.7 14 10 12.3 8.6 10l.9-.7c.5-.3.7-.9.6-1.5l-.5-2.7C9.4 4.5 8.8 4 8.1 4H5.5C4.7 4 4 4.7 4 5Z"/></svg></span><span><span class="lab">Телефон</span><span class="val">+7 (000) 000-00-00</span></span></div>
+      <div class="tile h6"><span class="ti"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><span class="lab">Почта</span><span class="val">hello@cakesmile.ru</span></span></div>
+    </div>
+  </div>
+
+</div>
+<div style="font-family:Manrope;text-align:center;padding:10px 24px 60px;color:var(--muted);font-size:.92rem">Наведи на таблички и скажи номер (H1–H6). Можно комбинировать.</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Герой — показать невесту · cake.smile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bx:#6b1f32; --bx-d:#4f1526; --ink:#3a1420;
+    --li:#a991b4; --li-d:#8a6f97; --li-soft:#ece4f0; --li-line:#d8c9e2;
+    --cr:#f6efe6; --cr2:#fbf7f1; --line:#e2d6c9; --muted:#7a5563; --rad:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Lora",Georgia,serif;background:var(--cr);color:var(--ink)}
+  img{display:block}
+  .container{width:100%;max-width:1200px;margin:0 auto;padding:0 30px}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Tenor Sans",sans-serif;letter-spacing:.22em;text-transform:uppercase;font-size:.8rem;margin-bottom:16px}
+  .eyebrow::before{content:"";width:26px;height:3px;border-radius:2px;background:currentColor}
+  .brand{font-family:"Parisienne",cursive;font-size:clamp(3.4rem,6.5vw,5.6rem);line-height:1.02;margin-bottom:12px}
+  .brand .dot{color:var(--bx)}
+  .slogan{font-family:"Lora",serif;font-style:italic;font-size:1.12rem;line-height:1.55;margin-bottom:26px;max-width:40ch}
+  .acts{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{font-family:"Manrope",sans-serif;font-weight:700;font-size:.88rem;padding:14px 26px;border-radius:12px;border:1.5px solid transparent;cursor:pointer}
+  .btn-primary{background:linear-gradient(135deg,var(--bx),var(--bx-d));color:#fff}
+  .btn-outline{background:transparent;border-color:currentColor}
+
+  .lab-top{background:var(--ink);color:#f4e9ef;padding:24px 0;text-align:center}
+  .lab-top h1{font-family:"Tenor Sans",sans-serif;font-size:1.5rem;margin-bottom:6px}
+  .lab-top p{font-family:"Manrope";font-size:.9rem;opacity:.82}
+  .vtag{max-width:1200px;margin:0 auto;padding:40px 30px 16px}
+  .vtag .vt{font-family:"Manrope";display:inline-block;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--bx);padding:7px 15px;border-radius:100px}
+  .vtag small{font-family:"Manrope";display:block;margin-top:10px;color:var(--muted);font-size:.9rem;max-width:700px}
+  .demo{padding-bottom:50px;border-bottom:1px dashed var(--li-line)}
+  .PH{background-image:url('https://kostaysss.github.io/cake-smile/assets/hero.jpg')}
+
+  /* V1 — Иммерсивный сплит (фото справа во всю высоту) */
+  .v1{position:relative;display:grid;grid-template-columns:1.05fr .95fr;min-height:660px;border-radius:var(--rad);overflow:hidden;box-shadow:0 40px 80px -46px rgba(58,20,32,.6)}
+  .v1 .t{background:linear-gradient(150deg,var(--li),var(--li-d));color:#fff;padding:60px 52px;display:flex;flex-direction:column;justify-content:center}
+  .v1 .t .brand{color:#fff}.v1 .t .eyebrow{color:#f0dbe3}.v1 .t .btn-outline{color:#fff}
+  .v1 .p{position:relative;background:#2c0f18}
+  .v1 .p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+
+  /* V2 — Чистый сплит (фото в высокой рамке) */
+  .v2{display:grid;grid-template-columns:1fr .82fr;gap:50px;align-items:center;padding:24px 0}
+  .v2 .eyebrow{color:var(--bx)}
+  .v2 .ph{position:relative}
+  .v2 .ph img{width:100%;aspect-ratio:3/4.15;object-fit:cover;object-position:center 32%;border-radius:var(--rad);box-shadow:0 40px 74px -40px rgba(58,20,32,.55)}
+  .v2 .ph::after{content:"";position:absolute;inset:13px;border:1px solid rgba(255,255,255,.5);border-radius:14px;pointer-events:none}
+
+  /* V3 — Фото целиком (contain), ничего не обрезано */
+  .v3{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:600px;background:linear-gradient(150deg,var(--li-soft),#e6dcee);border-radius:var(--rad);padding:40px 46px}
+  .v3 .eyebrow{color:var(--bx)}
+  .v3 .pc{align-self:stretch;display:flex;align-items:center;justify-content:center}
+  .v3 .pc img{max-width:100%;max-height:560px;width:auto;border-radius:14px;box-shadow:0 36px 70px -38px rgba(58,20,32,.55)}
+
+  /* V4 — Высокий фуллскрин (фото во всю ширину, но кадр ниже и выше блок) */
+  .v4{position:relative;border-radius:var(--rad);overflow:hidden;min-height:800px;display:flex;align-items:flex-end;box-shadow:0 40px 80px -46px rgba(58,20,32,.6)}
+  .v4 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 52%}
+  .v4 .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,12,20,.1) 0%,transparent 30%,transparent 50%,rgba(40,12,20,.85) 100%)}
+  .v4 .t{position:relative;z-index:2;padding:0 7% 56px;max-width:640px;color:#fff}
+  .v4 .t .brand{color:#fff}.v4 .t .eyebrow{color:#f0dbe3}.v4 .t .btn-outline{color:#fff}
+
+  .foot{font-family:"Manrope";text-align:center;padding:40px 30px 70px;color:var(--muted);font-size:.94rem}
+  @media(max-width:860px){
+    .v1{grid-template-columns:1fr}.v1 .p{min-height:420px}
+    .v2,.v3{grid-template-columns:1fr;gap:26px}.v2 .ph,.v3 .pc{order:-1}
+    .v3 .pc img{max-height:460px}
+    .v4{min-height:600px}
+  }
+</style>
+</head>
+<body>
+<div class="lab-top"><h1>Герой — показать невесту полнее</h1><p>4 варианта, где девушку видно почти в полный рост. Скажи номер (1–4).</p></div>
+
+<!-- V1 -->
+<div class="vtag"><span class="vt">Вариант 1 · Иммерсивный сплит</span><small>Текст слева на фирменном сиреневом фоне, фото справа во всю высоту блока — вертикальный кадр показывает невесту и торт почти целиком. Сохраняет «обложечность».</small></div>
+<section class="demo"><div class="container"><div class="v1">
+  <div class="t"><span class="eyebrow">Кондитерская с индивидуальным подходом</span><div class="brand">cake<span class="dot">.</span>smile</div><p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях и сервисе.</p><div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div></div>
+  <div class="p"><img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""></div>
+</div></div></section>
+
+<!-- V2 -->
+<div class="vtag"><span class="vt">Вариант 2 · Чистый сплит</span><small>Без цветной заливки: текст на креме, фото справа в высокой рамке (3:4) — невеста видна почти в полный рост. Воздушно, по-журнальному.</small></div>
+<section class="demo"><div class="container"><div class="v2">
+  <div class="t"><span class="eyebrow">Кондитерская с индивидуальным подходом</span><div class="brand">cake<span class="dot">.</span>smile</div><p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях, ответственности за результат и сервисе на каждом этапе.</p><div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div></div>
+  <div class="ph"><img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""></div>
+</div></div></section>
+
+<!-- V3 -->
+<div class="vtag"><span class="vt">Вариант 3 · Фото целиком</span><small>Фото показано полностью, без единой обрезки — видно всю сцену: невесту во весь рост и торт. На мягкой сиреневой подложке. Гарантированно ничего не режется.</small></div>
+<section class="demo"><div class="container"><div class="v3">
+  <div class="t"><span class="eyebrow">Кондитерская с индивидуальным подходом</span><div class="brand">cake<span class="dot">.</span>smile</div><p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях и сервисе.</p><div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div></div>
+  <div class="pc"><img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""></div>
+</div></div></section>
+
+<!-- V4 -->
+<div class="vtag"><span class="vt">Вариант 4 · Высокий фуллскрин</span><small>Как сейчас (фото во всю ширину), но блок заметно выше и кадр опущен ниже — невесту видно гораздо больше, почти в полный рост. Текст поверх снизу.</small></div>
+<section class="demo"><div class="container"><div class="v4">
+  <img src="https://kostaysss.github.io/cake-smile/assets/hero.jpg" alt=""><div class="scrim"></div>
+  <div class="t"><span class="eyebrow">Кондитерская с индивидуальным подходом</span><div class="brand">cake<span class="dot">.</span>smile</div><p class="slogan">Безупречный вкус и внешний вид под ваше ТЗ — наш базовый минимум. Ценность — в деталях и сервисе.</p><div class="acts"><a class="btn btn-primary">Написать в Telegram</a><a class="btn btn-outline">Наши дегустации</a></div></div>
+</div></div></section>
+
+<div class="foot">Напиши номер (1–4). После выбора точно подстрою кадр (object-position), чтобы невеста была идеально в кадре. Фото можно и заменить на горизонтальное — скажи.</div>
+</body>
+</html>
