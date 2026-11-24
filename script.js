@@ -34,6 +34,21 @@
     });
   }
 
+  /* ===== Прозрачная шапка на главной (поверх hero) ===== */
+  (function () {
+    if (!document.body.classList.contains("home")) return;
+    var header = document.querySelector(".site-header");
+    var hero = document.querySelector(".hero-d");
+    if (!header || !hero) return;
+    var onScroll = function () {
+      var threshold = hero.offsetHeight - header.offsetHeight - 10;
+      header.classList.toggle("scrolled", window.scrollY > threshold);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+  })();
+
   /* ===== Расчёт за 3 вопроса ===== */
   var calcForm = document.getElementById("calcForm");
   if (calcForm) {
