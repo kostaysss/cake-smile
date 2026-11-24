@@ -176,7 +176,7 @@ img { max-width: 100%; display: block; }
 .hero-frame { display: flex; height: min(64vh, 560px); box-sizing: border-box; background: #fbf7f1; padding: 17px; border-radius: 14px; box-shadow: 0 34px 74px -40px rgba(0,0,0,.6); }
 .hf-inner { position: relative; height: 100%; aspect-ratio: 863 / 870; overflow: hidden; border-radius: 4px; }
 .hf-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.hf-inner::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(107,31,50,.22); border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.04); pointer-events: none; }
+.hf-inner::after { content: ""; position: absolute; inset: 0; border: 0.5px solid rgba(107,31,50,.22); border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.04); pointer-events: none; }
 .hero-d-main { display: flex; align-items: center; padding: 120px 34px 44px 56px; }
 .hero-d-card { max-width: 520px; padding: 44px 46px; border-radius: 24px;
   background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3);
