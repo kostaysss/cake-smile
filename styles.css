@@ -489,17 +489,14 @@ body.home .site-header.scrolled .burger span { background: var(--ink); }
 .reviews-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth; padding: 8px 2px 20px; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
 .reviews-track::-webkit-scrollbar { display: none; }
 .reviews-track:active { cursor: grabbing; }
-.rev-item { flex: 0 0 auto; width: 326px; background: #fff; border: 1px solid #efe6dd; border-radius: 16px; padding: 22px 22px 18px; box-shadow: 0 14px 34px -26px rgba(58,20,32,.38); display: flex; flex-direction: column; scroll-snap-align: start; }
-.rev-stars { color: #e6b949; letter-spacing: 1.5px; font-size: .85rem; margin-bottom: 10px; }
-.rev-txt { font-size: .92rem; line-height: 1.56; color: #3c3035; margin: 0 0 16px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
-.rev-foot { display: flex; align-items: center; gap: 10px; margin-top: auto; }
-.rev-av { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: .9rem; flex: none; }
-.rev-av.av1 { background: #c58aa6; } .rev-av.av2 { background: #8a9bc5; } .rev-av.av3 { background: #c5a06a; }
-.rev-av.av4 { background: #7fb0a0; } .rev-av.av5 { background: #b58ac5; } .rev-av.av6 { background: #cf8f7a; }
-.rev-who { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
-.rev-name { font-weight: 700; font-size: .88rem; color: var(--ink); }
-.rev-src { font-size: .72rem; color: #a2919a; display: flex; align-items: center; gap: 4px; }
-.rev-src .tg-ic { width: 12px; height: 12px; fill: currentColor; }
+.rev-item { flex: 0 0 auto; width: 300px; height: 234px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px; box-shadow: 0 18px 40px -26px rgba(58,20,32,.45); display: flex; flex-direction: column; scroll-snap-align: start; }
+.rev-top { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+.rev-av { width: 38px; height: 38px; border-radius: 50%; background: var(--li-soft); color: var(--bx); display: grid; place-items: center; font-weight: 700; font-size: 1rem; flex: none; }
+.rev-who { display: flex; flex-direction: column; min-width: 0; }
+.rev-name { font-weight: 700; font-size: .92rem; color: var(--ink); }
+.rev-src { font-size: .68rem; color: var(--muted); letter-spacing: .02em; }
+.rev-src .st { color: #e2b23a; letter-spacing: 1px; }
+.rev-txt { font-size: .9rem; line-height: 1.5; color: #42353a; margin: 0; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
 .rev-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: none; background: linear-gradient(135deg, var(--bx), var(--bx-d)); color: #fff; font-size: 1.25rem; cursor: pointer; display: grid; place-items: center; box-shadow: 0 12px 26px -12px rgba(107,31,50,.7); z-index: 3; transition: transform .2s; }
 .rev-nav:hover { transform: translateY(-50%) scale(1.08); }
 .rev-prev { left: -6px; }
@@ -604,7 +601,7 @@ body.home .site-header.scrolled .burger span { background: var(--ink); }
   .gallery { grid-template-columns: repeat(3, 1fr); }
   .fillings-grid { grid-template-columns: 1fr; gap: 0; }
   .flavor-grid { grid-template-columns: repeat(2, 1fr); }
-  .rev-item { width: 286px; }
+  .rev-item { width: 262px; height: 220px; }
   .rev-nav { width: 38px; height: 38px; }
   .about-inner { grid-template-columns: 1fr; gap: 26px; max-width: 560px; }
   .about-photo-card { max-width: 380px; margin: 0 auto; }
