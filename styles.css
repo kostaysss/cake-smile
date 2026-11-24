@@ -188,14 +188,14 @@ img { max-width: 100%; display: block; }
 .hero-d-card .hero-slogan { color: #fff; margin-bottom: 28px; max-width: 42ch; text-shadow: 0 1px 16px rgba(0,0,0,.45); }
 .hero-d-card .btn-outline { border-color: rgba(255,255,255,.85); color: #fff; }
 .hero-d-card .btn-outline:hover { background: #fff; color: var(--bx); border-color: #fff; }
-.hero-d-strip { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr);
-  background: rgba(30,10,16,.42); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
-.hero-d-cell { position: relative; display: block; height: 124px; overflow: hidden; border-left: 1px solid rgba(255,255,255,.14); }
-.hero-d-cell:first-child { border-left: none; }
-.hero-d-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
-.hero-d-cell:hover img { transform: scale(1.07); }
-.hero-d-cell::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,6,10,0) 42%, rgba(20,6,10,.62)); }
-.hero-d-cell::after { content: attr(data-cap); position: absolute; left: 15px; bottom: 11px; color: #fff; font-family: var(--sans); font-weight: 600; font-size: .82rem; letter-spacing: .01em; }
+/* Лента работ — нависающие карточки, перекрывают стык hero и страницы */
+.works-strip { position: relative; z-index: 5; margin-top: -74px; }
+.ws-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.ws-card { position: relative; display: block; height: 134px; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 56px -24px rgba(58,20,32,.52); }
+.ws-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
+.ws-card:hover img { transform: scale(1.07); }
+.ws-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,6,10,0) 42%, rgba(20,6,10,.64)); }
+.ws-card::after { content: attr(data-cap); position: absolute; left: 15px; bottom: 12px; color: #fff; font-family: var(--sans); font-weight: 600; font-size: .86rem; letter-spacing: .01em; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
 
 /* Прозрачная шапка поверх hero — только на главной (body.home) */
 body.home .site-header { position: fixed; left: 0; right: 0; background: transparent; border-bottom-color: transparent;
@@ -625,9 +625,9 @@ body.home .site-header.scrolled .burger span { background: var(--ink); }
   .hf-inner { height: auto; width: 100%; }
   .hero-d-main { padding: 26px 22px 40px; }
   .hero-d-card { padding: 32px 26px; max-width: none; }
-  .hero-d-strip { grid-template-columns: repeat(2, 1fr); }
-  .hero-d-cell:nth-child(2) { border-left: none; }
-  .hero-d-cell:nth-child(3), .hero-d-cell:nth-child(4) { border-top: 1px solid rgba(255,255,255,.14); }
+  .works-strip { margin-top: -44px; }
+  .ws-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .ws-card { height: 116px; }
   .tasting { grid-template-columns: 1fr; background: linear-gradient(180deg, #b6a0c0 0%, #a991b4 16%, #8a5570 48%, #6b1f32 74%, #4f1526 100%); }
   .tasting .ph { min-height: 220px; order: -1; }
   .tasting-media { order: -1; padding: 0; aspect-ratio: 4 / 3; }
